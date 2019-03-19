@@ -3,14 +3,14 @@
   <channel>
     <title>周鹏的博客</title>
     <description>澹台宇鹏/@Roc Zhou</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 18 Mar 2019 15:16:41 +0800</pubDate>
-    <lastBuildDate>Mon, 18 Mar 2019 15:16:41 +0800</lastBuildDate>
+    <link>http://localhost:4000/my-blog/</link>
+    <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 19 Mar 2019 15:55:08 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Mar 2019 15:55:08 +0800</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
-        <title>Mac OS X中安装命令行工具Command Line Tools（无Xcode)</title>
+        <title>Mac OS X中安装命令行工具Command Line Tools</title>
         <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
 &lt;p&gt;喜欢通过终端访问更传统的Unix工具包的Mac用户（大部分是程序员），都会选择安装Xcode IDE的可选命令行工具子部分，也就是&lt;code class=&quot;highlighter-rouge&quot;&gt;Command Line Tools&lt;/code&gt;。&lt;/p&gt;
 
@@ -58,10 +58,118 @@ git version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/command/5.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;这个包实际安装在哪&quot;&gt;这个包实际安装在哪&lt;/h2&gt;
+
+&lt;p&gt;如果你对这个包中到底有什么东西感兴趣，可以自己查看这个包中的内容。它安装在mac的根目录中
+/Library/Developer/CommandLineTools/&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;注意： 在根/目录下，而不是用户目录~/..&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;61个可用的新命令，都在/ Library / Developer / CommandLineTools / usr / bin /中。&lt;/p&gt;
+
+&lt;p&gt;下面按字母顺序列出这些命令：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ar
+as
+asa
+bison
+BuildStrings
+c++
+c89
+c99
+cc
+clang
+clang++
+cmpdylib
+codesign_allocate
+CpMac
+cpp
+ctags
+ctf_insert
+DeRez
+dsymutil
+dwarfdump
+dyldinfo
+flex
+flex++
+g++
+gatherheaderdoc
+gcc
+gcov
+GetFileInfo
+git
+git-cvsserver
+git-receive-pack
+git-shell
+git-upload-archive
+git-upload-pack
+gm4
+gnumake
+gperf
+hdxml2manxml
+headerdoc2html
+indent
+install_name_tool
+ld
+lex
+libtool
+lipo
+lldb
+lorder
+m4
+make
+MergePef
+mig
+mkdep
+MvMac
+nasm
+ndisasm
+nm
+nmedit
+otool
+pagestuff
+projectInfo
+ranlib
+rebase
+redo_prebinding
+ResMerger
+resolveLinks
+Rez
+RezDet
+RezWack
+rpcgen
+segedit
+SetFile
+size
+SplitForks
+strings
+strip
+svn
+svnadmin
+svndumpfilter
+svnlook
+svnrdump
+svnserve
+svnsync
+svnversion
+unifdef
+unifdefall
+UnRezWack
+unwinddump
+what
+xml2man
+yacc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;参考文章：&lt;a href=&quot;http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/&quot;&gt;How to Install Command Line Tools in Mac OS X (Without Xcode)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 29 Dec 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/12/29/Command_Line_Tools/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/12/29/Command_Line_Tools/</guid>
+        <link>http://localhost:4000/my-blog/2018/12/29/Command_Line_Tools/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/12/29/Command_Line_Tools/</guid>
         
         <category>Mac环境配置</category>
         
@@ -275,8 +383,8 @@ function drawRoundRectPath(cxt,width,height,radius){
 &lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/10/09/canvas_toDataURL/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/10/09/canvas_toDataURL/</guid>
+        <link>http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</guid>
         
         <category>HTML5</category>
         
@@ -387,8 +495,8 @@ function drawRoundRectPath(cxt,width,height,radius){
 
 </description>
         <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/09/10/other_interview/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/10/other_interview/</guid>
+        <link>http://localhost:4000/my-blog/2018/09/10/other_interview/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/10/other_interview/</guid>
         
         <category>笔试面试</category>
         
@@ -837,8 +945,8 @@ b={b:1}
 &lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/getui_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/09/10/getui_interview/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/10/getui_interview/</guid>
+        <link>http://localhost:4000/my-blog/2018/09/10/getui_interview/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/10/getui_interview/</guid>
         
         <category>笔试面试</category>
         
@@ -932,10 +1040,57 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
 </description>
         <pubDate>Sat, 01 Sep 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/09/01/wechat_jssdk_bug/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/01/wechat_jssdk_bug/</guid>
+        <link>http://localhost:4000/my-blog/2018/09/01/wechat_jssdk_bug/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/01/wechat_jssdk_bug/</guid>
         
         <category>微信网页开发</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Html幻灯片展示</title>
+        <description>&lt;h4 id=&quot;可点击上方幻灯片右下角箭头进行切换&quot;&gt;可点击上方幻灯片右下角箭头进行切换&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;下滑这里查看更多内容&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;7月9日，我在公司内部进行了名为「JavaScript 模块化七日谈」分享，并将该 Slides 分享到了微博上。出乎意料地，这篇微博先后被 @JS小组 @尤小右 @寸志 等近 200 人转发，阅读达到 10w，获得了还不错的评价。&lt;/p&gt;
+
+&lt;p&gt;于是，我决定将它重新发到我的博客上，并为它专门制作了适用于 Keynote 展示文稿的新布局。它能自动根据屏幕大小/旋转以一定比例填充屏幕，你也可以直接点击下方链接在新页面打开，来获得更好的、沉浸式的全屏体验&lt;/p&gt;
+
+&lt;h3 id=&quot;watch-slides-&quot;&gt;&lt;a href=&quot;http://huangxuan.me/js-module-7day&quot;&gt;Watch Slides →&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://huangxuan.me/js-module-7day/attach/qrcode.png&quot; width=&quot;350&quot; height=&quot;350&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;small class=&quot;img-hint&quot;&gt;你也可以通过扫描二维码在手机上观看&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;这个 Web Slides 开源在&lt;a href=&quot;https://github.com/Huxpro/js-module-7day&quot;&gt;我的 Github 上&lt;/a&gt;，欢迎你帮助我完善这个展示文稿，你可以给我提 issue，可以 fork &amp;amp; pull request。如果它能帮助到你了，希望你还能不吝啬 star 一下这个项目&lt;/p&gt;
+
+&lt;h3 id=&quot;catalog&quot;&gt;Catalog&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一日 上古时期 &lt;strong&gt;&lt;em&gt;Module?&lt;/em&gt;&lt;/strong&gt; 从设计模式说起&lt;/li&gt;
+  &lt;li&gt;第二日 石器时代 &lt;strong&gt;&lt;em&gt;Script Loader&lt;/em&gt;&lt;/strong&gt; 只有封装性可不够，我们还需要加载&lt;/li&gt;
+  &lt;li&gt;第三日 蒸汽朋克 &lt;strong&gt;&lt;em&gt;Module Loader&lt;/em&gt;&lt;/strong&gt; 模块化架构的工业革命&lt;/li&gt;
+  &lt;li&gt;第四日 号角吹响 &lt;strong&gt;&lt;em&gt;CommonJS&lt;/em&gt;&lt;/strong&gt; 征服世界的第一步是跳出浏览器&lt;/li&gt;
+  &lt;li&gt;第五日 双塔奇兵 &lt;strong&gt;&lt;em&gt;AMD/CMD&lt;/em&gt;&lt;/strong&gt; 浏览器环境模块化方案&lt;/li&gt;
+  &lt;li&gt;第六日 精灵宝钻 &lt;strong&gt;&lt;em&gt;Browserify/Webpack&lt;/em&gt;&lt;/strong&gt; 大势所趋，去掉这层包裹！&lt;/li&gt;
+  &lt;li&gt;第七日 王者归来 &lt;strong&gt;&lt;em&gt;ES6 Module&lt;/em&gt;&lt;/strong&gt; 最后的战役&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Jul 2015 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2015/07/09/js-module-7day/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2015/07/09/js-module-7day/</guid>
+        
+        <category>前端开发</category>
+        
+        <category>JavaScript</category>
         
         
       </item>

@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="澹台宇鹏/@Roc Zhou">
     <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/logo.jpg">
+    <link rel="shortcut icon" href="/my-blog/img/logo.jpg">
 
-    <title>Mac OS X中安装命令行工具Command Line Tools（无Xcode) - 周鹏的博客</title>
+    <title>Mac OS X中安装命令行工具Command Line Tools - 周鹏的博客</title>
 
-    <link rel="canonical" href="http://localhost:4000/2018/12/29/Command_Line_Tools/">
+    <link rel="canonical" href="http://localhost:4000/my-blog/2018/12/29/Command_Line_Tools/">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/my-blog/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
+    <link rel="stylesheet" href="/my-blog/css/hux-blog.min.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/my-blog/css/syntax.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">周鹏的博客</a>
+            <a class="navbar-brand" href="/my-blog/">周鹏的博客</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,15 +75,15 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/my-blog/">Home</a>
                     </li>
                     
                     <li>
-                        <a href="/about/">About</a>
+                        <a href="/my-blog/about/">About</a>
                     </li>
                     
                     <li>
-                        <a href="/tags/">Tags</a>
+                        <a href="/my-blog/tags/">Tags</a>
                     </li>
                     
                 </ul>
@@ -125,12 +125,12 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-2015.jpg" width="0" height="0"> -->
+<!-- <img src="/my-blog/img/post-bg-2015.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('/img/post-bg-2015.jpg')
+        background-image: url('/my-blog/img/post-bg-2015.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -140,13 +140,13 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#Mac环境配置" title="Mac环境配置">Mac环境配置</a>
+                        <a class="tag" href="/my-blog/tags/#Mac环境配置" title="Mac环境配置">Mac环境配置</a>
                         
                     </div>
-                    <h1>Mac OS X中安装命令行工具Command Line Tools（无Xcode)</h1>
+                    <h1>Mac OS X中安装命令行工具Command Line Tools</h1>
                     
                     
-                    <h2 class="subheading"></h2>
+                    <h2 class="subheading">无Xcode安装</h2>
                     
                     <span class="meta">Posted by zhoupeng on December 29, 2018</span>
                 </div>
@@ -214,6 +214,114 @@ git version
 
 <p><img src="/img/posts/command/5.jpeg" alt="插图" /></p>
 
+<h2 id="这个包实际安装在哪">这个包实际安装在哪</h2>
+
+<p>如果你对这个包中到底有什么东西感兴趣，可以自己查看这个包中的内容。它安装在mac的根目录中
+/Library/Developer/CommandLineTools/</p>
+<blockquote>
+  <p>注意： 在根/目录下，而不是用户目录~/..</p>
+</blockquote>
+
+<p>61个可用的新命令，都在/ Library / Developer / CommandLineTools / usr / bin /中。</p>
+
+<p>下面按字母顺序列出这些命令：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ar
+as
+asa
+bison
+BuildStrings
+c++
+c89
+c99
+cc
+clang
+clang++
+cmpdylib
+codesign_allocate
+CpMac
+cpp
+ctags
+ctf_insert
+DeRez
+dsymutil
+dwarfdump
+dyldinfo
+flex
+flex++
+g++
+gatherheaderdoc
+gcc
+gcov
+GetFileInfo
+git
+git-cvsserver
+git-receive-pack
+git-shell
+git-upload-archive
+git-upload-pack
+gm4
+gnumake
+gperf
+hdxml2manxml
+headerdoc2html
+indent
+install_name_tool
+ld
+lex
+libtool
+lipo
+lldb
+lorder
+m4
+make
+MergePef
+mig
+mkdep
+MvMac
+nasm
+ndisasm
+nm
+nmedit
+otool
+pagestuff
+projectInfo
+ranlib
+rebase
+redo_prebinding
+ResMerger
+resolveLinks
+Rez
+RezDet
+RezWack
+rpcgen
+segedit
+SetFile
+size
+SplitForks
+strings
+strip
+svn
+svnadmin
+svndumpfilter
+svnlook
+svnrdump
+svnserve
+svnsync
+svnversion
+unifdef
+unifdefall
+UnRezWack
+unwinddump
+what
+xml2man
+yacc
+</code></pre></div></div>
+
+<p>参考文章：<a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">How to Install Command Line Tools in Mac OS X (Without Xcode)</a></p>
+
+<p>转载请注明：<a href="https://ttypzhoupeng.github.io/my-blog">周鹏的博客</a> » <a href="https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/">点击阅读原文</a></p>
+
+
 
                 <hr>
 
@@ -223,9 +331,9 @@ git version
                 <div class="ds-share"
                     style="text-align: right"
                     data-thread-key="/2018/12/29/Command_Line_Tools"
-                    data-title="Mac OS X中安装命令行工具Command Line Tools（无Xcode)"
-                    data-url="http://localhost:4000/2018/12/29/Command_Line_Tools/"
-                    data-images="http://localhost:4000/img/post-bg-2015.jpg"
+                    data-title="Mac OS X中安装命令行工具Command Line Tools"
+                    data-url="http://localhost:4000/my-blog/2018/12/29/Command_Line_Tools/"
+                    data-images="http://localhost:4000/my-blog/img/post-bg-2015.jpg"
                     data-content="简介
 喜欢通过终端访问更传统的Unix工具包的Mac用户（大部分是程序员），都会选择安装Xcode IDE的可选命令行工具子部分，也就是Command L... | 周鹏的博客 " >
                     <div class="ds-share-inline">
@@ -247,7 +355,7 @@ git version
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/10/09/canvas_toDataURL/" data-toggle="tooltip" data-placement="top" title="html dom 转化成图片踩坑记（canvas toDataURL）">&larr; Previous Post</a>
+                        <a href="/my-blog/2018/10/09/canvas_toDataURL/" data-toggle="tooltip" data-placement="top" title="html dom 转化成图片踩坑记（canvas toDataURL）">&larr; Previous Post</a>
                     </li>
                     
                     
@@ -259,8 +367,8 @@ git version
                 <div class="comment">
                     <div class="ds-thread"
                         data-thread-key="/2018/12/29/Command_Line_Tools"
-                        data-title="Mac OS X中安装命令行工具Command Line Tools（无Xcode)"
-                        data-url="http://localhost:4000/2018/12/29/Command_Line_Tools/" >
+                        data-title="Mac OS X中安装命令行工具Command Line Tools"
+                        data-url="http://localhost:4000/my-blog/2018/12/29/Command_Line_Tools/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -286,7 +394,11 @@ git version
                             
         				
                             
-                				<a href="/tags/#笔试面试" title="笔试面试" rel="2">
+        				
+                            
+        				
+                            
+                				<a href="/my-blog/tags/#笔试面试" title="笔试面试" rel="2">
                                     笔试面试
                                 </a>
                             
@@ -305,7 +417,7 @@ git version
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
                     
-                        <li><a href="http://huangxuan.me">Hux Blog</a></li>
+                        <li><a href="http://ttypzhoupeng.github.io/my-blog">zp</a></li>
                     
                         <li><a href="#">Foo</a></li>
                     
@@ -394,36 +506,9 @@ git version
 
                     <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
                     
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/ttypZhoupeng">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a target="_blank" href="http://weibo.com/ttypZhoupeng">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
                     
 
 
-                    
-                    <li>
-                        <a target="_blank" href="https://www.facebook.com/ttypZhoupeng">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
                     
                     
                     <li>
@@ -452,13 +537,13 @@ git version
 </footer>
 
 <!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
+<script src="/my-blog/js/jquery.min.js "></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+<script src="/my-blog/js/bootstrap.min.js "></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/js/hux-blog.min.js "></script>
+<script src="/my-blog/js/hux-blog.min.js "></script>
 
 
 <!-- async load function -->
@@ -554,7 +639,7 @@ git version
 
 
 <!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
+<img src="/my-blog/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
