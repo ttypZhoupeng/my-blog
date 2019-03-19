@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>周鹏的博客</title>
+    <description>澹台宇鹏/@Roc Zhou</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 18 Mar 2019 15:16:41 +0800</pubDate>
+    <lastBuildDate>Mon, 18 Mar 2019 15:16:41 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Mac OS X中安装命令行工具Command Line Tools（无Xcode)</title>
+        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;喜欢通过终端访问更传统的Unix工具包的Mac用户（大部分是程序员），都会选择安装Xcode IDE的可选命令行工具子部分，也就是&lt;code class=&quot;highlighter-rouge&quot;&gt;Command Line Tools&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;从MacOS High Sierra，Sierra，OS X El Capitan，Yosemite，Mavericks开始，无需先安装整个Xcode软件包，也无需登录开发人员帐户，就可以单独安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Command Line Tools&lt;/code&gt;。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;所以本篇文章适用于MacOS 10.13 High Sierra，10.12 Sierra，OS X 10.11 El Capitan，OS X 10.10 Yosemite和Mac OS X 10.9以及更新版本。&lt;/li&gt;
+    &lt;li&gt;运行OS X早期版本的Mac用户可以访问这篇文章&lt;a href=&quot;http://railsapps.github.io/xcode-command-line-tools.html&quot;&gt;Xcode Command Line Tools&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;简单来讲 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command Line Tools&lt;/code&gt; 就是一个小型独立包，为mac终端用户提供了许多常用的工具，实用程序和编译器。包括svn，git，make，GCC，clang，perl，size，strip，strings，libtool，cpp，what以及其他很多能够在Linux默认安装中找到的有用的命令。&lt;/p&gt;
+
+&lt;p&gt;后面会列出这个工具包中完整的命令列表，也可以自己安装完后亲自查看。&lt;/p&gt;
+
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+&lt;h3 id=&quot;1启动terminal或者iterm终端&quot;&gt;1.启动terminal或者iterm终端&lt;/h3&gt;
+&lt;h3 id=&quot;2输入以下命令字符串&quot;&gt;2.输入以下命令字符串&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;会出现以下弹窗，点击安装即可&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/command/1.png&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3接着会有一个同意服务条款弹出点击同意即可&quot;&gt;3.接着会有一个同意服务条款弹出，点击同意即可&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/command/2.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4等待下载&quot;&gt;4.等待下载&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/command/3.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5完成安装后会提示安装完成点击安装完成即可&quot;&gt;5.完成安装后会提示安装完成，点击安装完成即可。&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/command/4.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6然后可以通过尝试使用刚安装的命令之一来确认是否安装成功例如&quot;&gt;6.然后可以通过尝试使用刚安装的命令之一来确认是否安装成功，例如&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcc -v
+git version
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/command/5.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Dec 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/12/29/Command_Line_Tools/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/29/Command_Line_Tools/</guid>
+        
+        <category>Mac环境配置</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>html dom 转化成图片踩坑记（canvas toDataURL）</title>
+        <description>&lt;h2 id=&quot;需求&quot;&gt;需求&lt;/h2&gt;
+
+&lt;p&gt;在开发过程中遇到这么一个需求，h5页面需要将一个html dom转化成图片，便于用户保存。&lt;/p&gt;
+
+&lt;h2 id=&quot;面向百度搜索第三方得-html2canvas-和-dom-to-image&quot;&gt;面向百度搜索第三方得 html2canvas 和 dom-to-image&lt;/h2&gt;
+
+&lt;p&gt;两者在写这篇笔记之前在github上的星星数分别是&lt;/p&gt;
+
+&lt;p&gt;dom-to-image  4k ⭐️&lt;/p&gt;
+
+&lt;p&gt;html2canvas 13.7k ⭐️&lt;/p&gt;
+
+&lt;p&gt;两者都有尝试过，都有意想不到的bug，包括&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;部分手机有某些背景图片无法展示，为空白&lt;/li&gt;
+  &lt;li&gt;iphone8 plus ios 11中根本不调用这个转换方法，从而得不到想要的图片。
+等等&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;自己动手&quot;&gt;自己动手&lt;/h2&gt;
+&lt;h3 id=&quot;思路&quot;&gt;思路&lt;/h3&gt;
+&lt;p&gt;利用canvas的toDataURL来拿到canvas转化的base64码，来替换img的url, 也可以把图片上传到公司的服务器上，得到图片的地址来进行下载，或作为参数来传递&lt;/p&gt;
+
+&lt;p&gt;那么canvas的绘制主要就是文本和图片的绘制,文本绘制相对简单，图片绘制有一些注意点。&lt;/p&gt;
+
+&lt;h3 id=&quot;canvas-初始化&quot;&gt;canvas 初始化&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;canvas id=&quot;canvas&quot; width=&quot;750&quot; height=&quot;1164&quot;&amp;gt;
+  你的浏览器居然不支持Canvas？！赶快换一个吧！！
+&amp;lt;/canvas&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let c = document.getElementById(&quot;canvas&quot;);
+let ctx = c.getContext(&quot;2d&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;文本绘制&quot;&gt;文本绘制&lt;/h3&gt;
+
+&lt;h4 id=&quot;官方文档如图&quot;&gt;官方文档如图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/canvas_toDataURL/1.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;详细文档请参考-canvas手册&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;代码示例&quot;&gt;代码示例&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.fillStyle = &quot;#fff&quot;;
+ctx.font = &quot;32px PingFangSC-Regular&quot;;
+ctx.textAlign = &quot;left&quot;;
+ctx.fillText(&quot;这是文本&quot;, 280, 755);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;图片绘制&quot;&gt;图片绘制&lt;/h3&gt;
+
+&lt;h4 id=&quot;官方文档如图-1&quot;&gt;官方文档如图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/canvas_toDataURL/2.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;详细文档请参考-canvas手册-1&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;注意事项&quot;&gt;注意事项&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;图片需要进行跨域处理，否则后期无法生成图片，也就是在img标签中增加crossOrigin属性，值为anonymous&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const instBanner = document.getElementById(&quot;instBanner&quot;);
+instBanner.crossOrigin = &quot;anonymous&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;需要等到图片加载完成再画到画布上，否则有可能没画上去&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
+posterBg.src = mainBg;
+posterBg.onload = () =&amp;gt; {
+  ctx.drawImage(posterBg, 0, 0, 750, 1164);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;完整代码示例&quot;&gt;完整代码示例&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
+posterBg.src = 'https:....'; //这里是图片url
+posterBg.crossOrigin = &quot;anonymous&quot;;
+posterBg.onload = () =&amp;gt; {
+  ctx.drawImage(posterBg, 0, 0, 750, 1164);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;生成图片&quot;&gt;生成图片&lt;/h3&gt;
+
+&lt;h4 id=&quot;替换img-src&quot;&gt;替换img src&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
+let canvasImg = document.getElementById(&quot;canvasImg&quot;);
+canvas.src = dataURL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;上传服务器得到img-url可作为参数保存图片&quot;&gt;上传服务器，得到img url(可作为参数，保存图片)&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
+function getImgUrl(dataURL){
+  //一些上传服务器的代码
+  return imgUrl
+}
+let imgUrl = getImgUrl();
+let canvasImg = document.getElementById(&quot;canvasImg&quot;);
+canvas.src = imgUrl;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;最后奉上一些常用的canvas处理方法&quot;&gt;最后奉上一些，常用的canvas处理方法&lt;/h3&gt;
+
+&lt;h4 id=&quot;圆形图片的绘制&quot;&gt;圆形图片的绘制&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.save();
+
+ctx.beginPath(); //开始绘制
+//先画个圆   前两个参数确定了圆心 （x,y） 坐标  第三个参数是圆的半径  四参数是绘图方向  默认是false，即顺时针
+ctx.arc(60, 60, 30, 0 * Math.PI, 2 * Math.PI);
+
+ctx.clip();//画好了圆 剪切  原始画布中剪切任意形状和尺寸。一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内 这也是我们要save上下文的原因
+
+ctx.drawImage('https:....', 30, 30, 60, 60);
+
+contex.restore(); //恢复之前保存的绘图上下文 恢复之前保存的绘图上下午即状态 还可以继续绘制
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;圆角矩形绘制&quot;&gt;圆角矩形绘制&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+/**该方法用来绘制圆角矩形 
+*@param cxt:canvas的上下文环境 
+*@param x:左上角x轴坐标 
+*@param y:左上角y轴坐标 
+*@param width:矩形的宽度 
+*@param height:矩形的高度 
+*@param radius:圆的半径 
+*@param lineWidth:线条粗细 
+*@param strokeColor:线条颜色 
+**/  
+function strokeRoundRect(cxt,x,y,width,height,radius,/*optional*/lineWidth,/*optional*/strokeColor){  
+    //圆的直径必然要小于矩形的宽高          
+    if(2*radius&amp;gt;width || 2*radius&amp;gt;height){return false;}  
+      
+    cxt.save();  
+    cxt.translate(x,y);  
+    //绘制圆角矩形的各个边  
+    drawRoundRectPath(cxt,width,height,radius);  
+    cxt.lineWidth = lineWidth||2;//若是给定了值就用给定的值否则给予默认值2  
+    cxt.strokeStyle=strokeColor||&quot;#000&quot;;  
+    cxt.stroke();  
+    cxt.restore();  
+}  
+
+/**该方法用来绘制一个有填充色的圆角矩形 
+*@param cxt:canvas的上下文环境 
+*@param x:左上角x轴坐标 
+*@param y:左上角y轴坐标 
+*@param width:矩形的宽度 
+*@param height:矩形的高度 
+*@param radius:圆的半径 
+*@param fillColor:填充颜色 
+**/
+function fillRoundRect(cxt,x,y,width,height,radius,/*optional*/fillColor){  
+    //圆的直径必然要小于矩形的宽高          
+    if(2*radius&amp;gt;width || 2*radius&amp;gt;height){return false;}  
+      
+    cxt.save();  
+    cxt.translate(x,y);  
+    //绘制圆角矩形的各个边  
+    drawRoundRectPath(cxt,width,height,radius);  
+    cxt.fillStyle=fillColor||&quot;#000&quot;;//若是给定了值就用给定的值否则给予默认值  
+    cxt.fill();  
+    cxt.restore();  
+}  
+
+function drawRoundRectPath(cxt,width,height,radius){  
+    cxt.beginPath(0);  
+    //从右下角顺时针绘制，弧度从0到1/2PI  
+    cxt.arc(width-radius,height-radius,radius,0,Math.PI/2);  
+  
+    //矩形下边线  
+    cxt.lineTo(radius,height);  
+  
+    //左下角圆弧，弧度从1/2PI到PI  
+    cxt.arc(radius,height-radius,radius,Math.PI/2,Math.PI);  
+  
+    //矩形左边线  
+    cxt.lineTo(0,radius);  
+  
+    //左上角圆弧，弧度从PI到3/2PI  
+    cxt.arc(radius,radius,radius,Math.PI,Math.PI*3/2);  
+  
+    //上边线  
+    cxt.lineTo(width-radius,0);  
+  
+    //右上角圆弧  
+    cxt.arc(width-radius,radius,radius,Math.PI*3/2,Math.PI*2);  
+  
+    //右边线  
+    cxt.lineTo(width,height-radius);  
+    cxt.closePath();  
+}  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/10/09/canvas_toDataURL/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/10/09/canvas_toDataURL/</guid>
+        
+        <category>HTML5</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>个推二面以及其他笔试面试题目（大致）</title>
+        <description>&lt;h1 id=&quot;20171108-个推二面&quot;&gt;2017/11/08 （个推二面）&lt;/h1&gt;
+&lt;h2 id=&quot;前端知识&quot;&gt;前端知识&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;框架angular，有用到angular的一些什么功能&lt;/li&gt;
+  &lt;li&gt;flex布局兼容性&lt;/li&gt;
+  &lt;li&gt;数组去重方法 √&lt;/li&gt;
+  &lt;li&gt;跨域问题 √&lt;/li&gt;
+  &lt;li&gt;本地存储，cookie安全性 √&lt;/li&gt;
+  &lt;li&gt;怎么定义声明一个json&lt;/li&gt;
+  &lt;li&gt;阻止冒泡中stopPropagation和preventDefault区别 √&lt;/li&gt;
+  &lt;li&gt;你知道哪些js事件&lt;/li&gt;
+  &lt;li&gt;事件委托&lt;/li&gt;
+  &lt;li&gt;一道css float题目 呈现什么效果
+```&lt;/li&gt;
+&lt;/ul&gt;
+&lt;style&gt;
+.float-box.left{
+    float:left;
+}
+.float-box.right{
+    float:right;
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;float-box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;靠左边浮动&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;靠右边浮动&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom-box&quot;&gt;
+    &lt;div&gt;底部box&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;计算机基础&quot;&gt;计算机基础&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;冒泡排序&lt;/li&gt;
+  &lt;li&gt;数组链表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;看到媒体查询，问了下媒体查询&lt;/li&gt;
+  &lt;li&gt;看到官网，问了下是响应式的吗，上线了没， 我说那个商城是响应式的，然后问了商城中购物车怎么实现的&lt;/li&gt;
+  &lt;li&gt;职业规划&lt;/li&gt;
+  &lt;li&gt;什么时候接触前端的&lt;/li&gt;
+  &lt;li&gt;最后有什么问题要问我们的吗&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;最后逻辑题&quot;&gt;最后逻辑题&lt;/h2&gt;
+&lt;h3 id=&quot;一块砖头能干什么&quot;&gt;一块砖头能干什么？&lt;/h3&gt;
+
+&lt;h1 id=&quot;20171110-杭州对的人信息科技有限公司&quot;&gt;2017/11/10 （杭州对的人信息科技有限公司）&lt;/h1&gt;
+&lt;h2 id=&quot;前端基础知识&quot;&gt;前端基础知识&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;只用一个div怎么画一个矩形，矩形右上角为一个圆&lt;/li&gt;
+  &lt;li&gt;要是想要让这个圆在矩形的中间（居中问题）&lt;/li&gt;
+  &lt;li&gt;怎么画一个梯形&lt;/li&gt;
+  &lt;li&gt;amd cmd&lt;/li&gt;
+  &lt;li&gt;拖拽事件的实现&lt;/li&gt;
+  &lt;li&gt;有哪些鼠标事件&lt;/li&gt;
+  &lt;li&gt;事件中有哪些有冒泡&lt;/li&gt;
+  &lt;li&gt;一个输入框，从鼠标移入，然后点击输入框，再移出输入框，期间发生了哪些事件，按顺序说&lt;/li&gt;
+  &lt;li&gt;事件委托&lt;/li&gt;
+  &lt;li&gt;怎么解决页面首次加载，:hover改变图片闪白bug&lt;/li&gt;
+  &lt;li&gt;雪碧图是怎么制作的，雪碧图，svg一键生成。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;其他-1&quot;&gt;其他&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;在做官网项目时有遇到什么问题&lt;/li&gt;
+  &lt;li&gt;wow.js是干什么的&lt;/li&gt;
+  &lt;li&gt;对webpack有了解吗&lt;/li&gt;
+  &lt;li&gt;用gulp做过哪些事&lt;/li&gt;
+  &lt;li&gt;angular单页面的具体实现方式&lt;/li&gt;
+  &lt;li&gt;用过react吗&lt;/li&gt;
+  &lt;li&gt;require.js&lt;/li&gt;
+  &lt;li&gt;c3.js，D3.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;20171111-小麦助教&quot;&gt;2017/11/11 (小麦助教)&lt;/h1&gt;
+&lt;h2 id=&quot;前端基础知识-1&quot;&gt;前端基础知识&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;浏览器渲染页面过程中发生了什么&lt;/li&gt;
+  &lt;li&gt;跨域问题&lt;/li&gt;
+  &lt;li&gt;get与post区别&lt;/li&gt;
+  &lt;li&gt;状态码500,400&lt;/li&gt;
+  &lt;li&gt;localstorage的定义以及api，怎么删除单条数据&lt;/li&gt;
+  &lt;li&gt;axios与ajax区别&lt;/li&gt;
+  &lt;li&gt;jQuery中$.fn是什么意思&lt;/li&gt;
+  &lt;li&gt;原型链&lt;/li&gt;
+  &lt;li&gt;出了一道手写编程，一个数列，1,1,2,3,5,8,13,21…,计算第100位是什么数字&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;其他-2&quot;&gt;其他&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;快速排序&lt;/li&gt;
+  &lt;li&gt;进程与线程&lt;/li&gt;
+  &lt;li&gt;promise&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/09/10/other_interview/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/10/other_interview/</guid>
+        
+        <category>笔试面试</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>杭州 &quot;超详细&quot; 前端笔试面试经历分享</title>
+        <description>&lt;h1 id=&quot;笔试题照片&quot;&gt;笔试题照片&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/img/posts/getui/1.jpeg&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/getui/2.jpeg&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;笔试解答&quot;&gt;笔试解答&lt;/h1&gt;
+&lt;h2 id=&quot;计算机基础题必做&quot;&gt;计算机基础题（必做）&lt;/h2&gt;
+&lt;h3 id=&quot;1略&quot;&gt;1.略&lt;/h3&gt;
+
+&lt;h3 id=&quot;2内存溢出和内存泄露&quot;&gt;2.内存溢出和内存泄露&lt;/h3&gt;
+&lt;p&gt;内存溢出是指已有的数据超过了其获得到的内存所能存储的范围，比如用一个字节存放1000这个数字就属于内存溢出；
+内存泄漏是指程序由于错误或漏洞造成的内存占用过多，或占用内存后无法释放（很多情况是申请了内存，但程序结束后没有释放）。&lt;/p&gt;
+
+&lt;h3 id=&quot;3数据库中索引主键唯一索引联合索引的区别对数据库性能有什么影响&quot;&gt;3.数据库中索引，主键，唯一索引，联合索引的区别，对数据库性能有什么影响&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;索引是一种特殊文件，它包含对数据表里所有记录的引用指针&lt;/li&gt;
+  &lt;li&gt;普通索引的唯一作用是加快访问速度&lt;/li&gt;
+  &lt;li&gt;普通索引，被索引的数据中可以包含重复的数据，唯一索引就是规定了索引到的值各不相同&lt;/li&gt;
+  &lt;li&gt;主键是一种特殊的唯一索引，一个表中只能允许有一个主键，用来唯一标识一条记录&lt;/li&gt;
+  &lt;li&gt;联动索引就是索引可以覆盖多个数据列&lt;/li&gt;
+  &lt;li&gt;索引加快了查询的速度，但是减慢了添加删除更新的速度，因为在执行这些操作之前需要先索引&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4数据库中内联接和外联接区别&quot;&gt;4.数据库中内联接和外联接区别&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;内连接：指连接结果仅包含符合连接条件的行，参与连接的两个表都应该符合连接条件。&lt;/li&gt;
+  &lt;li&gt;外连接：连接结果不仅包含符合连接条件的行同时也包含自身不符合条件的行。包括左外连接、右外连接和全外连接。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;内连接只能查询两个表中关系匹配的记录外连接不仅能查询两个表中关系匹配的记录,而且可以查询不匹配的纪录&lt;/p&gt;
+
+&lt;h3 id=&quot;5线程和进程多线程中死锁怎么处理&quot;&gt;5.线程和进程，多线程中死锁怎么处理&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;联系:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;一个线程只属于一个进程，一个进程可以拥有多个线程，但至少有一个线程，称为主线程&lt;/li&gt;
+  &lt;li&gt;资源统一分配给进程，同一进程中的线程共享该进程的所有资源&lt;/li&gt;
+  &lt;li&gt;线程在执行过程中，需要协作同步，不同进程之间线程需要通过消息通信来达到同步&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;区别:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;线程作为调度和分配的基本单位，进程作为分配资源的基本单位&lt;/li&gt;
+  &lt;li&gt;并发性：不仅进程之间可以并发执行，同一进程中的不同线程之间也能进行并发执行&lt;/li&gt;
+  &lt;li&gt;拥有资源：进程是拥有资源的独立单位，线程不拥有资源，但可以访问隶属于进程的所有资源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;什么时候用多线程:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;耗时或大量占用处理器阻塞用户界面操作&lt;/li&gt;
+  &lt;li&gt;各个任务必须等待外部资源时&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;避免多线程中死锁&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;加锁顺序（线程按照一定的顺序加锁）&lt;/li&gt;
+  &lt;li&gt;加锁时限（线程尝试获取锁的时候加上一定的时限，超过时限则放弃对该锁的请求，并释放自己占有的锁）&lt;/li&gt;
+  &lt;li&gt;死锁检测&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6缓存的应用场景&quot;&gt;6.缓存的应用场景&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;我们先解释下缓存， 顾名思义，就是数据暂存的地方，你可以理解为从磁盘里取出来数据，暂时存放在内存，以待后面处理来读取。而能存放在缓存的数据，通常是频繁访问的，不会经常修改的数据。知道了什么是缓存，什么数据可以放缓存，就可以寻找合适的缓存(这里说的缓存，就是对象或者容器了)。&lt;/li&gt;
+  &lt;li&gt;目前，缓存的操作主要是两种方式，一种是使用程序自带的map对象(像jdk的hashmap)，一种是缓存软件，第一种不细说，大家可以看看hashmap的实现和应用，这里主要说缓存软件。现在流行的缓存软件是memcached、redis(如果有不了解的，google)，有的博客还说到mongodb。个人认为，因为要兼顾DB的某些特性，所以做不到其他两个缓存的为了实现极高的吞吐量而采用的epoll 或 libevent事件驱动的方案，所以这里排除。下面所说的缓存，就指的是第二种。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;7略&quot;&gt;7.略&lt;/h3&gt;
+
+&lt;h3 id=&quot;8略&quot;&gt;8.略&lt;/h3&gt;
+
+&lt;h3 id=&quot;9tcp和udp区别&quot;&gt;9.TCP和UDP区别&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;基于连接与不连接&lt;/li&gt;
+  &lt;li&gt;UDP程序结构简单&lt;/li&gt;
+  &lt;li&gt;对系统资源的要求，TCP多，UDP少&lt;/li&gt;
+  &lt;li&gt;TCP保证数据正确性，UDP可能丢包，TCP保证数据顺序，UDP不保证&lt;/li&gt;
+  &lt;li&gt;流模式，数据报模式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;10观察者模式&quot;&gt;10.观察者模式&lt;/h3&gt;
+&lt;p&gt;当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。&lt;/p&gt;
+
+&lt;h2 id=&quot;前端笔试题&quot;&gt;前端笔试题&lt;/h2&gt;
+&lt;h3 id=&quot;1css有哪些选择器如何区分优先级下面的代码是什么效果&quot;&gt;1.css有哪些选择器，如何区分优先级，下面的代码是什么效果&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;派生选择器（用HTML标签申明）&lt;/li&gt;
+  &lt;li&gt;id选择器（用DOM的ID申明）&lt;/li&gt;
+  &lt;li&gt;类选择器（用一个样式类名申明）
+除了前3种基本选择器，还有一些扩展选择器，包括&lt;/li&gt;
+  &lt;li&gt;后代选择器（利用空格间隔，比如div .a{  }）&lt;/li&gt;
+  &lt;li&gt;群组选择器（利用逗号间隔，比如p,div,#a{  }）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;css选择器的优先级的定义&quot;&gt;CSS选择器的优先级的定义&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;基本原则：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;复杂的计算方法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用1表示派生选择器的优先级&lt;/li&gt;
+  &lt;li&gt;用10表示类选择器的优先级&lt;/li&gt;
+  &lt;li&gt;用100标示ID选择器的优先级&lt;/li&gt;
+  &lt;li&gt;div.test1 .span var 优先级 1+10 +10 +1&lt;/li&gt;
+  &lt;li&gt;span#xxx .songs li 优先级1+100 + 10 + 1&lt;/li&gt;
+  &lt;li&gt;#xxx li 优先级 100 +1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+#id{color:green;}
+.class-a{
+    color:blue;
+}
+#my-id.class-b{color:yellow;}
+p.class-a.class-b{
+    color:red;
+}
+&amp;lt;/style&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;p class=&quot;class-b class-a&quot; id=&quot;my-id&quot;&amp;gt;123&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;答案是yellow,黄色&lt;/p&gt;
+
+&lt;h3 id=&quot;2如何用css让一个元素不可见&quot;&gt;2.如何用css让一个元素不可见&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;opcity: 0;    隐藏对应的元素并且挤占该元素原来的空间。&lt;/li&gt;
+  &lt;li&gt;display : none;  隐藏对应的元素但不挤占该元素原来的空间。&lt;/li&gt;
+  &lt;li&gt;visibility: hidden;  隐藏对应的元素并且挤占该元素原来的空间。
+即是，使用CSS display:none属性后，HTML元素（对象）的宽度、高度等各种属性值都将“丢失”;而使用visibility:hidden属性后，HTML元素（对象）仅仅是在视觉上看不见（完全透明），而它所占据的空间位置仍然存在。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3补充一下b的css代码使得div-classbdiv在页面水平居中列出你能想到的所有方法&quot;&gt;3.补充一下.b的css代码，使得&amp;lt;div class=&quot;b&quot;&amp;gt;&amp;lt;/div&amp;gt;在页面水平居中，列出你能想到的所有方法&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.b{
+    width:200px;
+    height:100px;
+    background:#ccc;
+    //继续补充代码
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;传统的居中方式&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;添加代码margin:0 auto;即可&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;绝对定位方式（必须已知子元素宽高，并且父元素需要relative定位）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;添加代码&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;position:absolute;
+left:50%;
+margin-left:-100px;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;绝对定位方式（不用知道子元素宽高，但父元素需要relative定位）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;position:absolute;
+left:0;
+right:0;
+margin:0 auto;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4如果一个页面因为图片大且多加载慢应该如何去优化&quot;&gt;4.如果一个页面因为图片大且多加载慢，应该如何去优化？&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;图片懒加载，在页面上的未可视区域可以添加一个滚动条事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。&lt;/li&gt;
+  &lt;li&gt;如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。&lt;/li&gt;
+  &lt;li&gt;如果图片为css图片，可以使用CSSsprite，SVGsprite，Iconfont、Base64等技术。&lt;/li&gt;
+  &lt;li&gt;如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。&lt;/li&gt;
+  &lt;li&gt;如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5如何消除一个数组里面重复的元素&quot;&gt;5.如何消除一个数组里面重复的元素？&lt;/h3&gt;
+&lt;p&gt;这个是一个常考题，网上一搜方式很多。&lt;/p&gt;
+
+&lt;p&gt;首先介绍一种es6的解决方法&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ES6里新添加了两个很好用的东西，set和Array.from。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;set是一种新的数据结构，它可以接收一个数组或者是类数组对象，自动去重其中的重复项目。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [1,1,'1','1',null,null,undefined,undefined,NaN,NaN];
+console.log(new Set(arr));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/getui/3.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在这我们可以看见，重复的项目已经被去掉了，包括NaN。正常情况下，NaN === NaN 返回的是false，但是在set里，一样能够帮你去重。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/getui/4.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是这里大家可以看到，set返回的是一个对象，但是我们想要的是数组啊。&lt;/p&gt;
+
+&lt;p&gt;这回，就该轮到Array.from出场了，它的作用，就是可以把类数组对象、可迭代对象转化为数组。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [1,1,'1','1',null,null,undefined,undefined,NaN,NaN];
+var newArr = Array.from(new Set(arr));
+console.log(newArr);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/img/posts/getui/5.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;再介绍一种利用indexOf方法的去重&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [1,1,2,3,4,2,6,4,5,7];
+var nArr = [];
+function removeItem(arr){
+    for(var i=0;i&amp;lt;arr.length;i++){
+        if(nArr.indexOf(arr[i])==-1){
+            nArr.push(arr[i]);
+        }
+    }
+    return nArr;
+}
+console.log(removeItem(arr));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6请简述var-let-const的区别&quot;&gt;6.请简述var let const的区别&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;var定义的变量可以修改，如果不初始化会输出undefind,并且有时候会泄露到全局，造成一些影响&lt;/li&gt;
+  &lt;li&gt;为了解决这个泄露的bug，有了es6的let，let相当于给行数定义了一个块级域，函数内部使用let定义的变量只能在函数内部起作用&lt;/li&gt;
+  &lt;li&gt;const是用来定义一个不变的量，不能修改的量，必须赋初值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;7如何深拷贝对象jsonstringfiy需要注意什么&quot;&gt;7.如何深拷贝对象，JSON.stringfiy需要注意什么&lt;/h3&gt;
+&lt;p&gt;讲讲浅拷贝和深拷贝的概念，js中的浅拷贝和深拷贝，知识针对复杂数据类型（Object,Array)的复制问题。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;浅拷贝：是拷贝引用，拷贝后的引用都是指向同一个对象的实例，彼此之间的操作会互相影响
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var a = {c:1};
+var b = a;
+console.log(a === b); // 输出true。
+a.c = 2;
+console.log(b.c); // 输出 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;深拷贝：在堆中重新分配内存，并且把资源对象所有属性都进行新建拷贝，拷贝后的对象与原来的对象是完全隔离，互不影响&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;常见方法有JSON.parse(),JSON.stringify()，jQury的$.extend(true,{},obj)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var a = {c: {d: 1}};
+var b = $.extend(true, {}, a);
+console.log(a === b); // 输出false
+a.c.d = 3;
+console.log(b.c.d); // 输出 1，没有改变。
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSON.stringfiy需要注意什么
+首先讲一下JSON.parse()和JSON.stringfiy的概念&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;JSON.parse()是将字符串转黄成json对象&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var str = '{&quot;name&quot;:&quot;zp&quot;,&quot;age&quot;:&quot;22&quot;}'
+结果：
+JSON.parse(str)
+
+Object
+
+    age: &quot;22&quot;
+    name: &quot;zp&quot;
+    __proto__: Object
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;JSON.stringfiy则相反，是将json对象转换成字符串&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vara = {a:1,b:2}
+结果：
+JSON.stringify(a)
+
+&quot;{&quot;a&quot;:1,&quot;b&quot;:2}&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;JSON.stringfiy需要注意的地方&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON.stringfiy将不会转换不具有json表示形式的值&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;数字（整数或浮点数）
+字符串（在双引号中）
+逻辑值（true 或 false）
+数组（在方括号中）
+对象（在花括号中）
+null
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;undefined不在其中。&lt;/p&gt;
+
+&lt;h3 id=&quot;8a-onclickaclick和a-onclickaclick两者的写法有差别吗如果有差别是什么&quot;&gt;8.&amp;lt;a onclick=”a.click”&amp;gt;和&amp;lt;a onclick=”a.click()”&amp;gt;两者的写法有差别吗，如果有，差别是什么&lt;/h3&gt;
+&lt;p&gt;前者调用的是一个函数，当点击的时候可以执行函数
+而后者只是将函数运行后的值赋值给了a，所以当点击的时候并不会执行函数&lt;/p&gt;
+
+&lt;h3 id=&quot;9按时间顺序排序的日志信息如何快速找到指定时间的日志时间复杂度是多少&quot;&gt;9.按时间顺序排序的日志信息，如何快速找到指定时间的日志。时间复杂度是多少&lt;/h3&gt;
+&lt;p&gt;这个是数据结构中的日志信息，有兴趣的同学可以自行百度&lt;/p&gt;
+
+&lt;h3 id=&quot;10写一个fiter函数执行器第一个参数为filter函数剩余的参数传入filter执行并返回结果exefilter&quot;&gt;10.写一个fiter函数执行器，第一个参数为filter函数，剩余的参数传入filter执行，并返回结果，exeFilter()&lt;/h3&gt;
+&lt;p&gt;首先看看js filter()的用法，
+array.filter(function(currentValue,index,arr), thisValue)
+参数	描述&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;function(currentValue, index,arr)
+    &lt;ul&gt;
+      &lt;li&gt;currentValue 	必须。当前元素的值&lt;/li&gt;
+      &lt;li&gt;index         可选。当前元素的索引值&lt;/li&gt;
+      &lt;li&gt;array         可选。当前元素属于的数组对象&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;thisValue 	可选。对象作为该执行回调时使用，传递给函数，用作 “this” 的值。如果省略了 thisValue ，”this” 的值为 “undefined”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var ages = [32, 33, 16, 40];
+
+function exeFilter(age) {
+    return age &amp;gt;= 18;
+}
+
+function myFunction() {
+    document.getElementById(&quot;demo&quot;).innerHTML = ages.filter(exeFilter);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;11这题是一个浏览器console中报错信息要求一条条解释图片没拍到可以自行脑补&quot;&gt;11.这题是一个浏览器，console中报错信息，要求一条条解释，图片没拍到，可以自行脑补&lt;/h3&gt;
+
+&lt;h1 id=&quot;面试&quot;&gt;面试&lt;/h1&gt;
+
+&lt;p&gt;宣讲会6点开始，晚饭没吃，就跑去听宣讲会了，原本以为7，8点就能结束，但是宣讲+笔试+面试，硬是拖到了10点钟才吃上晚饭。&lt;/p&gt;
+
+&lt;p&gt;废话不多说，讲重点&lt;/p&gt;
+
+&lt;p&gt;面试排队轮到我了，首先和面试官打个招呼，简历递给他，他直接开始看简历了，没说啥，我就自己先进行了自我介绍，讲了下基本情况，以及一些实习经历&lt;/p&gt;
+
+&lt;p&gt;接着面试官开始问问题，一上来就直接问的框架，看来框架还是挺重要&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;面试官：你的简历上写了angular.js,你能讲讲angular吗？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由于临时接到的宣讲会通知，框架还没整理准备好，只说了一些简单的知识，加上单页面的跳转。然后我强调了vue，但是面试官嗯了一下，没太在意，就过去了。应该公司侧重angular吧。感觉这一问题没回答好&lt;/p&gt;
+
+&lt;p&gt;接着就是照简历来问了&lt;/p&gt;
+
+&lt;h3 id=&quot;gulp&quot;&gt;gulp&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面试官：你能说说gulp吗？&lt;/li&gt;
+  &lt;li&gt;我：gulp是前端工程化开发工具，能够极大的增强工作流程&lt;/li&gt;
+  &lt;li&gt;面试官：那你主要用gulp干了哪些具体的事呢？&lt;/li&gt;
+  &lt;li&gt;我：主要用gulp进行图片压缩，less，sass编译，es6编译为es5以及其他自动化工作&lt;/li&gt;
+  &lt;li&gt;面试官：那gulp有哪些api呢？&lt;/li&gt;
+  &lt;li&gt;我：
+    &lt;ul&gt;
+      &lt;li&gt;gulp.task 主要就是运用这个进行任务的创建，其他还有* gulp.src 用来查找一个或多个文件&lt;/li&gt;
+      &lt;li&gt;gulp.watch用来监听文件的变化，&lt;/li&gt;
+      &lt;li&gt;gulp.dest指定文件输出的文件夹路径&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;面试官：嗯好&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;es6&quot;&gt;es6&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面试官：你能讲一下let和var的区别吗&lt;/li&gt;
+  &lt;li&gt;我：var定义的变量有时候会泄露到全局，有一定的影响，而es6的let可以解决这个问题，let相当与赋予了一个块级作用域，let定义的变量只能在该作用域中起作用&lt;/li&gt;
+  &lt;li&gt;面试官：嗯好的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;响应式&quot;&gt;响应式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面试官：你能讲一下你对响应式的理解吗&lt;/li&gt;
+  &lt;li&gt;我：
+    &lt;ul&gt;
+      &lt;li&gt;响应式主要是文档呈现方式能够随浏览器宽度的改变而随之改变。&lt;/li&gt;
+      &lt;li&gt;我主要是运用bootstrap的栅格化系统加上媒体查询来达到这一目的。&lt;/li&gt;
+      &lt;li&gt;另外我还了解了fundation, fundation和bootstrap的主要区别我觉得是，fundation是能够随着浏览器大小改变，实时改变文档样式，而且具有像css3中transition一样的过渡效果，而bootstrap是当浏览器宽度大小改变到一个固定值的时候，文档样式产生响应改变&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;面试官：嗯好的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;和的区别&quot;&gt;’==’和’===’的区别&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面试官：你能讲讲’==’和’===’的区别&lt;/li&gt;
+  &lt;li&gt;我：’==’是有强制类型转换的，’===’没有转换&lt;/li&gt;
+  &lt;li&gt;面试官：嗯好（接着手写了一个题目）
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a={a:1}
+b={b:1}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;面试官：你能说说a==b和a===b这两个是真还是假吗&lt;/li&gt;
+  &lt;li&gt;我：（一开始没听懂面试官的意思，让他有复述了一遍，然后看着题目还是一脸懵逼，没看懂啥意思，稍微想了下）&lt;/li&gt;
+  &lt;li&gt;面试官：能给我正确答案了吗？&lt;/li&gt;
+  &lt;li&gt;我：（感觉有套路）我随便答了下，a==b是true，a===b是false&lt;/li&gt;
+  &lt;li&gt;面试官：好的，你能解释一下吗&lt;/li&gt;
+  &lt;li&gt;我：（含糊的说）好像对象typeof返回的值是什么什么&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;后来想想，其实这是个很容易的题目啊，我竟然没想到，我以为他靠考的重点是==和===,往这钻去了，&lt;/p&gt;
+
+&lt;p&gt;其实这道题考的是引用类型，引用类型是存在堆中的，虽然a和b的值是一样的，但是存放在栈中的是指向不同堆内存的指针，所以不存在类型转换,那么两者都应该是false&lt;/p&gt;
+
+&lt;h3 id=&quot;让我总结&quot;&gt;让我总结&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面试官：差不多到这了，你能总结一些这次面试吗&lt;/li&gt;
+  &lt;li&gt;我：我觉得我的基础知识还需要多巩固，多看看&lt;/li&gt;
+  &lt;li&gt;面试官：嗯，好的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;收尾因为当时已经很晚了差不多晚上10点左右了面试感觉有点赶&quot;&gt;收尾（因为当时已经很晚了，差不多晚上10点左右了，面试感觉有点赶）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面试官：面试到这差不多了，你有什么问题想问我的吗？&lt;/li&gt;
+  &lt;li&gt;我：（想了下这是个套路，还好有准备）公司目前所主要用的框架是什么呢？&lt;/li&gt;
+  &lt;li&gt;面试官：我们有用vue和angular，主要用angular&lt;/li&gt;
+  &lt;li&gt;我：angular1和angular2差别挺大的&lt;/li&gt;
+  &lt;li&gt;面试官：是的，但是angular2-angular4都差不多&lt;/li&gt;
+  &lt;li&gt;我：我的表现如何呢，有哪些不足的地方呢？&lt;/li&gt;
+  &lt;li&gt;面试官：不要太紧张了，放松点&lt;/li&gt;
+  &lt;li&gt;我：哦，好的，那技术方面呢，有什么不足的吗&lt;/li&gt;
+  &lt;li&gt;面试官：基础要看，框架也要再多学习多看&lt;/li&gt;
+  &lt;li&gt;我：嗯好的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;面试到此结束。等待通知中。。。&lt;/p&gt;
+
+&lt;p&gt;感觉面试总体还好吧，能答的都答了，就是那道基础题坑了&lt;/p&gt;
+
+&lt;p&gt;二面也结束了，没有回答好，被刷了，一方面没有经验，一方面很多东西不常用忘记了。&lt;/p&gt;
+
+&lt;p&gt;二面具体问题请看  &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/other_interview/&quot;&gt;前端面试经历&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最后有什么不对的地方，欢迎指正。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/getui_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/09/10/getui_interview/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/10/getui_interview/</guid>
+        
+        <category>笔试面试</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法 （持续更新）</title>
+        <description>&lt;h3 id=&quot;1微信网页开发调用jssdk时报permission-denied&quot;&gt;1.微信网页开发调用jssdk时报permission denied&lt;/h3&gt;
+&lt;h4 id=&quot;大致是两个原因&quot;&gt;大致是两个原因&lt;/h4&gt;
+
+&lt;p&gt;（1）首先注册时未将你所调用的接口名字添加至jsApiList&lt;/p&gt;
+
+&lt;p&gt;（2）第二个就是你的这个公众号没有权限使用这个api，例如在开发环境中的微信页面就无法调取这个api,需要发布后，到对应的有权限的公众号中再打开对应的界面，调用api才成功&lt;/p&gt;
+
+&lt;h3 id=&quot;2微信jssdk-使用微信内置地图查看位置openlocation接口-最终显示不精确&quot;&gt;2.微信jssdk 使用微信内置地图查看位置【openLocation】接口 最终显示不精确&lt;/h3&gt;
+
+&lt;p&gt;项目开发中，web端调用的是百度地图api，而微信项目中调用的是腾讯自己的地图，两者所使用的坐标系有所不同，百度用的是自己的百度坐标系，而高德地图和腾讯地图使用的是火星坐标系，两者之间需要做一下转换&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt;火星坐标 转换到 百度地图坐标&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function huoxingToBaidu(hxLongitude, hxLatitude){  
+                var X_PI = Math.PI * 3000.0 / 180.0;  
+                var x = hxLongitude, y = hxLatitude;  
+                var z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * X_PI);  
+                var theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * X_PI);  
+                var bdLongitude = z * Math.cos(theta) + 0.0065;  
+                var bdLatitude = z * Math.sin(theta) + 0.006;  
+                return {  
+                    bdLongitude: bdLongitude,  
+                    bdLatitude: bdLatitude  
+                };  
+            }  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;=&amp;gt;百度地图坐标 转换到 火星坐标&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function baiduToHuoxing(bdLongitude,bdLatitude) {  
+                var X_PI = Math.Pi * 3000.0 / 180.0;  
+                var x = bdLongitude - 0.0065;  
+                var y = bdLatitude - 0.006;  
+                var z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * X_PI);  
+                var theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * X_PI);  
+                var hxLongitude = z * Math.cos(theta);  
+                var hxLatitude = z * Math.sin(theta);  
+                return {  
+                    hxLongitude: hxLongitude,  
+                    hxLatitude: hxLatitude  
+                }  
+            }  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3微信jssdk-预览图片previewimage接口的坑-安卓手机上图片预览需要点击两次才能退出预览&quot;&gt;3.微信JSSDK 预览图片【previewImage】接口的坑, 安卓手机上，图片预览需要点击两次才能退出预览&lt;/h3&gt;
+
+&lt;p&gt;在微信网页开发过程中，测试提出的一个bug，在微信中预览图片是，点击图片，打开图片正常，当再次点击时，原本应该直接退出图片预览，但是却需要点击两次才能退出预览。&lt;/p&gt;
+
+&lt;h4 id=&quot;分析原因&quot;&gt;分析原因&lt;/h4&gt;
+
+&lt;p&gt;应该是 previewImage 这个接口调用了两次，进行了图片的叠加。所以需要两次才能退出&lt;/p&gt;
+
+&lt;h4 id=&quot;最终得出的结果&quot;&gt;最终得出的结果&lt;/h4&gt;
+
+&lt;p&gt;代码中实际上只调用了一次。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;在Android系统的手机中，其实微信点击网页的图片会自动调用这个接口一次。然后代码中又对对这个接口调用了一次，这就造成了以上的结果。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;但是在ios系统的手机中，微信并不会调用这个接口。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;解决方案&quot;&gt;解决方案&lt;/h4&gt;
+
+&lt;p&gt;在方法的最前面进行手机系统的判断，当是Android系统直接return。
+然后在在下面进行微信的previewImage接口的调用&lt;/p&gt;
+
+&lt;h4 id=&quot;js判断是android还是ios&quot;&gt;js判断是Android还是ios&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var u = navigator.userAgent;
+
+isAndroid = u.indexOf('Android') &amp;gt; -1 || u.indexOf('Adr') &amp;gt; -1, //android终端
+
+isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;2018.8.1更新
+这个bug好像微信自己修复了，现在无论Android还是ios，如果不调用这个方法，微信自己不会去调用了。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 01 Sep 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/09/01/wechat_jssdk_bug/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/01/wechat_jssdk_bug/</guid>
+        
+        <category>微信网页开发</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
