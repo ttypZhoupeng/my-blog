@@ -1,9 +1,7 @@
-# HuxBlog Boilerplate
+# 周鹏博客
 
-##### This is the boilerplate of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), all documents is over there!
+##### 这是我博客github地址 [my-blog](https://github.com/ttypZhoupeng/my-blog), 主要记录一些平常遇到的问题，一些基础知识，以及一些笔试面试经验!
 
-#### [View Boilerplate &rarr;](http://huangxuan.me/huxblog-boilerplate/)
+#### [点击查看我的博客] &rarr;](http://ttypzhoupeng.github.io/my-blog)
 
-#### [View Live Hux Blog &rarr;](http://huangxuan.me)
-
-## If you like Hux Blog, Please star [huxpro.github.io repo](https://github.com/Huxpro/huxpro.github.io) instead of this! Thank you!
+## 喜欢可以star哦 [my-blog](https://github.com/ttypZhoupeng/my-blog) 非常感谢！
