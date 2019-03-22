@@ -8,11 +8,11 @@ tags: 笔试面试
 ---
 
 # 笔试题照片
-![图片描述](/img/posts/getui/1.jpeg)
+![图片描述](/my-blog/img/posts/getui/1.jpeg)
 
 ---
 
-![图片描述](/img/posts/getui/2.jpeg)
+![图片描述](/my-blog/img/posts/getui/2.jpeg)
 
 
 # 笔试解答
@@ -183,13 +183,13 @@ console.log(new Set(arr));
 ```
 
 
-![图片描述](/img/posts/getui/3.png)
+![图片描述](/my-blog/img/posts/getui/3.png)
 
 
 
 在这我们可以看见，重复的项目已经被去掉了，包括NaN。正常情况下，NaN === NaN 返回的是false，但是在set里，一样能够帮你去重。
 
-![图片描述](/img/posts/getui/4.png)
+![图片描述](/my-blog/img/posts/getui/4.png)
 
 但是这里大家可以看到，set返回的是一个对象，但是我们想要的是数组啊。
 
@@ -200,7 +200,7 @@ var arr = [1,1,'1','1',null,null,undefined,undefined,NaN,NaN];
 var newArr = Array.from(new Set(arr));
 console.log(newArr);
 ```
-![图片描述](/img/posts/getui/5.png)
+![图片描述](/my-blog/img/posts/getui/5.png)
 
 **再介绍一种利用indexOf方法的去重**
 
@@ -406,8 +406,11 @@ b={b:1}
 
 二面也结束了，没有回答好，被刷了，一方面没有经验，一方面很多东西不常用忘记了。
 
-二面具体问题请看  [前端面试经历](https://ttypzhoupeng.github.io/2018/09/other_interview/)
+二面具体问题请看  [前端面试经历](https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/)
 
-最后有什么不对的地方，欢迎指正。
+#### 最后
+感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
+
+如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
 
 转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/) » [点击阅读原文](https://ttypzhoupeng.github.io/2018/09/getui_interview/)

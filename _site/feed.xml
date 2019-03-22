@@ -5,9 +5,9 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 19 Mar 2019 15:55:08 +0800</pubDate>
-    <lastBuildDate>Tue, 19 Mar 2019 15:55:08 +0800</lastBuildDate>
-    <generator>Jekyll v3.8.3</generator>
+    <pubDate>Fri, 22 Mar 2019 16:07:16 +0800</pubDate>
+    <lastBuildDate>Fri, 22 Mar 2019 16:07:16 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Mac OS X中安装命令行工具Command Line Tools</title>
@@ -36,19 +36,19 @@
 
 &lt;p&gt;会出现以下弹窗，点击安装即可&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/command/1.png&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/command/1.png&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3接着会有一个同意服务条款弹出点击同意即可&quot;&gt;3.接着会有一个同意服务条款弹出，点击同意即可&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/command/2.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/command/2.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4等待下载&quot;&gt;4.等待下载&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/command/3.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/command/3.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5完成安装后会提示安装完成点击安装完成即可&quot;&gt;5.完成安装后会提示安装完成，点击安装完成即可。&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/command/4.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/command/4.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;6然后可以通过尝试使用刚安装的命令之一来确认是否安装成功例如&quot;&gt;6.然后可以通过尝试使用刚安装的命令之一来确认是否安装成功，例如&lt;/h3&gt;
 
@@ -57,7 +57,7 @@ git version
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/command/5.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/command/5.jpeg&quot; alt=&quot;插图&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;这个包实际安装在哪&quot;&gt;这个包实际安装在哪&lt;/h2&gt;
 
@@ -164,7 +164,12 @@ yacc
 
 &lt;p&gt;参考文章：&lt;a href=&quot;http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/&quot;&gt;How to Install Command Line Tools in Mac OS X (Without Xcode)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/12/29/Command_Line_Tools/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 29 Dec 2018 00:00:00 +0800</pubDate>
@@ -220,7 +225,7 @@ let ctx = c.getContext(&quot;2d&quot;);
 
 &lt;h4 id=&quot;官方文档如图&quot;&gt;官方文档如图&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/canvas_toDataURL/1.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/1.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;详细文档请参考-canvas手册&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
 
@@ -235,7 +240,7 @@ ctx.fillText(&quot;这是文本&quot;, 280, 755);
 
 &lt;h4 id=&quot;官方文档如图-1&quot;&gt;官方文档如图&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/canvas_toDataURL/2.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/2.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;详细文档请参考-canvas手册-1&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
 
@@ -380,7 +385,12 @@ function drawRoundRectPath(cxt,width,height,radius){
 }  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/10/09/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</link>
@@ -493,6 +503,13 @@ function drawRoundRectPath(cxt,width,height,radius){
   &lt;li&gt;promise&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2018/09/10/other_interview/</link>
@@ -506,11 +523,11 @@ function drawRoundRectPath(cxt,width,height,radius){
       <item>
         <title>杭州 &quot;超详细&quot; 前端笔试面试经历分享</title>
         <description>&lt;h1 id=&quot;笔试题照片&quot;&gt;笔试题照片&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/img/posts/getui/1.jpeg&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/getui/1.jpeg&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/getui/2.jpeg&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/getui/2.jpeg&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;笔试解答&quot;&gt;笔试解答&lt;/h1&gt;
 &lt;h2 id=&quot;计算机基础题必做&quot;&gt;计算机基础题（必做）&lt;/h2&gt;
@@ -695,11 +712,11 @@ margin:0 auto;
 console.log(new Set(arr));
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/getui/3.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/getui/3.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在这我们可以看见，重复的项目已经被去掉了，包括NaN。正常情况下，NaN === NaN 返回的是false，但是在set里，一样能够帮你去重。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/getui/4.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/getui/4.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;但是这里大家可以看到，set返回的是一个对象，但是我们想要的是数组啊。&lt;/p&gt;
 
@@ -709,7 +726,7 @@ console.log(new Set(arr));
 var newArr = Array.from(new Set(arr));
 console.log(newArr);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/img/posts/getui/5.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/getui/5.png&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;再介绍一种利用indexOf方法的去重&lt;/strong&gt;&lt;/p&gt;
 
@@ -938,9 +955,12 @@ b={b:1}
 
 &lt;p&gt;二面也结束了，没有回答好，被刷了，一方面没有经验，一方面很多东西不常用忘记了。&lt;/p&gt;
 
-&lt;p&gt;二面具体问题请看  &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/other_interview/&quot;&gt;前端面试经历&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;二面具体问题请看  &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/&quot;&gt;前端面试经历&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;最后有什么不对的地方，欢迎指正。&lt;/p&gt;
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
 &lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/getui_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -954,7 +974,7 @@ b={b:1}
       </item>
     
       <item>
-        <title>微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法 （持续更新）</title>
+        <title>微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法</title>
         <description>&lt;h3 id=&quot;1微信网页开发调用jssdk时报permission-denied&quot;&gt;1.微信网页开发调用jssdk时报permission denied&lt;/h3&gt;
 &lt;h4 id=&quot;大致是两个原因&quot;&gt;大致是两个原因&lt;/h4&gt;
 
@@ -1037,6 +1057,13 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 &lt;hr /&gt;
 &lt;p&gt;2018.8.1更新
 这个bug好像微信自己修复了，现在无论Android还是ios，如果不调用这个方法，微信自己不会去调用了。&lt;/p&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/01/wechat_jssdk_bug/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 01 Sep 2018 00:00:00 +0800</pubDate>

@@ -30,19 +30,19 @@ tags: Mac环境配置
 
 会出现以下弹窗，点击安装即可
 
-![插图](/img/posts/command/1.png)
+![插图](/my-blog/img/posts/command/1.png)
 
 ### 3.接着会有一个同意服务条款弹出，点击同意即可
 
-![插图](/img/posts/command/2.jpeg)
+![插图](/my-blog/img/posts/command/2.jpeg)
 
 ### 4.等待下载
 
-![插图](/img/posts/command/3.jpeg)
+![插图](/my-blog/img/posts/command/3.jpeg)
 
 ### 5.完成安装后会提示安装完成，点击安装完成即可。
 
-![插图](/img/posts/command/4.jpeg)
+![插图](/my-blog/img/posts/command/4.jpeg)
 
 ### 6.然后可以通过尝试使用刚安装的命令之一来确认是否安装成功，例如
 
@@ -52,7 +52,7 @@ git version
 ...
 ```
 
-![插图](/img/posts/command/5.jpeg)
+![插图](/my-blog/img/posts/command/5.jpeg)
 
 ## 这个包实际安装在哪
 
@@ -158,7 +158,12 @@ yacc
 
 参考文章：[How to Install Command Line Tools in Mac OS X (Without Xcode)][1]
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/)
+#### 最后
+感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
+
+如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
+
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2018/12/29/Command_Line_Tools/)
 
 
   [1]: http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/

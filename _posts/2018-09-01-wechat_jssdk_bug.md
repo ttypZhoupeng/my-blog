@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法 （持续更新）
+title: 微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法 
+subtitle: 持续更新ing..
 date: 2018-09-01
 author:     "zhoupeng"
 header-img: "img/post-bg-js-module.jpg"
@@ -90,5 +91,10 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 2018.8.1更新
 这个bug好像微信自己修复了，现在无论Android还是ios，如果不调用这个方法，微信自己不会去调用了。
 
+#### 最后
+感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
 
+如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
+
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2018/09/01/wechat_jssdk_bug/)
 

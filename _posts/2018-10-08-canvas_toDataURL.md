@@ -49,7 +49,7 @@ let ctx = c.getContext("2d");
 
 #### 官方文档如图
 
-![文本绘制](/img/posts/canvas_toDataURL/1.png)
+![文本绘制](/my-blog/img/posts/canvas_toDataURL/1.png)
 
 #### 详细文档请参考 [canvas手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
 
@@ -65,7 +65,7 @@ ctx.fillText("这是文本", 280, 755);
 
 #### 官方文档如图
 
-![文本绘制](/img/posts/canvas_toDataURL/2.png)
+![文本绘制](/my-blog/img/posts/canvas_toDataURL/2.png)
 
 #### 详细文档请参考 [canvas手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
 
@@ -213,4 +213,9 @@ function drawRoundRectPath(cxt,width,height,radius){
 }  
 ```
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/) » [点击阅读原文](https://ttypzhoupeng.github.io/2018/10/canvas_toDataURL/)
+#### 最后
+感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
+
+如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
+
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2018/10/09/canvas_toDataURL/)
