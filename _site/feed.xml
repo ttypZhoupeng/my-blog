@@ -5,9 +5,159 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 22 Mar 2019 16:07:16 +0800</pubDate>
-    <lastBuildDate>Fri, 22 Mar 2019 16:07:16 +0800</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2019 15:13:57 +0800</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2019 15:13:57 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>移动端，vue+clipboard.js，复制一段密令的文本到剪切板</title>
+        <description>&lt;h3 id=&quot;需求&quot;&gt;需求&lt;/h3&gt;
+&lt;p&gt;开发过程中遇到的需求需要复制 请求过来的一段密令（类似支付宝淘宝口令）到剪切板。&lt;/p&gt;
+
+&lt;h3 id=&quot;pc端的文本复制到剪切板&quot;&gt;pc端的文本复制到剪切板&lt;/h3&gt;
+
+&lt;p&gt;如果是在pc端的话，可以直接使用原生js进行编写，代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;textarea id=&quot;input&quot;&amp;gt;这是被复制的内容&amp;lt;/textarea&amp;gt;
+&amp;lt;button onclick=&quot;copyText()&quot;&amp;gt;copy&amp;lt;/button&amp;gt;
+
+
+&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
+    function copyText() {
+    	var text = document.getElementById(&quot;text&quot;).innerText;
+    	var input = document.getElementById(&quot;input&quot;);
+    	input.value = text; // 修改文本框的内容
+    	input.select(); // 选中文本
+    	document.execCommand(&quot;copy&quot;); // 执行浏览器复制命令
+    	alert(&quot;复制成功&quot;);
+    }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;但是这种方法在移动端会有一些问题，我是在微信公众号开发，发现在微信浏览器中会失效。&lt;/p&gt;
+
+&lt;p&gt;网上搜了下，&lt;code class=&quot;highlighter-rouge&quot;&gt;clipboard.js&lt;/code&gt;是个相对比较靠谱的第三方。&lt;/p&gt;
+
+&lt;h3 id=&quot;clipboardjs&quot;&gt;clipboard.js&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zenorocha/clipboard.js&quot;&gt;官方github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;目前的star 25k ⭐️&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/yunser/p/7628031.html&quot;&gt;大佬的中文翻译&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;概括一下&quot;&gt;概括一下&lt;/h3&gt;
+
+&lt;p&gt;两种方式，一种适合复制固定的文本，另一种适合复制从后端获取的数据文本;&lt;/p&gt;
+
+&lt;h3 id=&quot;具体操作&quot;&gt;具体操作&lt;/h3&gt;
+
+&lt;h4 id=&quot;安装&quot;&gt;安装&lt;/h4&gt;
+
+&lt;p&gt;通过npm安装&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install clipboard --save
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;通过script+链接导入,可以去&lt;a href=&quot;https://www.bootcdn.cn/clipboard.js/&quot;&gt;BootCDN&lt;/a&gt;复制个自己想要的&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;使用&quot;&gt;使用&lt;/h4&gt;
+
+&lt;p&gt;如果是vue文件，只需要在相关的组件中进行clipboard.js导入即刻。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Clipboard from &quot;clipboard&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;编写需要进行复制的相关代码&lt;/p&gt;
+
+&lt;p&gt;如果是复制固定文本则如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button
+    class=&quot;copy-btn&quot;
+    @click=&quot;getAnswerNiceName&quot;
+    ref=&quot;copy&quot;
+    data-clipboard-text=&quot;这是固定的需要被复制到剪切板的内容&quot;
+&amp;gt;复制口令&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果是复制从服务器获取的数据则如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;input
+    id=&quot;copy-input&quot;
+    readonly  	 //如果在移动端，一定要再input中加上`readonly`属性，否则会拉起手机输入框
+/&amp;gt;  			 //这个input可以进行相应的隐藏，例如绝对定位等	
+&amp;lt;button
+    class=&quot;copy-btn&quot;
+    @click=&quot;handleCopy&quot;
+    ref=&quot;copy&quot;
+    data-clipboard-action=&quot;copy&quot;
+    data-clipboard-target=&quot;#copy-input&quot;
+&amp;gt;复制口令&amp;lt;/button&amp;gt;
+
+....
+
+methods: {
+	handleCopy(){
+    	axios.post('请求链接').then(res=&amp;gt;{
+        	var input = document.getElementById(&quot;copy-input&quot;);
+        	input.value = res.data  	//将获取的数据复制给input
+            setTimeout(() =&amp;gt; {
+          		const copybtn = this.$refs.copy;
+          		this.clipboard = new Clipboard(copybtn);
+        	}, 100);  					//利用延时器防止内容没有及时更新等导致报错
+        })
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;延时器代码部分，也可以使用vue提供的 &lt;a href=&quot;https://cn.vuejs.org/v2/api/#Vue-nextTick&quot;&gt;nextTick&lt;/a&gt; 方法。 //感谢 Grewer 大佬的评论意见&lt;/p&gt;
+
+&lt;p&gt;使用该方法，会在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this.$nextTick(() =&amp;gt; {
+    const copybtn = this.$refs.copy;
+    this.clipboard = new Clipboard(copybtn);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;也可以做一些复制成功与否的判断：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+    alert('复制成功，您复制的链接为'+e.text);
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+    alert('复制失败')
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这位大佬的demo代码也可以进行参考，亲测有用 -&amp;gt; &lt;a href=&quot;https://blog.csdn.net/qq_33485463/article/details/82899752&quot;&gt;使用clipboard.js实现js复制黏贴的功能&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;可能存在的兼容性问题&quot;&gt;可能存在的兼容性问题&lt;/h4&gt;
+&lt;p&gt;网上说这个插件可能存在一些兼容性问题，我自己测试了多个手机，包括安卓和ios，暂时还未发现有兼容问题的存在，如果遇到了我再来及时更新&lt;/p&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/03/01/vue_clipboard/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/03/01/vue_clipboard/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/03/01/vue_clipboard/</guid>
+        
+        <category>vue</category>
+        
+        <category>JavaScript</category>
+        
+        
+      </item>
     
       <item>
         <title>Mac OS X中安装命令行工具Command Line Tools</title>
@@ -1116,8 +1266,6 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         <guid isPermaLink="true">http://localhost:4000/my-blog/2015/07/09/js-module-7day/</guid>
         
         <category>前端开发</category>
-        
-        <category>JavaScript</category>
         
         
       </item>

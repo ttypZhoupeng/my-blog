@@ -8,7 +8,6 @@ author:     "Hux"
 header-img: "img/post-bg-js-version.jpg"
 tags:
     - 前端开发
-    - JavaScript
 ---
 
 #### 可点击上方幻灯片右下角箭头进行切换
