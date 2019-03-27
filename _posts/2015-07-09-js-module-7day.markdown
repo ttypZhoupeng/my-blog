@@ -2,7 +2,7 @@
 layout:     keynote
 title:      "Html幻灯片展示"
 subtitle:   "Keynote: JavaScript Modularization Journey"
-iframe:     "http://huangxuan.me/js-module-7day/"
+iframe:     "https://huangxuan.me/js-module-7day/"
 date:       2015-07-09
 author:     "Hux"
 header-img: "img/post-bg-js-version.jpg"
