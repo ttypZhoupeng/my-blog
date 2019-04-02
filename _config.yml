@@ -68,7 +68,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "将博客作为连接互联网那一头网友的桥梁。"
+sidebar-about-description: "记录一些知识，感想，以及生活中的所见所闻"
 sidebar-avatar: /my-blog/img/avatar-roc.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
