@@ -100,7 +100,7 @@ tags: 笔试面试
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/)
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/)
 
 
 

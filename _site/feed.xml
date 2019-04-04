@@ -5,9 +5,254 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 27 Mar 2019 15:25:07 +0800</pubDate>
-    <lastBuildDate>Wed, 27 Mar 2019 15:25:07 +0800</lastBuildDate>
+    <pubDate>Thu, 04 Apr 2019 18:08:28 +0800</pubDate>
+    <lastBuildDate>Thu, 04 Apr 2019 18:08:28 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>js基础查漏补缺-1.Map &amp; Set &amp; 函数定义及调用</title>
+        <description>&lt;h1 id=&quot;js基础查漏补缺&quot;&gt;js基础查漏补缺&lt;/h1&gt;
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#js%E5%9F%BA%E7%A1%80%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA&quot;&gt;js基础查漏补缺&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-es6-map-set&quot;&gt;1. es6 Map Set&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#11-map&quot;&gt;1.1 Map&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#12-set&quot;&gt;1.2 Set&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8&quot;&gt;2. 函数定义和调用&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#21-arguments%E7%9A%84%E7%94%A8%E5%A4%84&quot;&gt;2.1 arguments的用处&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#22-es6-rest%E5%8F%82%E6%95%B0&quot;&gt;2.2 es6 rest参数&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#23-return-%E7%9A%84%E5%9D%91&quot;&gt;2.3 return 的坑&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E5%90%8E&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;1-es6-map-set&quot;&gt;1. es6 Map Set&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-map&quot;&gt;1.1 Map&lt;/h3&gt;
+
+&lt;p&gt;Api:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set(key,value)&lt;/li&gt;
+  &lt;li&gt;get(key)&lt;/li&gt;
+  &lt;li&gt;delete(key)&lt;/li&gt;
+  &lt;li&gt;has(key)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+m.get('Michael'); // 95
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  var m = new Map(); // 空Map
+  m.set('Adam', 67); // 添加新的key-value
+  m.set('Bob', 59);
+  m.has('Adam'); // 是否存在key 'Adam': true
+  m.get('Adam'); // 67
+  m.delete('Adam'); // 删除key 'Adam'
+  m.get('Adam'); // undefined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意，一个key只能对应一个value，重复会覆盖&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  var m = new Map();
+  m.set('Adam', 67);
+  m.set('Adam', 88);
+  m.get('Adam'); // 88
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;12-set&quot;&gt;1.2 Set&lt;/h3&gt;
+
+&lt;p&gt;Api:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;add(value)：添加某个值，返回 Set 结构本身。&lt;/li&gt;
+  &lt;li&gt;delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。&lt;/li&gt;
+  &lt;li&gt;has(value)：返回一个布尔值，表示该值是否为Set的成员。&lt;/li&gt;
+  &lt;li&gt;clear()：清除所有成员，没有返回值。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;两种创建方式&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var s1 = new Set(); // 空Set
+var s2 = new Set([1, 2, 3]); // 含1, 2, 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重复元素自动过滤&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var s = new Set([1, 2, 3, 3, '3']);
+s; // Set {1, 2, 3, &quot;3&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;可重复添加，但无效果&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;s.add(4);
+s; // Set {1, 2, 3, 4}
+s.add(4);
+s; // 仍然是 Set {1, 2, 3, 4}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;delete使用&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var s = new Set([1, 2, 3]);
+s; // Set {1, 2, 3}
+s.delete(3);
+s; // Set {1, 2}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：在Set中NaN是相等的，=== 时是不对等的&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let set = new Set();
+let a = NaN;
+let b = NaN;
+set.add(a);
+set.add(b);
+set // Set {NaN}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：两个对象总是不相等的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let set = new Set();
+
+set.add({});
+set.size // 1
+
+set.add({});
+set.size // 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://es6.ruanyifeng.com/#docs/set-map&quot;&gt;详情查看es6入门&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-函数定义和调用&quot;&gt;2. 函数定义和调用&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-arguments的用处&quot;&gt;2.1 arguments的用处&lt;/h3&gt;
+
+&lt;p&gt;当函数没有传入任何参数的时候可以使用&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function abs() {
+    if (arguments.length === 0) {
+        return 0;
+    }
+    var x = arguments[0];
+    return x &amp;gt;= 0 ? x : -x;
+}
+
+abs(); // 0
+abs(10); // 10
+abs(-9); // 9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// foo(a[, b], c)
+// 接收2~3个参数，b是可选参数，如果只传2个参数，b默认为null：
+function foo(a, b, c) {
+    if (arguments.length === 2) {
+        // 实际拿到的参数是a和b，c为undefined
+        c = b; // 把b赋给c
+        b = null; // b变为默认值
+    }
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-es6-rest参数&quot;&gt;2.2 es6 rest参数&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function foo(a, b, ...rest) {
+    console.log('a = ' + a);
+    console.log('b = ' + b);
+    console.log(rest);
+}
+
+foo(1, 2, 3, 4, 5);
+// 结果:
+// a = 1
+// b = 2
+// Array [ 3, 4, 5 ]
+
+foo(1);
+// 结果:
+// a = 1
+// b = undefined
+// Array []
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://es6.ruanyifeng.com/?search=rest&amp;amp;x=0&amp;amp;y=0#docs/function#rest-%E5%8F%82%E6%95%B0&quot;&gt;-&amp;gt; es6入门&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449926746982f181557d9b423f819e89709feabdb4000&quot;&gt;-&amp;gt; 廖雪峰js教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;23-return-的坑&quot;&gt;2.3 return 的坑&lt;/h3&gt;
+
+&lt;p&gt;JavaScript引擎有一个在行末自动添加分号的机制&lt;/p&gt;
+
+&lt;p&gt;正常编写：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function foo() {
+    return { name: 'foo' };
+}
+
+foo(); // { name: 'foo' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;坑编写：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function foo() {
+    return
+        { name: 'foo' };
+}
+
+foo(); // undefined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;JavaScript引擎在行末自动添加分号后：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function foo() {
+    return; // 自动添加了分号，相当于return undefined;
+        { name: 'foo' }; // 这行语句已经没法执行到了
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;正确多行写法：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function foo() {
+    return { // 这里不会自动加分号，因为{表示语句尚未结束
+        name: 'foo'
+    };
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/01/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 04 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/04/04/js_basic/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/04/js_basic/</guid>
+        
+        <category>js基础查漏补缺</category>
+        
+        
+      </item>
     
       <item>
         <title>移动端，vue+clipboard.js，复制一段密令的文本到剪切板</title>
@@ -540,7 +785,7 @@ function drawRoundRectPath(cxt,width,height,radius){
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/10/09/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/10/09/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</link>
@@ -658,7 +903,7 @@ function drawRoundRectPath(cxt,width,height,radius){
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
@@ -1112,7 +1357,7 @@ b={b:1}
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/getui_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/2018/09/getui_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2018/09/10/getui_interview/</link>
@@ -1213,7 +1458,7 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/01/wechat_jssdk_bug/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/01/wechat_jssdk_bug/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 01 Sep 2018 00:00:00 +0800</pubDate>
@@ -1237,7 +1482,7 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
 &lt;p&gt;于是，我决定将它重新发到我的博客上，并为它专门制作了适用于 Keynote 展示文稿的新布局。它能自动根据屏幕大小/旋转以一定比例填充屏幕，你也可以直接点击下方链接在新页面打开，来获得更好的、沉浸式的全屏体验&lt;/p&gt;
 
-&lt;h3 id=&quot;watch-slides-&quot;&gt;&lt;a href=&quot;http://huangxuan.me/js-module-7day&quot;&gt;Watch Slides →&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;watch-slides-&quot;&gt;&lt;a href=&quot;https://huangxuan.me/js-module-7day&quot;&gt;Watch Slides →&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://huangxuan.me/js-module-7day/attach/qrcode.png&quot; width=&quot;350&quot; height=&quot;350&quot; /&gt;&lt;/p&gt;
 
