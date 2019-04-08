@@ -4,7 +4,9 @@ title: html dom 转化成图片踩坑记（canvas toDataURL）
 date: 2018-10-09
 author:     "zhoupeng"
 header-img: "img/post-bg-js-module.jpg"
-tags: HTML5  
+tags: 
+    - HTML5  
+    - js经验篇
 ---
 
 ## 需求

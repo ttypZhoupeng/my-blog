@@ -5,12 +5,192 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 04 Apr 2019 18:08:28 +0800</pubDate>
-    <lastBuildDate>Thu, 04 Apr 2019 18:08:28 +0800</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2019 17:51:19 +0800</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2019 17:51:19 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>js基础查漏补缺-1.Map &amp; Set &amp; 函数定义及调用</title>
+        <title>js基础篇-2.解构赋值</title>
+        <description>&lt;h1 id=&quot;js基础查漏补缺&quot;&gt;js基础查漏补缺&lt;/h1&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#js基础查漏补缺&quot;&gt;js基础查漏补缺&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1解构赋值&quot;&gt;1.解构赋值&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#11-使用解构赋值快速获取对象的指定属性&quot;&gt;1.1 使用解构赋值，快速获取对象的指定属性：&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#12-对嵌套对象属性赋值&quot;&gt;1.2 对嵌套对象属性赋值&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#13-利用新变量替代属性名&quot;&gt;1.3 利用新变量替代属性名&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#14-使用默认值&quot;&gt;1.4 使用默认值&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#15-有时候正确写法报错&quot;&gt;1.5 有时候正确写法报错&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#16-使用场景简化代码&quot;&gt;1.6 使用场景，简化代码&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#交换两个变量值&quot;&gt;交换两个变量值&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#快速获取当前页面的域名和路径&quot;&gt;快速获取当前页面的域名和路径&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#函数接收对象参数直接把对象的属性绑定到变量&quot;&gt;函数接收对象参数，直接把对象的属性绑定到变量&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#最后&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;1解构赋值&quot;&gt;1.解构赋值&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-使用解构赋值快速获取对象的指定属性&quot;&gt;1.1 使用解构赋值，快速获取对象的指定属性：&lt;/h3&gt;
+
+&lt;p&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;var {name, age, passport} = person;&lt;/code&gt;这种写法就源于此&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'use strict';
+
+var person = {
+    name: '小明',
+    age: 20,
+    gender: 'male',
+    passport: 'G-12345678',
+    school: 'No.4 middle school'
+};
+var {name, age, passport} = person;  // * 这东西原来是es6里面的解构赋值 *
+
+// name, age, passport分别被赋值为对应属性:
+console.log('name = ' + name + ', age = ' + age + ', passport = ' + passport); // name = 小明, age = 20, passport = G-12345678
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;12-对嵌套对象属性赋值&quot;&gt;1.2 对嵌套对象属性赋值&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：如果对应的属性不存在，变量将被赋值为undefined&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var person = {
+    name: '小明',
+    age: 20,
+    gender: 'male',
+    passport: 'G-12345678',
+    school: 'No.4 middle school',
+    address: {
+        city: 'Beijing',
+        street: 'No.1 Road',
+        zipcode: '100001'
+    }
+};
+var {name, address: {city, zip}} = person;
+name; // '小明'
+city; // 'Beijing'
+zip; // undefined, 因为属性名是zipcode而不是zip
+// 注意: address不是变量，而是为了让city和zip获得嵌套的address对象的属性:
+address; // Uncaught ReferenceError: address is not defined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;13-利用新变量替代属性名&quot;&gt;1.3 利用新变量替代属性名&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var person = {
+    name: '小明',
+    age: 20,
+    gender: 'male',
+    passport: 'G-12345678',
+    school: 'No.4 middle school'
+};
+
+// 把passport属性赋值给变量id:
+let {name, passport:id} = person;
+name; // '小明'
+id; // 'G-12345678'
+// 注意: passport不是变量，而是为了让变量id获得passport属性:
+passport; // Uncaught ReferenceError: passport is not defined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;14-使用默认值&quot;&gt;1.4 使用默认值&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;主要避免不存在的属性返回undefined&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var person = {
+    name: '小明',
+    age: 20,
+    gender: 'male',
+    passport: 'G-12345678'
+};
+
+// 如果person对象没有single属性，默认赋值为true:
+var {name, single=true} = person;
+name; // '小明'
+single; // true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;15-有时候正确写法报错&quot;&gt;1.5 有时候正确写法报错&lt;/h3&gt;
+
+&lt;p&gt;有些时候，如果变量已经被声明了，再次赋值的时候，正确的写法也会报语法错误:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 声明变量:
+var x, y;
+// 解构赋值:
+{x, y} = { name: '小明', x: 100, y: 200};
+// 语法错误: Uncaught SyntaxError: Unexpected token =
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这是因为JavaScript引擎把{开头的语句当作了块处理，于是=不再合法。解决方法是用小括号括起来:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;({x, y} = { name: '小明', x: 100, y: 200});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;16-使用场景简化代码&quot;&gt;1.6 使用场景，简化代码&lt;/h3&gt;
+
+&lt;h4 id=&quot;交换两个变量值&quot;&gt;交换两个变量值&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var x=1, y=2;
+[x, y] = [y, x]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;快速获取当前页面的域名和路径&quot;&gt;快速获取当前页面的域名和路径&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var {hostname:domain, pathname:path} = location;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;函数接收对象参数直接把对象的属性绑定到变量&quot;&gt;函数接收对象参数，直接把对象的属性绑定到变量&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function buildDate({year, month, day, hour=0, minute=0, second=0}) {
+    return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：使用解构赋值可以减少代码量，但是，需要在支持ES6解构赋值特性的现代浏览器中才能正常运行。目前支持解构赋值的浏览器包括Chrome，Firefox，Edge等。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;详情可参考如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://es6.ruanyifeng.com/?search=rest&amp;amp;x=0&amp;amp;y=0#docs/destructuring&quot;&gt;es6入门&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000&quot;&gt;廖雪峰js教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/08/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 08 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/04/08/js_basic/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/08/js_basic/</guid>
+        
+        <category>js基础篇</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>js基础篇-1.Map &amp; Set &amp; 函数定义及调用</title>
         <description>&lt;h1 id=&quot;js基础查漏补缺&quot;&gt;js基础查漏补缺&lt;/h1&gt;
 &lt;!-- TOC --&gt;
 
@@ -27,11 +207,8 @@
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#21-arguments%E7%9A%84%E7%94%A8%E5%A4%84&quot;&gt;2.1 arguments的用处&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#22-es6-rest%E5%8F%82%E6%95%B0&quot;&gt;2.2 es6 rest参数&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#23-return-%E7%9A%84%E5%9D%91&quot;&gt;2.3 return 的坑&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E5%90%8E&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#23-return-%E7%9A%84%E5%9D%91&quot;&gt;2.3 return 的坑&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E5%90%8E&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -238,18 +415,18 @@ foo(); // undefined
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/01/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/04/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Apr 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/04/04/js_basic/</link>
         <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/04/js_basic/</guid>
         
-        <category>js基础查漏补缺</category>
+        <category>js基础篇</category>
         
         
       </item>
@@ -399,7 +576,7 @@ clipboard.on('error', function(e) {
         
         <category>vue</category>
         
-        <category>JavaScript</category>
+        <category>js经验篇</category>
         
         
       </item>
@@ -792,6 +969,8 @@ function drawRoundRectPath(cxt,width,height,radius){
         <guid isPermaLink="true">http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</guid>
         
         <category>HTML5</category>
+        
+        <category>js经验篇</category>
         
         
       </item>
@@ -1466,6 +1645,8 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/01/wechat_jssdk_bug/</guid>
         
         <category>微信网页开发</category>
+        
+        <category>js经验篇</category>
         
         
       </item>

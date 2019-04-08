@@ -5,7 +5,9 @@ subtitle: 持续更新ing..
 date: 2018-09-01
 author:     "zhoupeng"
 header-img: "img/post-bg-js-module.jpg"
-tags: 微信网页开发  
+tags: 
+    - 微信网页开发  
+    - js经验篇
 ---
 
 ### 1.微信网页开发调用jssdk时报permission denied
