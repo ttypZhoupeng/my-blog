@@ -3,7 +3,7 @@ layout: post
 # title: js基础篇-1.Map & Set & 函数定义及调用
 # date: 2019-04-04 
 author:     "zhoupeng"
-header-img: "img/post-bg-js-version.jpg"
+# header-img: "img/post-bg-js-version.jpg"
 # tags: js基础篇
 ---
 
