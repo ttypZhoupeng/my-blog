@@ -7,7 +7,7 @@ author:     "zhoupeng"
 header-img: "img/post-bg-2015.jpg"
 tags: 
     - vue
-    - JavaScript
+    - js经验篇
 ---
 
 ### 需求
