@@ -22,19 +22,22 @@ dom-to-image  4k ⭐️
 html2canvas 13.7k ⭐️
 
 两者都有尝试过，都有意想不到的bug，包括
+
 1. 部分手机有某些背景图片无法展示，为空白
 2. iphone8 plus ios 11中根本不调用这个转换方法，从而得不到想要的图片。
 等等
 
 ## 自己动手
+
 ### 思路
+
 利用canvas的toDataURL来拿到canvas转化的base64码，来替换img的url, 也可以把图片上传到公司的服务器上，得到图片的地址来进行下载，或作为参数来传递
 
 那么canvas的绘制主要就是文本和图片的绘制,文本绘制相对简单，图片绘制有一些注意点。
 
 ### canvas 初始化
 
-**由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来**
+>注意：由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来
 
 ```
 <canvas id="canvas" width="750" height="1164">
@@ -49,13 +52,14 @@ let ctx = c.getContext("2d");
 
 ### 文本绘制
 
-#### 官方文档如图
+#### 官方文档如图1
 
 ![文本绘制](/my-blog/img/posts/canvas_toDataURL/1.png)
 
 #### 详细文档请参考 [canvas手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
 
 #### 代码示例
+
 ```
 ctx.fillStyle = "#fff";
 ctx.font = "32px PingFangSC-Regular";
@@ -65,19 +69,21 @@ ctx.fillText("这是文本", 280, 755);
 
 ### 图片绘制
 
-#### 官方文档如图
+#### 官方文档如图2
 
 ![文本绘制](/my-blog/img/posts/canvas_toDataURL/2.png)
 
-#### 详细文档请参考 [canvas手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
+#### 详细文档请参考1 [canvas手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
 
 #### 注意事项
+
 1. 图片需要进行跨域处理，否则后期无法生成图片，也就是在img标签中增加crossOrigin属性，值为anonymous
 
 ```
 const instBanner = document.getElementById("instBanner");
 instBanner.crossOrigin = "anonymous";
 ```
+
 2. 需要等到图片加载完成再画到画布上，否则有可能没画上去
 
 ```
@@ -89,6 +95,7 @@ posterBg.onload = () => {
 ```
 
 #### 完整代码示例
+
 ```
 const posterBg = new Image();
 posterBg.src = 'https:....'; //这里是图片url
@@ -101,6 +108,7 @@ posterBg.onload = () => {
 ### 生成图片
 
 #### 替换img src 
+
 ```
 let dataURL = c.toDataURL("image/png");
 let canvasImg = document.getElementById("canvasImg");
@@ -108,6 +116,7 @@ canvas.src = dataURL;
 ```
 
 #### 上传服务器，得到img url(可作为参数，保存图片)
+
 ```
 let dataURL = c.toDataURL("image/png");
 function getImgUrl(dataURL){
@@ -122,6 +131,7 @@ canvas.src = imgUrl;
 ### 最后奉上一些，常用的canvas处理方法
 
 #### 圆形图片的绘制
+
 ```
 ctx.save();
 
@@ -216,6 +226,7 @@ function drawRoundRectPath(cxt,width,height,radius){
 ```
 
 #### 最后
+
 感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。

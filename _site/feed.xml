@@ -5,9 +5,82 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Apr 2019 17:51:19 +0800</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2019 17:51:19 +0800</lastBuildDate>
+    <pubDate>Tue, 09 Apr 2019 16:25:56 +0800</pubDate>
+    <lastBuildDate>Tue, 09 Apr 2019 16:25:56 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>日常摘录-1.前端之前辈经验</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;以下来自公众号&lt;code class=&quot;highlighter-rouge&quot;&gt;程序猿&lt;/code&gt;的文章《我在网易做了6年前端，想给求职者4条建议》&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;1前端开发工程师薪资数据来自猎聘网&quot;&gt;1.《前端开发工程师薪资》数据来自猎聘网：&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/daily_excerpts/salary.png&quot; alt=&quot;前端开发工程师薪资&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-前端知识体系&quot;&gt;2. 前端知识体系：&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/daily_excerpts/mind_map.png&quot; alt=&quot;前端知识体系&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-建议&quot;&gt;3. 建议&lt;/h3&gt;
+
+&lt;h4 id=&quot;31-培养编程思想&quot;&gt;3.1 培养编程思想&lt;/h4&gt;
+
+&lt;p&gt;JavaScript是一门面向对象的动态类型语言, &lt;strong&gt;可以使用面向对象语言常用的设计模式的思想开发&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;32-学好原生javascript和es6&quot;&gt;3.2 学好原生JavaScript和ES6&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;闭包、原型&lt;/li&gt;
+  &lt;li&gt;DOM API，BOM API&lt;/li&gt;
+  &lt;li&gt;作用域&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+  &lt;li&gt;Promise，async await异步操作&lt;/li&gt;
+  &lt;li&gt;数组对象新方法&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;33-掌握前端优化技术&quot;&gt;3.3 掌握前端优化技术&lt;/h4&gt;
+
+&lt;p&gt;不仅是做好业务需求的开发，&lt;strong&gt;还要涉及前端工程的优化&lt;/strong&gt;
+例如：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何提高web响应速度?&lt;/li&gt;
+  &lt;li&gt;如何加快静态资源的加载?&lt;/li&gt;
+  &lt;li&gt;如何提升用户的使用体验？&lt;/li&gt;
+  &lt;li&gt;如何更快地解析脚本，尽快处于可工作状态？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;web的优化处理原理和方法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;熟练掌握JavaScript的方法和原理&lt;/li&gt;
+  &lt;li&gt;熟练掌握tcp，http协议和CDN知识&lt;/li&gt;
+  &lt;li&gt;充分了解浏览器的渲染和执行机制&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;34-框架原理&quot;&gt;3.4 框架原理&lt;/h4&gt;
+
+&lt;p&gt;面试官对于框架除了问及API，更关注对于框架底层原理的了解程度&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/09/daily_excerpt/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/04/09/daily_excerpt/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/09/daily_excerpt/</guid>
+        
+        <category>日常摘录</category>
+        
+        
+      </item>
     
       <item>
         <title>js基础篇-2.解构赋值</title>
@@ -434,6 +507,7 @@ foo(); // undefined
       <item>
         <title>移动端，vue+clipboard.js，复制一段密令的文本到剪切板</title>
         <description>&lt;h3 id=&quot;需求&quot;&gt;需求&lt;/h3&gt;
+
 &lt;p&gt;开发过程中遇到的需求需要复制 请求过来的一段密令（类似支付宝淘宝口令）到剪切板。&lt;/p&gt;
 
 &lt;h3 id=&quot;pc端的文本复制到剪切板&quot;&gt;pc端的文本复制到剪切板&lt;/h3&gt;
@@ -442,7 +516,6 @@ foo(); // undefined
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;textarea id=&quot;input&quot;&amp;gt;这是被复制的内容&amp;lt;/textarea&amp;gt;
 &amp;lt;button onclick=&quot;copyText()&quot;&amp;gt;copy&amp;lt;/button&amp;gt;
-
 
 &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
     function copyText() {
@@ -477,6 +550,7 @@ foo(); // undefined
 &lt;h4 id=&quot;安装&quot;&gt;安装&lt;/h4&gt;
 
 &lt;p&gt;通过npm安装&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install clipboard --save
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -495,6 +569,7 @@ foo(); // undefined
 &lt;p&gt;编写需要进行复制的相关代码&lt;/p&gt;
 
 &lt;p&gt;如果是复制固定文本则如下：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button
     class=&quot;copy-btn&quot;
     @click=&quot;getAnswerNiceName&quot;
@@ -504,6 +579,7 @@ foo(); // undefined
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;如果是复制从服务器获取的数据则如下：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;input
     id=&quot;copy-input&quot;
     readonly  	 //如果在移动端，一定要再input中加上`readonly`属性，否则会拉起手机输入框
@@ -536,6 +612,7 @@ methods: {
 &lt;p&gt;延时器代码部分，也可以使用vue提供的 &lt;a href=&quot;https://cn.vuejs.org/v2/api/#Vue-nextTick&quot;&gt;nextTick&lt;/a&gt; 方法。 //感谢 Grewer 大佬的评论意见&lt;/p&gt;
 
 &lt;p&gt;使用该方法，会在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。代码如下：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this.$nextTick(() =&amp;gt; {
     const copybtn = this.$refs.copy;
     this.clipboard = new Clipboard(copybtn);
@@ -543,6 +620,7 @@ methods: {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;也可以做一些复制成功与否的判断：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;clipboard.on('success', function(e) {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
@@ -561,9 +639,11 @@ clipboard.on('error', function(e) {
 &lt;p&gt;这位大佬的demo代码也可以进行参考，亲测有用 -&amp;gt; &lt;a href=&quot;https://blog.csdn.net/qq_33485463/article/details/82899752&quot;&gt;使用clipboard.js实现js复制黏贴的功能&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;可能存在的兼容性问题&quot;&gt;可能存在的兼容性问题&lt;/h4&gt;
+
 &lt;p&gt;网上说这个插件可能存在一些兼容性问题，我自己测试了多个手机，包括安卓和ios，暂时还未发现有兼容问题的存在，如果遇到了我再来及时更新&lt;/p&gt;
 
 &lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
 &lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
@@ -600,7 +680,9 @@ clipboard.on('error', function(e) {
 &lt;p&gt;后面会列出这个工具包中完整的命令列表，也可以自己安装完后亲自查看。&lt;/p&gt;
 
 &lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+
 &lt;h3 id=&quot;1启动terminal或者iterm终端&quot;&gt;1.启动terminal或者iterm终端&lt;/h3&gt;
+
 &lt;h3 id=&quot;2输入以下命令字符串&quot;&gt;2.输入以下命令字符串&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; xcode-select --install
@@ -642,6 +724,7 @@ git version
 &lt;p&gt;61个可用的新命令，都在/ Library / Developer / CommandLineTools / usr / bin /中。&lt;/p&gt;
 
 &lt;p&gt;下面按字母顺序列出这些命令：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ar
 as
 asa
@@ -737,6 +820,7 @@ yacc
 &lt;p&gt;参考文章：&lt;a href=&quot;http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/&quot;&gt;How to Install Command Line Tools in Mac OS X (Without Xcode)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
 &lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
@@ -768,6 +852,7 @@ yacc
 &lt;p&gt;html2canvas 13.7k ⭐️&lt;/p&gt;
 
 &lt;p&gt;两者都有尝试过，都有意想不到的bug，包括&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;部分手机有某些背景图片无法展示，为空白&lt;/li&gt;
   &lt;li&gt;iphone8 plus ios 11中根本不调用这个转换方法，从而得不到想要的图片。
@@ -775,14 +860,18 @@ yacc
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;自己动手&quot;&gt;自己动手&lt;/h2&gt;
+
 &lt;h3 id=&quot;思路&quot;&gt;思路&lt;/h3&gt;
+
 &lt;p&gt;利用canvas的toDataURL来拿到canvas转化的base64码，来替换img的url, 也可以把图片上传到公司的服务器上，得到图片的地址来进行下载，或作为参数来传递&lt;/p&gt;
 
 &lt;p&gt;那么canvas的绘制主要就是文本和图片的绘制,文本绘制相对简单，图片绘制有一些注意点。&lt;/p&gt;
 
 &lt;h3 id=&quot;canvas-初始化&quot;&gt;canvas 初始化&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;注意：由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;canvas id=&quot;canvas&quot; width=&quot;750&quot; height=&quot;1164&quot;&amp;gt;
   你的浏览器居然不支持Canvas？！赶快换一个吧！！
@@ -795,13 +884,14 @@ let ctx = c.getContext(&quot;2d&quot;);
 
 &lt;h3 id=&quot;文本绘制&quot;&gt;文本绘制&lt;/h3&gt;
 
-&lt;h4 id=&quot;官方文档如图&quot;&gt;官方文档如图&lt;/h4&gt;
+&lt;h4 id=&quot;官方文档如图1&quot;&gt;官方文档如图1&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/1.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;详细文档请参考-canvas手册&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
 
 &lt;h4 id=&quot;代码示例&quot;&gt;代码示例&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.fillStyle = &quot;#fff&quot;;
 ctx.font = &quot;32px PingFangSC-Regular&quot;;
 ctx.textAlign = &quot;left&quot;;
@@ -810,13 +900,14 @@ ctx.fillText(&quot;这是文本&quot;, 280, 755);
 
 &lt;h3 id=&quot;图片绘制&quot;&gt;图片绘制&lt;/h3&gt;
 
-&lt;h4 id=&quot;官方文档如图-1&quot;&gt;官方文档如图&lt;/h4&gt;
+&lt;h4 id=&quot;官方文档如图2&quot;&gt;官方文档如图2&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/2.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;详细文档请参考-canvas手册-1&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;详细文档请参考1-canvas手册&quot;&gt;详细文档请参考1 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
 
 &lt;h4 id=&quot;注意事项&quot;&gt;注意事项&lt;/h4&gt;
+
 &lt;ol&gt;
   &lt;li&gt;图片需要进行跨域处理，否则后期无法生成图片，也就是在img标签中增加crossOrigin属性，值为anonymous&lt;/li&gt;
 &lt;/ol&gt;
@@ -824,6 +915,7 @@ ctx.fillText(&quot;这是文本&quot;, 280, 755);
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const instBanner = document.getElementById(&quot;instBanner&quot;);
 instBanner.crossOrigin = &quot;anonymous&quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;ol&gt;
   &lt;li&gt;需要等到图片加载完成再画到画布上，否则有可能没画上去&lt;/li&gt;
 &lt;/ol&gt;
@@ -836,6 +928,7 @@ posterBg.onload = () =&amp;gt; {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;完整代码示例&quot;&gt;完整代码示例&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
 posterBg.src = 'https:....'; //这里是图片url
 posterBg.crossOrigin = &quot;anonymous&quot;;
@@ -847,12 +940,14 @@ posterBg.onload = () =&amp;gt; {
 &lt;h3 id=&quot;生成图片&quot;&gt;生成图片&lt;/h3&gt;
 
 &lt;h4 id=&quot;替换img-src&quot;&gt;替换img src&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
 let canvasImg = document.getElementById(&quot;canvasImg&quot;);
 canvas.src = dataURL;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;上传服务器得到img-url可作为参数保存图片&quot;&gt;上传服务器，得到img url(可作为参数，保存图片)&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
 function getImgUrl(dataURL){
   //一些上传服务器的代码
@@ -866,6 +961,7 @@ canvas.src = imgUrl;
 &lt;h3 id=&quot;最后奉上一些常用的canvas处理方法&quot;&gt;最后奉上一些，常用的canvas处理方法&lt;/h3&gt;
 
 &lt;h4 id=&quot;圆形图片的绘制&quot;&gt;圆形图片的绘制&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.save();
 
 ctx.beginPath(); //开始绘制
@@ -958,6 +1054,7 @@ function drawRoundRectPath(cxt,width,height,radius){
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
 &lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
@@ -1550,6 +1647,7 @@ b={b:1}
       <item>
         <title>微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法</title>
         <description>&lt;h3 id=&quot;1微信网页开发调用jssdk时报permission-denied&quot;&gt;1.微信网页开发调用jssdk时报permission denied&lt;/h3&gt;
+
 &lt;h4 id=&quot;大致是两个原因&quot;&gt;大致是两个原因&lt;/h4&gt;
 
 &lt;p&gt;（1）首先注册时未将你所调用的接口名字添加至jsApiList&lt;/p&gt;
@@ -1633,6 +1731,7 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 这个bug好像微信自己修复了，现在无论Android还是ios，如果不调用这个方法，微信自己不会去调用了。&lt;/p&gt;
 
 &lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
 &lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;

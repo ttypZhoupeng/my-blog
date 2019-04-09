@@ -21,7 +21,9 @@ tags: Mac环境配置
 后面会列出这个工具包中完整的命令列表，也可以自己安装完后亲自查看。
 
 ## 安装
+
 ### 1.启动terminal或者iterm终端
+
 ### 2.输入以下命令字符串
 
 ```
@@ -63,6 +65,7 @@ git version
 61个可用的新命令，都在/ Library / Developer / CommandLineTools / usr / bin /中。
 
 下面按字母顺序列出这些命令：
+
 ```
 ar
 as
@@ -159,6 +162,7 @@ yacc
 参考文章：[How to Install Command Line Tools in Mac OS X (Without Xcode)][1]
 
 #### 最后
+
 感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。

@@ -11,6 +11,7 @@ tags:
 ---
 
 ### 需求
+
 开发过程中遇到的需求需要复制 请求过来的一段密令（类似支付宝淘宝口令）到剪切板。
 
 ### pc端的文本复制到剪切板
@@ -20,7 +21,6 @@ tags:
 ```
 <textarea id="input">这是被复制的内容</textarea>
 <button onclick="copyText()">copy</button>
-
 
 <script type="text/javascript">
     function copyText() {
@@ -55,6 +55,7 @@ tags:
 #### 安装
 
 通过npm安装
+
 ```
 npm install clipboard --save
 ```
@@ -76,6 +77,7 @@ import Clipboard from "clipboard";
 编写需要进行复制的相关代码
 
 如果是复制固定文本则如下：
+
 ```
 <button
     class="copy-btn"
@@ -86,6 +88,7 @@ import Clipboard from "clipboard";
 ```
 
 如果是复制从服务器获取的数据则如下：
+
 ```
 <input
     id="copy-input"
@@ -119,6 +122,7 @@ methods: {
 延时器代码部分，也可以使用vue提供的 [nextTick](https://cn.vuejs.org/v2/api/#Vue-nextTick) 方法。 //感谢 Grewer 大佬的评论意见
 
 使用该方法，会在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。代码如下：
+
 ```
 this.$nextTick(() => {
     const copybtn = this.$refs.copy;
@@ -127,6 +131,7 @@ this.$nextTick(() => {
 ```
 
 也可以做一些复制成功与否的判断：
+
 ```
 clipboard.on('success', function(e) {
     console.info('Action:', e.action);
@@ -146,9 +151,11 @@ clipboard.on('error', function(e) {
 这位大佬的demo代码也可以进行参考，亲测有用 -> [使用clipboard.js实现js复制黏贴的功能](https://blog.csdn.net/qq_33485463/article/details/82899752)
 
 #### 可能存在的兼容性问题
+
 网上说这个插件可能存在一些兼容性问题，我自己测试了多个手机，包括安卓和ios，暂时还未发现有兼容问题的存在，如果遇到了我再来及时更新
 
 #### 最后
+
 感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。

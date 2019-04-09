@@ -170,6 +170,7 @@
                 post-container">
 
 				<h3 id="需求">需求</h3>
+
 <p>开发过程中遇到的需求需要复制 请求过来的一段密令（类似支付宝淘宝口令）到剪切板。</p>
 
 <h3 id="pc端的文本复制到剪切板">pc端的文本复制到剪切板</h3>
@@ -178,7 +179,6 @@
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;textarea id="input"&gt;这是被复制的内容&lt;/textarea&gt;
 &lt;button onclick="copyText()"&gt;copy&lt;/button&gt;
-
 
 &lt;script type="text/javascript"&gt;
     function copyText() {
@@ -213,6 +213,7 @@
 <h4 id="安装">安装</h4>
 
 <p>通过npm安装</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install clipboard --save
 </code></pre></div></div>
 
@@ -231,6 +232,7 @@
 <p>编写需要进行复制的相关代码</p>
 
 <p>如果是复制固定文本则如下：</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button
     class="copy-btn"
     @click="getAnswerNiceName"
@@ -240,6 +242,7 @@
 </code></pre></div></div>
 
 <p>如果是复制从服务器获取的数据则如下：</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;input
     id="copy-input"
     readonly  	 //如果在移动端，一定要再input中加上`readonly`属性，否则会拉起手机输入框
@@ -272,6 +275,7 @@ methods: {
 <p>延时器代码部分，也可以使用vue提供的 <a href="https://cn.vuejs.org/v2/api/#Vue-nextTick">nextTick</a> 方法。 //感谢 Grewer 大佬的评论意见</p>
 
 <p>使用该方法，会在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。代码如下：</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this.$nextTick(() =&gt; {
     const copybtn = this.$refs.copy;
     this.clipboard = new Clipboard(copybtn);
@@ -279,6 +283,7 @@ methods: {
 </code></pre></div></div>
 
 <p>也可以做一些复制成功与否的判断：</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clipboard.on('success', function(e) {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
@@ -297,9 +302,11 @@ clipboard.on('error', function(e) {
 <p>这位大佬的demo代码也可以进行参考，亲测有用 -&gt; <a href="https://blog.csdn.net/qq_33485463/article/details/82899752">使用clipboard.js实现js复制黏贴的功能</a></p>
 
 <h4 id="可能存在的兼容性问题">可能存在的兼容性问题</h4>
+
 <p>网上说这个插件可能存在一些兼容性问题，我自己测试了多个手机，包括安卓和ios，暂时还未发现有兼容问题的存在，如果遇到了我再来及时更新</p>
 
 <h4 id="最后">最后</h4>
+
 <p>感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。</p>
 
 <p>如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。</p>
@@ -319,11 +326,12 @@ clipboard.on('error', function(e) {
                     data-url="http://localhost:4000/my-blog/2019/03/01/vue_clipboard/"
                     data-images="http://localhost:4000/my-blog/img/post-bg-2015.jpg"
                     data-content="需求
+
 开发过程中遇到的需求需要复制 请求过来的一段密令（类似支付宝淘宝口令）到剪切板。
 
 pc端的文本复制到剪切板
 
-如果是在pc端的话，可以直接使用原生... | 周鹏的博客 " >
+如果是在pc端的话，可以直接使用原... | 周鹏的博客 " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -409,6 +417,8 @@ pc端的文本复制到剪切板
                 				<a href="/my-blog/tags/#js基础篇" title="js基础篇" rel="2">
                                     js基础篇
                                 </a>
+                            
+        				
                             
         				
         			</div>

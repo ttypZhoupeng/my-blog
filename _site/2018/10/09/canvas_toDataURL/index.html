@@ -182,6 +182,7 @@
 <p>html2canvas 13.7k ⭐️</p>
 
 <p>两者都有尝试过，都有意想不到的bug，包括</p>
+
 <ol>
   <li>部分手机有某些背景图片无法展示，为空白</li>
   <li>iphone8 plus ios 11中根本不调用这个转换方法，从而得不到想要的图片。
@@ -189,14 +190,18 @@
 </ol>
 
 <h2 id="自己动手">自己动手</h2>
+
 <h3 id="思路">思路</h3>
+
 <p>利用canvas的toDataURL来拿到canvas转化的base64码，来替换img的url, 也可以把图片上传到公司的服务器上，得到图片的地址来进行下载，或作为参数来传递</p>
 
 <p>那么canvas的绘制主要就是文本和图片的绘制,文本绘制相对简单，图片绘制有一些注意点。</p>
 
 <h3 id="canvas-初始化">canvas 初始化</h3>
 
-<p><strong>由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来</strong></p>
+<blockquote>
+  <p>注意：由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来</p>
+</blockquote>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;canvas id="canvas" width="750" height="1164"&gt;
   你的浏览器居然不支持Canvas？！赶快换一个吧！！
@@ -209,13 +214,14 @@ let ctx = c.getContext("2d");
 
 <h3 id="文本绘制">文本绘制</h3>
 
-<h4 id="官方文档如图">官方文档如图</h4>
+<h4 id="官方文档如图1">官方文档如图1</h4>
 
 <p><img src="/my-blog/img/posts/canvas_toDataURL/1.png" alt="文本绘制" /></p>
 
 <h4 id="详细文档请参考-canvas手册">详细文档请参考 <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp">canvas手册</a></h4>
 
 <h4 id="代码示例">代码示例</h4>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctx.fillStyle = "#fff";
 ctx.font = "32px PingFangSC-Regular";
 ctx.textAlign = "left";
@@ -224,13 +230,14 @@ ctx.fillText("这是文本", 280, 755);
 
 <h3 id="图片绘制">图片绘制</h3>
 
-<h4 id="官方文档如图-1">官方文档如图</h4>
+<h4 id="官方文档如图2">官方文档如图2</h4>
 
 <p><img src="/my-blog/img/posts/canvas_toDataURL/2.png" alt="文本绘制" /></p>
 
-<h4 id="详细文档请参考-canvas手册-1">详细文档请参考 <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp">canvas手册</a></h4>
+<h4 id="详细文档请参考1-canvas手册">详细文档请参考1 <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp">canvas手册</a></h4>
 
 <h4 id="注意事项">注意事项</h4>
+
 <ol>
   <li>图片需要进行跨域处理，否则后期无法生成图片，也就是在img标签中增加crossOrigin属性，值为anonymous</li>
 </ol>
@@ -238,6 +245,7 @@ ctx.fillText("这是文本", 280, 755);
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const instBanner = document.getElementById("instBanner");
 instBanner.crossOrigin = "anonymous";
 </code></pre></div></div>
+
 <ol>
   <li>需要等到图片加载完成再画到画布上，否则有可能没画上去</li>
 </ol>
@@ -250,6 +258,7 @@ posterBg.onload = () =&gt; {
 </code></pre></div></div>
 
 <h4 id="完整代码示例">完整代码示例</h4>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const posterBg = new Image();
 posterBg.src = 'https:....'; //这里是图片url
 posterBg.crossOrigin = "anonymous";
@@ -261,12 +270,14 @@ posterBg.onload = () =&gt; {
 <h3 id="生成图片">生成图片</h3>
 
 <h4 id="替换img-src">替换img src</h4>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let dataURL = c.toDataURL("image/png");
 let canvasImg = document.getElementById("canvasImg");
 canvas.src = dataURL;
 </code></pre></div></div>
 
 <h4 id="上传服务器得到img-url可作为参数保存图片">上传服务器，得到img url(可作为参数，保存图片)</h4>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let dataURL = c.toDataURL("image/png");
 function getImgUrl(dataURL){
   //一些上传服务器的代码
@@ -280,6 +291,7 @@ canvas.src = imgUrl;
 <h3 id="最后奉上一些常用的canvas处理方法">最后奉上一些，常用的canvas处理方法</h3>
 
 <h4 id="圆形图片的绘制">圆形图片的绘制</h4>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctx.save();
 
 ctx.beginPath(); //开始绘制
@@ -372,6 +384,7 @@ function drawRoundRectPath(cxt,width,height,radius){
 </code></pre></div></div>
 
 <h4 id="最后">最后</h4>
+
 <p>感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。</p>
 
 <p>如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。</p>
@@ -480,6 +493,8 @@ function drawRoundRectPath(cxt,width,height,radius){
                 				<a href="/my-blog/tags/#js基础篇" title="js基础篇" rel="2">
                                     js基础篇
                                 </a>
+                            
+        				
                             
         				
         			</div>
