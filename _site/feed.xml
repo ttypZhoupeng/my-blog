@@ -5,9 +5,212 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 13 Apr 2019 15:22:49 +0800</pubDate>
-    <lastBuildDate>Sat, 13 Apr 2019 15:22:49 +0800</lastBuildDate>
+    <pubDate>Sun, 14 Apr 2019 21:54:37 +0800</pubDate>
+    <lastBuildDate>Sun, 14 Apr 2019 21:54:37 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>互联网寒冬中程序员该如何谨慎选择公司？</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;知乎live模块, 内容来自我听过的live，摘取主要内容，语音转化文字，偏口语化&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;互联网寒冬中程序员该如何谨慎选择公司&quot;&gt;互联网寒冬中程序员该如何谨慎选择公司？&lt;/h2&gt;
+
+&lt;h3 id=&quot;live-简介&quot;&gt;Live 简介&lt;/h3&gt;
+
+&lt;p&gt;本期 Live 从时间上来说，带给大家的目的非常明确了，在 2019 年「金三银四」的跳槽季中，作为码农而言，很多人可能只看到公司的薪酬待遇的福利，却往往忽略了技术环境、成长方向、期股权结构、盈利能力等等。正可谓面试是相互的，当公司在面你的时候，你也在面公司，所以本期 Live 会给大家做一个指导性的分享，在面试前、中、后三个不同阶段该如何了解到你所想去的公司的更多背景。毕竟年轻的岁月并不多，如果在一家公司被坑，那可能就会比别人多走两年弯路；如果选择得当，还有可能弯道超车，在初创公司中赶超大厂的同学。&lt;/p&gt;
+
+&lt;h3 id=&quot;内容大纲&quot;&gt;内容大纲&lt;/h3&gt;
+
+&lt;p&gt;一、个人经历分享
+a)	学习生涯：信息学竞赛与 ACM 的竞赛之路，本科毕业自学 Python 与机器学习算法；
+b)	初创公司：从后端研发转算法，经历电商、互联网广告、互联网金融三大领域的算法开发；
+c)	大厂（阿里）：专注于电商交易安全，保护消费者及商家权利，在电商反作弊中应用算法能力。&lt;/p&gt;
+
+&lt;p&gt;二、初创公司与大厂利弊分析
+a)	个人发展环境：就两者的发展广度与深度做比较
+b)	公司稳定性：初创公司相对比较难判断是否靠谱
+c)	薪资体系：短期内可能初创公司会给出更好的薪酬&lt;/p&gt;
+
+&lt;p&gt;三、如何理性地做出适合自己的选择
+a)	面试前：估值、舆情、CEO 背景、盈利情况
+b)	面试中：辨别初创公司的「画大饼」、了解技术氛围
+c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
+
+&lt;h3 id=&quot;主讲人介绍&quot;&gt;主讲人介绍&lt;/h3&gt;
+
+&lt;p&gt;SimonS（编程话题优秀回答者）&lt;/p&gt;
+
+&lt;p&gt;我是 SimonS ，知乎 45K 粉丝大透明一枚，编程话题优秀回答者，历史 Live 听众数逾两万。小学接触编程学习，初中自主创站，高中开始长达七年的 OI / ACM 竞赛，本科毕业后有六年计算广告及风控征信相关机器学习工作经历。6 年工作中共经历过 4 家公司，除了目前所在的阿里外，其余初创公司在入职时均未超过 C 轮，而后都有较快速的成长。曾合伙创办公司担任算法技术总监，负责广告精准投放及商业智能相关工作，现任阿里巴巴集团 CRO 线安全专家，负责正向交易全链路风控相关算法及策略研发。&lt;/p&gt;
+
+&lt;h3 id=&quot;正文内容摘录&quot;&gt;正文内容摘录&lt;/h3&gt;
+
+&lt;h4 id=&quot;1个人经历分享&quot;&gt;1.个人经历分享&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_01.jpg&quot; alt=&quot;个人经历&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;个人简介略过&lt;/p&gt;
+
+&lt;h4 id=&quot;2初创公司与大厂的利弊分析&quot;&gt;2.初创公司与大厂的利弊分析&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_02.jpg&quot; alt=&quot;初创 or 大厂&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;扪心自问，是否自认为自己能力 &lt;strong&gt;很强&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果很强则推荐去初创公司，因为每一家大厂都有差不多规范的代码和守则，但是每家初创公司有很多的坑留着让你去踩。想一想，该怎么在踩坑和填坑中让自己成长。&lt;/p&gt;
+
+&lt;p&gt;很多人吐槽完一家初创公司就急急忙忙跳到另一家公司，接着会发现另一家公司的坑更大，相对而言大厂没有这么多需要顾虑的点，虽然有很多的办公室政治，但是基本我们不会涉及到，在大厂能够按部就班的安稳成长。
+出来之后能够得到大厂渡经的凭证，也能更帮助自己找到下一家公司，有更多的资本和HR谈薪酬待遇方面内容。&lt;/p&gt;
+
+&lt;p&gt;首先强调个人发展，对于工龄未满五年的新同学，不要把钱看得太重，把个人发展放在第一位。
+初创公司和大厂有着截然不同的发展方向。对于有能力的人来说，在初创公司能得到全方位的发展，可以向全栈工程师发展。对于没有能力的人来说，在初创公司可能就是到处打杂。&lt;/p&gt;
+
+&lt;p&gt;有能力的人能够在大厂里面找到一个能带自己深耕的大牛，对于一个没有能力的人来说就是在一个岗位上拧螺丝了，可以看出有能力的人，在初创公司能够承担更大的责任，对于成长而言也能有更大的提升，能力不那么强的人而言。能力不那么强的人就是大树底下好乘凉选择大厂更稳妥一些。&lt;/p&gt;
+
+&lt;p&gt;从稳定性来说，初创公司考虑，B轮/已有100人以上，会有较为稳定的盈利点，受资方青睐的点，资金流不会太紧张，也保留了初创公司 短平快 的自由度。&lt;/p&gt;
+
+&lt;p&gt;有光环也就是有大厂经验的可以去初创公司提升自己，没有光环的可以早点去大厂历练。&lt;/p&gt;
+
+&lt;p&gt;对大部分人的建议还是去大厂，大厂更安稳。&lt;/p&gt;
+
+&lt;p&gt;但是不乐观的是，high count(人员配额)一直在缩，只有等老员工离职了，才会招新人代替，相应的门槛也会变高。&lt;/p&gt;
+
+&lt;p&gt;学会包装自己&lt;/p&gt;
+
+&lt;h4 id=&quot;3面试前评估&quot;&gt;3.面试前评估&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_03.jpg&quot; alt=&quot;面试前评估&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简单讲就是 &lt;strong&gt;谨慎&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;面试分为前中后三个部分&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;估值&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;上市公司：看最近几期的财报 
+查看公司整体是否在健康发展，知道哪些业务是公司的核心，哪些业务一直在烧钱。尽量避开一直在烧钱的业务，可能有二次面试转岗或者被裁员的风险&lt;/p&gt;
+
+&lt;p&gt;初创公司：看看领导层面，CEO,CTO背景，都是从何来，手里有哪方面的资源。
+初创公司最重要的一点就是活下去，能否得到资方的青睐很重要。&lt;/p&gt;
+
+&lt;p&gt;举例：挖财CEO背景还不错，挖财至今活的还不错&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;业务&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;不赚钱的业务尽量不去，发年终奖的时候就能感受到贫富差距&lt;/p&gt;
+
+&lt;p&gt;举例: 阴阳师团队，天美团队年终奖。&lt;/p&gt;
+
+&lt;p&gt;业务赚不赚钱很重要。&lt;/p&gt;
+
+&lt;p&gt;业务决定了收入、发展空间、成就感&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;舆情&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;从师兄或者朋友那里了解公司的情况&lt;/p&gt;
+
+&lt;p&gt;可以从一些公关稿当中，了解公司领导的态度，&lt;/p&gt;
+
+&lt;p&gt;举例：阿里月饼门态度&lt;/p&gt;
+
+&lt;p&gt;面试是个互相选择的过程，道不同不相为谋。&lt;/p&gt;
+
+&lt;h4 id=&quot;4-面试中评估&quot;&gt;4. 面试中评估&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_04.jpg&quot; alt=&quot;面试中评估&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;业务&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如何在面试的过程中去了解公司&lt;/p&gt;
+
+&lt;p&gt;不要按部就班的只是回答面试官的问题，最后也只是问薪资福利，不利于了解公司具体情况。&lt;/p&gt;
+
+&lt;p&gt;怎么了解？&lt;/p&gt;
+
+&lt;p&gt;了解业务，了解公司的业务是怎么运作的，以及未来可能在其中扮演的角色。&lt;/p&gt;
+
+&lt;p&gt;从0-1打拼的业务，会非常累，当时也会有相当丰厚的回报，例如阿里云，菜鸟，钉钉。&lt;/p&gt;
+
+&lt;p&gt;安稳的业务，例如淘宝天猫，相对稳定，不是特别忙碌。在成熟的业务线中，自己的价值观很容易被量化，一般都会有比较大的流量，自己代码优化了多少性能，提升了多少转化都能算的很清楚。&lt;/p&gt;
+
+&lt;p&gt;创业的项目，一定要问，怎么样才能体现自己的价值，别辛辛苦苦干了一年让老板觉得自己没什么价值而被裁掉了。&lt;/p&gt;
+
+&lt;p&gt;问面试官，所在的team的业绩是怎么和业务挂钩的，如果回答模糊，则公司在这方面管理不是很成熟。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;技术&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;每个人的技术栈不同，每家公司用的技术栈也都不同。省略&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;薪资，期权&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;总包（packge）= 月薪base数 x 12 + 奖金（年终奖+季度奖）+ 股票（上市公司）/ 期权（初创公司）&lt;/p&gt;
+
+&lt;p&gt;不要把眼光停留在月薪上，越往后月薪越不重要。&lt;/p&gt;
+
+&lt;p&gt;月薪只要能支持自己基本开销就行，在互联网，主要还是看期股权。&lt;/p&gt;
+
+&lt;p&gt;奖金和期股权和业务强相关，业务线非常重要&lt;/p&gt;
+
+&lt;p&gt;期权：未上市的公司，给予员工的股权，不是一次性到手的股权&lt;/p&gt;
+
+&lt;p&gt;公允价 评估 到手的期权价值&lt;/p&gt;
+
+&lt;p&gt;中途离开的时候，已归属的期权是否能够带走，如果被回购，这个价格怎么算的&lt;/p&gt;
+
+&lt;h4 id=&quot;面试后评估&quot;&gt;面试后评估&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_05.jpg&quot; alt=&quot;面试后评估&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;到了这一步，一般来说就是庆祝的时候&lt;/p&gt;
+
+&lt;p&gt;务必要尽快做出选择接受的offer，避免被替代&lt;/p&gt;
+
+&lt;p&gt;公司不会在一棵树上吊死，在给你发offer的时候也在不断的面试其他人&lt;/p&gt;
+
+&lt;p&gt;提高自己的决策能力&lt;/p&gt;
+
+&lt;p&gt;评估，和面试中谈的需求是否一致，和直系主管沟通细节&lt;/p&gt;
+
+&lt;p&gt;KPI:&lt;/p&gt;
+
+&lt;p&gt;0-1的业务，初创公司中，老板注重个人平时工作情况，还是最终的产出。&lt;/p&gt;
+
+&lt;p&gt;成熟的业务在这方面不会有太大问题，成熟业务对未来的要求对未来的要求不会特备过分，一般按部就班就能获得平均绩效。仅需关注个人能力，和对KPI的影响度。当然越多越好&lt;/p&gt;
+
+&lt;p&gt;福利：&lt;/p&gt;
+
+&lt;p&gt;缴纳社保的基数，会直接影响公积金的缴纳额，以及公司在当地缴纳公积金的比例。&lt;/p&gt;
+
+&lt;p&gt;年休假随工龄和级别的增长情况&lt;/p&gt;
+
+&lt;p&gt;别老盯着outing, 下午茶这些东西&lt;/p&gt;
+
+&lt;p&gt;所谓寒冬，不是每个人的寒冬，只是淘汰一些不靠谱的公司和不靠谱的业务，以及一些半桶水的程序员，是金子总会发光的。&lt;/p&gt;
+
+&lt;h4 id=&quot;问答环节&quot;&gt;问答环节&lt;/h4&gt;
+
+&lt;p&gt;Q: 跳槽的话，是否需要裸辞&lt;/p&gt;
+
+&lt;p&gt;A: 一般来说还是不建议裸辞，除非跳槽的跨度比较大，比如从前端开发跳到后端数据挖掘方向，这时候可能需要比较久的时间去准备。
+另外裸辞的话还是比较影响心态的，因为没有工作，会比较急，然后可能就随便找了家公司，可能等不到自己最满意的offer了。&lt;/p&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/14/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 14 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/04/14/zhihu_live/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/14/zhihu_live/</guid>
+        
+        <category>知乎live</category>
+        
+        
+      </item>
     
       <item>
         <title>日常摘录-1.前端之前辈经验</title>
@@ -1746,51 +1949,6 @@ isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         <category>微信网页开发</category>
         
         <category>js经验篇</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Html幻灯片展示</title>
-        <description>&lt;h4 id=&quot;可点击上方幻灯片右下角箭头进行切换&quot;&gt;可点击上方幻灯片右下角箭头进行切换&lt;/h4&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;下滑这里查看更多内容&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;7月9日，我在公司内部进行了名为「JavaScript 模块化七日谈」分享，并将该 Slides 分享到了微博上。出乎意料地，这篇微博先后被 @JS小组 @尤小右 @寸志 等近 200 人转发，阅读达到 10w，获得了还不错的评价。&lt;/p&gt;
-
-&lt;p&gt;于是，我决定将它重新发到我的博客上，并为它专门制作了适用于 Keynote 展示文稿的新布局。它能自动根据屏幕大小/旋转以一定比例填充屏幕，你也可以直接点击下方链接在新页面打开，来获得更好的、沉浸式的全屏体验&lt;/p&gt;
-
-&lt;h3 id=&quot;watch-slides-&quot;&gt;&lt;a href=&quot;https://huangxuan.me/js-module-7day&quot;&gt;Watch Slides →&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://huangxuan.me/js-module-7day/attach/qrcode.png&quot; width=&quot;350&quot; height=&quot;350&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;small class=&quot;img-hint&quot;&gt;你也可以通过扫描二维码在手机上观看&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;这个 Web Slides 开源在&lt;a href=&quot;https://github.com/Huxpro/js-module-7day&quot;&gt;我的 Github 上&lt;/a&gt;，欢迎你帮助我完善这个展示文稿，你可以给我提 issue，可以 fork &amp;amp; pull request。如果它能帮助到你了，希望你还能不吝啬 star 一下这个项目&lt;/p&gt;
-
-&lt;h3 id=&quot;catalog&quot;&gt;Catalog&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;第一日 上古时期 &lt;strong&gt;&lt;em&gt;Module?&lt;/em&gt;&lt;/strong&gt; 从设计模式说起&lt;/li&gt;
-  &lt;li&gt;第二日 石器时代 &lt;strong&gt;&lt;em&gt;Script Loader&lt;/em&gt;&lt;/strong&gt; 只有封装性可不够，我们还需要加载&lt;/li&gt;
-  &lt;li&gt;第三日 蒸汽朋克 &lt;strong&gt;&lt;em&gt;Module Loader&lt;/em&gt;&lt;/strong&gt; 模块化架构的工业革命&lt;/li&gt;
-  &lt;li&gt;第四日 号角吹响 &lt;strong&gt;&lt;em&gt;CommonJS&lt;/em&gt;&lt;/strong&gt; 征服世界的第一步是跳出浏览器&lt;/li&gt;
-  &lt;li&gt;第五日 双塔奇兵 &lt;strong&gt;&lt;em&gt;AMD/CMD&lt;/em&gt;&lt;/strong&gt; 浏览器环境模块化方案&lt;/li&gt;
-  &lt;li&gt;第六日 精灵宝钻 &lt;strong&gt;&lt;em&gt;Browserify/Webpack&lt;/em&gt;&lt;/strong&gt; 大势所趋，去掉这层包裹！&lt;/li&gt;
-  &lt;li&gt;第七日 王者归来 &lt;strong&gt;&lt;em&gt;ES6 Module&lt;/em&gt;&lt;/strong&gt; 最后的战役&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 09 Jul 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2015/07/09/js-module-7day/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2015/07/09/js-module-7day/</guid>
-        
-        <category>前端开发</category>
         
         
       </item>
