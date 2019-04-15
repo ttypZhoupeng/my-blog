@@ -5,9 +5,204 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 14 Apr 2019 21:54:37 +0800</pubDate>
-    <lastBuildDate>Sun, 14 Apr 2019 21:54:37 +0800</lastBuildDate>
+    <pubDate>Mon, 15 Apr 2019 18:12:23 +0800</pubDate>
+    <lastBuildDate>Mon, 15 Apr 2019 18:12:23 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>js基础篇-3.高阶函数</title>
+        <description>&lt;h1 id=&quot;js基础查漏补缺&quot;&gt;js基础查漏补缺&lt;/h1&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#js%E5%9F%BA%E7%A1%80%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA&quot;&gt;js基础查漏补缺&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0&quot;&gt;高阶函数&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#map&quot;&gt;Map&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#reduce&quot;&gt;reduce&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#filter&quot;&gt;filter&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0&quot;&gt;回调函数&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#sort&quot;&gt;sort&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E5%90%8E&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;高阶函数&quot;&gt;高阶函数&lt;/h2&gt;
+
+&lt;p&gt;JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。&lt;/p&gt;
+
+&lt;p&gt;一个最简单的高阶函数：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function add(x, y, f) {
+    return f(x) + f(y);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function add(x, y, f) {
+    return f(x) + f(y);
+}
+
+var x = add(-5, 6, Math.abs); // 11
+console.log(x);
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;map&quot;&gt;Map&lt;/h3&gt;
+
+&lt;p&gt;数组Array的一个方法，与es6 Map有所不同&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function pow(x) {
+    return x * x;
+}
+
+var results = arr.map(pow); // [1, 4, 9, 16, 25, 36, 49, 64, 81]
+console.log(results);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;reduce&quot;&gt;reduce&lt;/h3&gt;
+
+&lt;p&gt;reduce也是Array的一个方法，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算。&lt;/p&gt;
+
+&lt;p&gt;对一个array求和：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [1, 3, 5, 7, 9];
+arr.reduce(function (x, y) {
+    return x + y;
+}); // 25
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;对一个array求积：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function product(arr) {
+ const newArr =  arr.reduce(function (x, y) {
+    return (x * y);
+});
+
+return newArr
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;把[1, 3, 5, 7, 9]变换成整数13579：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [1, 3, 5, 7, 9];
+arr.reduce(function (x, y) {
+    return x * 10 + y;
+}); 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;filter&quot;&gt;filter&lt;/h3&gt;
+
+&lt;p&gt;filter()也接收一个函数。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素&lt;/p&gt;
+
+&lt;p&gt;删除array中偶数：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [1, 2, 4, 5, 6, 9, 10, 15];
+var r = arr.filter(function (x) {
+    return x % 2 !== 0;
+});
+r; // [1, 5, 9, 15]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;删除array中空字符串：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = ['A', '', 'B', null, undefined, 'C', '  '];
+var r = arr.filter(function (s) {
+    return s &amp;amp;&amp;amp; s.trim(); // 注意：IE9以下的版本没有trim()方法
+});
+r; // ['A', 'B', 'C']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;回调函数&quot;&gt;回调函数&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = ['A', 'B', 'C'];
+var r = arr.filter(function (element, index, self) {
+    console.log(element); // 依次打印'A', 'B', 'C'
+    console.log(index); // 依次打印0, 1, 2
+    console.log(self); // self就是变量arr
+    return true;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;去除array重复元素：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var
+    r,
+    arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+r = arr.filter(function (element, index, self) {
+    return self.indexOf(element) === index;
+});
+
+console.log(r.toString());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;sort&quot;&gt;sort&lt;/h3&gt;
+
+&lt;p&gt;通常规定，对于两个元素x和y，如果认为x &amp;lt; y，则返回-1，如果认为x == y，则返回0，如果认为x &amp;gt; y，则返回1&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 看上去正常的结果:
+['Google', 'Apple', 'Microsoft'].sort(); // ['Apple', 'Google', 'Microsoft'];
+
+// apple排在了最后:
+['Google', 'apple', 'Microsoft'].sort(); // ['Google', 'Microsoft&quot;, 'apple']
+
+// 无法理解的结果(这里是个坑):
+[10, 20, 1, 2].sort(); // [1, 10, 2, 20]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;第二个排序把apple排在了最后，是因为字符串根据ASCII码进行排序，而小写字母a的ASCII码在大写字母之后。&lt;/p&gt;
+
+&lt;p&gt;第三个排序结果是什么鬼？简单的数字排序都能错？&lt;/p&gt;
+
+&lt;p&gt;这是因为Array的sort()方法默认把所有元素先转换为String再排序，结果’10’排在了’2’的前面，因为字符’1’比字符’2’的ASCII码小。&lt;/p&gt;
+
+&lt;p&gt;要按数字大小排序，我们可以这么写：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var arr = [10, 20, 1, 2];
+arr.sort(function (x, y) {
+    if (x &amp;lt; y) {
+        return -1;
+    }
+    if (x &amp;gt; y) {
+        return 1;
+    }
+    return 0;
+});
+console.log(arr); // [1, 2, 10, 20]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;详情可参考如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499355829ead974e550644e2ebd9fd8bb1b0dd721000&quot;&gt;廖雪峰js教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/15/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/04/15/js_basic/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/15/js_basic/</guid>
+        
+        <category>js基础篇</category>
+        
+        
+      </item>
     
       <item>
         <title>互联网寒冬中程序员该如何谨慎选择公司？</title>
@@ -60,8 +255,8 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;p&gt;如果很强则推荐去初创公司，因为每一家大厂都有差不多规范的代码和守则，但是每家初创公司有很多的坑留着让你去踩。想一想，该怎么在踩坑和填坑中让自己成长。&lt;/p&gt;
 
-&lt;p&gt;很多人吐槽完一家初创公司就急急忙忙跳到另一家公司，接着会发现另一家公司的坑更大，相对而言大厂没有这么多需要顾虑的点，虽然有很多的办公室政治，但是基本我们不会涉及到，在大厂能够按部就班的安稳成长。
-出来之后能够得到大厂渡经的凭证，也能更帮助自己找到下一家公司，有更多的资本和HR谈薪酬待遇方面内容。&lt;/p&gt;
+&lt;p&gt;很多人吐槽玩一家初创公司就急急忙忙跳到另一家公司，接着会发现另一家公司的坑更大，相对而言大厂没有这么需要顾虑的点，虽然有很多的办公室政治，但是基本我们不会涉及到，在大厂能够按部就班的安稳成长。
+出来之后能够得到大厂镀金的凭证，也能更帮助自己找到下一家公司，有更多的资本和HR谈薪酬待遇方面内容。&lt;/p&gt;
 
 &lt;p&gt;首先强调个人发展，对于工龄未满五年的新同学，不要把钱看得太重，把个人发展放在第一位。
 初创公司和大厂有着截然不同的发展方向。对于有能力的人来说，在初创公司能得到全方位的发展，可以向全栈工程师发展。对于没有能力的人来说，在初创公司可能就是到处打杂。&lt;/p&gt;
@@ -1843,112 +2038,6 @@ b={b:1}
         <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/10/getui_interview/</guid>
         
         <category>笔试面试</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>微信网页开发调用微信jssdk接口遇到的坑以及最终解决方法</title>
-        <description>&lt;h3 id=&quot;1微信网页开发调用jssdk时报permission-denied&quot;&gt;1.微信网页开发调用jssdk时报permission denied&lt;/h3&gt;
-
-&lt;h4 id=&quot;大致是两个原因&quot;&gt;大致是两个原因&lt;/h4&gt;
-
-&lt;p&gt;（1）首先注册时未将你所调用的接口名字添加至jsApiList&lt;/p&gt;
-
-&lt;p&gt;（2）第二个就是你的这个公众号没有权限使用这个api，例如在开发环境中的微信页面就无法调取这个api,需要发布后，到对应的有权限的公众号中再打开对应的界面，调用api才成功&lt;/p&gt;
-
-&lt;h3 id=&quot;2微信jssdk-使用微信内置地图查看位置openlocation接口-最终显示不精确&quot;&gt;2.微信jssdk 使用微信内置地图查看位置【openLocation】接口 最终显示不精确&lt;/h3&gt;
-
-&lt;p&gt;项目开发中，web端调用的是百度地图api，而微信项目中调用的是腾讯自己的地图，两者所使用的坐标系有所不同，百度用的是自己的百度坐标系，而高德地图和腾讯地图使用的是火星坐标系，两者之间需要做一下转换&lt;/p&gt;
-
-&lt;p&gt;=&amp;gt;火星坐标 转换到 百度地图坐标&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function huoxingToBaidu(hxLongitude, hxLatitude){  
-                var X_PI = Math.PI * 3000.0 / 180.0;  
-                var x = hxLongitude, y = hxLatitude;  
-                var z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * X_PI);  
-                var theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * X_PI);  
-                var bdLongitude = z * Math.cos(theta) + 0.0065;  
-                var bdLatitude = z * Math.sin(theta) + 0.006;  
-                return {  
-                    bdLongitude: bdLongitude,  
-                    bdLatitude: bdLatitude  
-                };  
-            }  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;=&amp;gt;百度地图坐标 转换到 火星坐标&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function baiduToHuoxing(bdLongitude,bdLatitude) {  
-                var X_PI = Math.Pi * 3000.0 / 180.0;  
-                var x = bdLongitude - 0.0065;  
-                var y = bdLatitude - 0.006;  
-                var z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * X_PI);  
-                var theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * X_PI);  
-                var hxLongitude = z * Math.cos(theta);  
-                var hxLatitude = z * Math.sin(theta);  
-                return {  
-                    hxLongitude: hxLongitude,  
-                    hxLatitude: hxLatitude  
-                }  
-            }  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3微信jssdk-预览图片previewimage接口的坑-安卓手机上图片预览需要点击两次才能退出预览&quot;&gt;3.微信JSSDK 预览图片【previewImage】接口的坑, 安卓手机上，图片预览需要点击两次才能退出预览&lt;/h3&gt;
-
-&lt;p&gt;在微信网页开发过程中，测试提出的一个bug，在微信中预览图片是，点击图片，打开图片正常，当再次点击时，原本应该直接退出图片预览，但是却需要点击两次才能退出预览。&lt;/p&gt;
-
-&lt;h4 id=&quot;分析原因&quot;&gt;分析原因&lt;/h4&gt;
-
-&lt;p&gt;应该是 previewImage 这个接口调用了两次，进行了图片的叠加。所以需要两次才能退出&lt;/p&gt;
-
-&lt;h4 id=&quot;最终得出的结果&quot;&gt;最终得出的结果&lt;/h4&gt;
-
-&lt;p&gt;代码中实际上只调用了一次。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;在Android系统的手机中，其实微信点击网页的图片会自动调用这个接口一次。然后代码中又对对这个接口调用了一次，这就造成了以上的结果。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;但是在ios系统的手机中，微信并不会调用这个接口。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;解决方案&quot;&gt;解决方案&lt;/h4&gt;
-
-&lt;p&gt;在方法的最前面进行手机系统的判断，当是Android系统直接return。
-然后在在下面进行微信的previewImage接口的调用&lt;/p&gt;
-
-&lt;h4 id=&quot;js判断是android还是ios&quot;&gt;js判断是Android还是ios&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var u = navigator.userAgent;
-
-isAndroid = u.indexOf('Android') &amp;gt; -1 || u.indexOf('Adr') &amp;gt; -1, //android终端
-
-isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;2018.8.1更新
-这个bug好像微信自己修复了，现在无论Android还是ios，如果不调用这个方法，微信自己不会去调用了。&lt;/p&gt;
-
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/01/wechat_jssdk_bug/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 01 Sep 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2018/09/01/wechat_jssdk_bug/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/01/wechat_jssdk_bug/</guid>
-        
-        <category>微信网页开发</category>
-        
-        <category>js经验篇</category>
         
         
       </item>
