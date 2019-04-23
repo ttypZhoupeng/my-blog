@@ -166,4 +166,4 @@ function buildDate({year, month, day, hour=0, minute=0, second=0}) {
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/08/js_basic/)
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/08/Destructuring_assignment/)

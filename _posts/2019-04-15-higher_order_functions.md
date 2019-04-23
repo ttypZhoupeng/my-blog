@@ -1,6 +1,7 @@
 ---
 layout: post
 title: js基础篇-3.高阶函数
+subtitle: HOF
 date: 2019-04-15
 author: "zhoupeng"
 header-img: "img/post-bg-js-version.jpg"
@@ -187,4 +188,4 @@ console.log(arr); // [1, 2, 10, 20]
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/15/js_basic/)
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/15/higher_order_functions/)

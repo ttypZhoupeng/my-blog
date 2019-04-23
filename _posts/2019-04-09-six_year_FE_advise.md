@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 日常摘录-1.前端之前辈经验
-subtitle: 随便摘录一些看上去有用的玩意儿
+title: 我在网易做了6年前端，想给求职者4条建议
+subtitle: 随便摘录一些看上去有用的玩意儿，来自`程序猿`公众号
 date: 2019-04-09 
 author:     "zhoupeng"
 header-img: "img/post-bg-daily-excerpts.jpg"
 tags: 日常摘录
 ---
 
->以下来自公众号`程序猿`的文章《我在网易做了6年前端，想给求职者4条建议》
+>以下来自公众号`程序猿`的文章[《我在网易做了6年前端，想给求职者4条建议》](https://mp.weixin.qq.com/s?__biz=MjM5NzA1MTcyMA==&mid=2651169300&idx=1&sn=a427ca963c2307abf6db3f8b8f740330&chksm=bd2eee338a596725a9a3445d3c8f4673cc74f43b35a013ec14a403949f620cf68fd35e7786f8&scene=0&xtrack=1#rd)
 
 ### 1.《前端开发工程师薪资》数据来自猎聘网：
 
@@ -60,4 +60,4 @@ web的优化处理原理和方法：
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/09/daily_excerpt/)
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/09/six_year_FE_advise/)

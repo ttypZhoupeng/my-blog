@@ -5,8 +5,8 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 15 Apr 2019 18:12:23 +0800</pubDate>
-    <lastBuildDate>Mon, 15 Apr 2019 18:12:23 +0800</lastBuildDate>
+    <pubDate>Tue, 23 Apr 2019 11:43:34 +0800</pubDate>
+    <lastBuildDate>Tue, 23 Apr 2019 11:43:34 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -193,11 +193,11 @@ console.log(arr); // [1, 2, 10, 20]
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/15/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/15/higher_order_functions/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2019/04/15/js_basic/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/15/js_basic/</guid>
+        <link>http://localhost:4000/my-blog/2019/04/15/higher_order_functions/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/15/higher_order_functions/</guid>
         
         <category>js基础篇</category>
         
@@ -243,13 +243,13 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;h4 id=&quot;1个人经历分享&quot;&gt;1.个人经历分享&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_01.jpg&quot; alt=&quot;个人经历&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_01.jpg&quot; alt=&quot;个人经历&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;个人简介略过&lt;/p&gt;
 
 &lt;h4 id=&quot;2初创公司与大厂的利弊分析&quot;&gt;2.初创公司与大厂的利弊分析&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_02.jpg&quot; alt=&quot;初创 or 大厂&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_02.jpg&quot; alt=&quot;初创 or 大厂&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;扪心自问，是否自认为自己能力 &lt;strong&gt;很强&lt;/strong&gt;。&lt;/p&gt;
 
@@ -275,7 +275,7 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;h4 id=&quot;3面试前评估&quot;&gt;3.面试前评估&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_03.jpg&quot; alt=&quot;面试前评估&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_03.jpg&quot; alt=&quot;面试前评估&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;简单讲就是 &lt;strong&gt;谨慎&lt;/strong&gt;&lt;/p&gt;
 
@@ -313,7 +313,7 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;h4 id=&quot;4-面试中评估&quot;&gt;4. 面试中评估&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_04.jpg&quot; alt=&quot;面试中评估&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_04.jpg&quot; alt=&quot;面试中评估&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;业务&lt;/strong&gt;&lt;/p&gt;
 
@@ -355,7 +355,7 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;h4 id=&quot;面试后评估&quot;&gt;面试后评估&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter_05.jpg&quot; alt=&quot;面试后评估&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_05.jpg&quot; alt=&quot;面试后评估&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;到了这一步，一般来说就是庆祝的时候&lt;/p&gt;
 
@@ -396,11 +396,11 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/14/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/14/internet_winter/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2019/04/14/zhihu_live/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/14/zhihu_live/</guid>
+        <link>http://localhost:4000/my-blog/2019/04/14/internet_winter/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/14/internet_winter/</guid>
         
         <category>知乎live</category>
         
@@ -408,9 +408,9 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
       </item>
     
       <item>
-        <title>日常摘录-1.前端之前辈经验</title>
+        <title>我在网易做了6年前端，想给求职者4条建议</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;以下来自公众号&lt;code class=&quot;highlighter-rouge&quot;&gt;程序猿&lt;/code&gt;的文章《我在网易做了6年前端，想给求职者4条建议》&lt;/p&gt;
+  &lt;p&gt;以下来自公众号&lt;code class=&quot;highlighter-rouge&quot;&gt;程序猿&lt;/code&gt;的文章&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MjM5NzA1MTcyMA==&amp;amp;mid=2651169300&amp;amp;idx=1&amp;amp;sn=a427ca963c2307abf6db3f8b8f740330&amp;amp;chksm=bd2eee338a596725a9a3445d3c8f4673cc74f43b35a013ec14a403949f620cf68fd35e7786f8&amp;amp;scene=0&amp;amp;xtrack=1#rd&quot;&gt;《我在网易做了6年前端，想给求职者4条建议》&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;1前端开发工程师薪资数据来自猎聘网&quot;&gt;1.《前端开发工程师薪资》数据来自猎聘网：&lt;/h3&gt;
@@ -469,11 +469,11 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/09/daily_excerpt/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/09/six_year_FE_advise/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2019/04/09/daily_excerpt/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/09/daily_excerpt/</guid>
+        <link>http://localhost:4000/my-blog/2019/04/09/six_year_FE_advise/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/09/six_year_FE_advise/</guid>
         
         <category>日常摘录</category>
         
@@ -649,11 +649,11 @@ var x, y;
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/08/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/08/Destructuring_assignment/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2019/04/08/js_basic/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/08/js_basic/</guid>
+        <link>http://localhost:4000/my-blog/2019/04/08/Destructuring_assignment/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/08/Destructuring_assignment/</guid>
         
         <category>js基础篇</category>
         
@@ -891,11 +891,11 @@ foo(); // undefined
 
 &lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
 
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/04/js_basic/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/04/map_set/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2019/04/04/js_basic/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/04/js_basic/</guid>
+        <link>http://localhost:4000/my-blog/2019/04/04/map_set/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/04/04/map_set/</guid>
         
         <category>js基础篇</category>
         

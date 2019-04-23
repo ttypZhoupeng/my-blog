@@ -43,13 +43,13 @@ SimonS（编程话题优秀回答者）
 
 #### 1.个人经历分享
 
-![个人经历](/my-blog/img/posts/zhihu/zhihu-live/internet_winter_01.jpg)
+![个人经历](/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_01.jpg)
 
 个人简介略过
 
 #### 2.初创公司与大厂的利弊分析
 
-![初创 or 大厂](/my-blog/img/posts/zhihu/zhihu-live/internet_winter_02.jpg)
+![初创 or 大厂](/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_02.jpg)
 
 扪心自问，是否自认为自己能力 **很强**。
 
@@ -75,7 +75,7 @@ SimonS（编程话题优秀回答者）
 
 #### 3.面试前评估
 
-![面试前评估](/my-blog/img/posts/zhihu/zhihu-live/internet_winter_03.jpg)
+![面试前评估](/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_03.jpg)
 
 简单讲就是 **谨慎**
 
@@ -113,7 +113,7 @@ SimonS（编程话题优秀回答者）
 
 #### 4. 面试中评估
 
-![面试中评估](/my-blog/img/posts/zhihu/zhihu-live/internet_winter_04.jpg)
+![面试中评估](/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_04.jpg)
 
 **业务**
 
@@ -156,7 +156,7 @@ SimonS（编程话题优秀回答者）
 
 #### 面试后评估
 
-![面试后评估](/my-blog/img/posts/zhihu/zhihu-live/internet_winter_05.jpg)
+![面试后评估](/my-blog/img/posts/zhihu/zhihu-live/internet_winter/internet_winter_05.jpg)
 
 到了这一步，一般来说就是庆祝的时候
 
@@ -198,4 +198,4 @@ A: 一般来说还是不建议裸辞，除非跳槽的跨度比较大，比如�
 
 如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
 
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/14/js_basic/)
+转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/14/internet_winter/)
