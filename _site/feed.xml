@@ -5,9 +5,676 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 24 May 2019 22:13:41 +0800</pubDate>
-    <lastBuildDate>Fri, 24 May 2019 22:13:41 +0800</lastBuildDate>
+    <pubDate>Mon, 15 Jul 2019 15:52:27 +0800</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 15:52:27 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>js笔试面试知识点速记[1]</title>
+        <description>&lt;h1 id=&quot;js速记&quot;&gt;js速记&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;答案比较精简，便于速记，复盘&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;基础部分&quot;&gt;基础部分&lt;/h2&gt;
+
+&lt;h3 id=&quot;对象&quot;&gt;对象&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSON.stringify()、JSON.parse() -&amp;gt; 对象字符串相互转化&lt;/li&gt;
+  &lt;li&gt;Object.keys -&amp;gt; 迭代对象&lt;/li&gt;
+  &lt;li&gt;Object.values  -&amp;gt; 以数组的方式返回对象的值&lt;/li&gt;
+  &lt;li&gt;Object.prototype
+    &lt;ul&gt;
+      &lt;li&gt;Object.prototype.hasOwnProperty -&amp;gt; 用于检查给定的属性/键是否存在于对象中&lt;/li&gt;
+      &lt;li&gt;Object.prototype.instanceof -&amp;gt; 判断给定对象是否是特定原型的类型&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Object.freeze -&amp;gt;  可以冻结对象，以便不能修改对象现有属性&lt;/li&gt;
+  &lt;li&gt;Object.isFrozen -&amp;gt; 给定对象是否被冻结&lt;/li&gt;
+  &lt;li&gt;Object.seal() -&amp;gt; 封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要可写就可以改变。&lt;/li&gt;
+  &lt;li&gt; Object.isSealed -&amp;gt; 判断对象是否被密封。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;函数&quot;&gt;函数&lt;/h3&gt;
+&lt;p&gt;可赋值给变量，可传给函数，也可从函数返回。注意变量提升，匿名函数提升&lt;/p&gt;
+
+&lt;h4 id=&quot;1高阶函数&quot;&gt;1.高阶函数&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;函数作为参数传递，&lt;/li&gt;
+  &lt;li&gt;函数作为返回值输出&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;数组&quot;&gt;数组&lt;/h3&gt;
+
+&lt;h4 id=&quot;1创建数组的方法&quot;&gt;1.创建数组的方法：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;var array = new Array()&lt;/li&gt;
+  &lt;li&gt;var array = []&lt;/li&gt;
+  &lt;li&gt;Array.of(1,2)  // es6新增方法 // 结果为：[1,2]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2判断是否为数组&quot;&gt;2.判断是否为数组&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;console.log(arr instanceof Array)&lt;/li&gt;
+  &lt;li&gt;console.log(arr.construct === Array)&lt;/li&gt;
+  &lt;li&gt;console.log(Array.isArray(arr))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3数组常用操作&quot;&gt;3.数组常用操作&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;pop()尾部删除&lt;/li&gt;
+  &lt;li&gt;push()尾部插入&lt;/li&gt;
+  &lt;li&gt;unshift()头部插入&lt;/li&gt;
+  &lt;li&gt;shift()头部删除&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;callapplybind&quot;&gt;call、apply、bind&lt;/h3&gt;
+&lt;p&gt;改变this指向。call、apply类似，立即调用。bind稍后调用&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mathLib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;circumference&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;mathLib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1159&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//12.56636 &lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;mathLib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1159&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//12.56636 &lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;mathLib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1159&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//12.56636 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;dom相关&quot;&gt;DOM相关&lt;/h3&gt;
+
+&lt;h4 id=&quot;1dom0级&quot;&gt;1.dom0级&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不支持添加多个事件，后面的会覆盖前面的&lt;/li&gt;
+  &lt;li&gt;无法取消&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;btn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;btn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;btn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;//只弹出2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2dom2级&quot;&gt;2.dom2级&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可以添加多个事件&lt;/li&gt;
+  &lt;li&gt;不兼容低版本IE&lt;/li&gt;
+  &lt;li&gt;支持事件冒泡，事件捕获&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;btn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;btn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;btn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;//先弹出1，再弹出2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;3dom节点操作&quot;&gt;3.DOM节点操作&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;obj.appendChild()&lt;/li&gt;
+  &lt;li&gt;obj.insertBefore()&lt;/li&gt;
+  &lt;li&gt;obj.replace()&lt;/li&gt;
+  &lt;li&gt;obj.remove()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;跨域相关&quot;&gt;跨域相关&lt;/h3&gt;
+
+&lt;h4 id=&quot;1什么是跨域&quot;&gt;1.什么是跨域&lt;/h4&gt;
+&lt;p&gt;也就是一个网站不能执行其他网站上的网址，或者说一个服务器上的文件，无法拿到另一个服务器上的文件是浏览器的同源策略，对js的一种安全限制。&lt;br /&gt;当域名协议端口，有一个不同的时候就为跨域&lt;/p&gt;
+
+&lt;h4 id=&quot;2解决方法&quot;&gt;2.解决方法&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;前端处理：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;JSONP:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;json with padding    json的一种使用模式&lt;/li&gt;
+  &lt;li&gt;跨域产生的具体原因：由于浏览器的同源策略，ajax无法进行跨域，但是script标签中的src支持跨域&lt;/li&gt;
+  &lt;li&gt;原理：动态创建一个script标签的，通过src调用服务器提供的js脚本，该脚本的内容是一个函数调用，该函数在本地js文件中进行定义，其中的参数就是，本地函数请求的数据，也就是服务器所将返回的数据&lt;/li&gt;
+  &lt;li&gt;注意：与ajax的不同，ajax是通过xhr获取非本页面的数据内容，而JSONP获取的是服务器提供js脚本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;后端处理：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;CORS:&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;跨域资源共享，w3c标准&lt;/strong&gt;&lt;br /&gt;它允许浏览器向跨源(协议 + 域名 + 端口)服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制&lt;br /&gt;CORS需要浏览器和服务器同时支持，浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，因此关键在于服务器实现cors接口&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;两者的优缺点：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSONP对浏览器的支持较好，IE10一下不支持CORS&lt;/li&gt;
+  &lt;li&gt;JSONP只能用于获取资源（即只读，类似于GET请求）；CORS支持所有类型的HTTP请求，功能完善。（这点JSONP被玩虐，但大部分情况下GET已经能满足需求了）&lt;/li&gt;
+  &lt;li&gt;JSONP的错误处理机制并不完善，我们没办法进行错误处理；而CORS可以通过onerror事件监听错误，并且浏览器控制台会看到报错信息，利于排查。&lt;/li&gt;
+  &lt;li&gt;JSONP只会发一次请求；而对于复杂请求，CORS会发两次请求。&lt;/li&gt;
+  &lt;li&gt;相对而言CORS更安全一点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;**&lt;/p&gt;
+
+&lt;h3 id=&quot;typeof返回的类型--基础类型-引用类型&quot;&gt;typeof返回的类型 &amp;amp; 基础类型 &amp;amp;引用类型&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;返回的类型&lt;/strong&gt;：string,number,object,undefined,boolean,function&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;基础类型&lt;/strong&gt;：string,number,boolean,undefined,null&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本类型的值是不能改变的&lt;/li&gt;
+  &lt;li&gt;基本类型不能添加属性和方法&lt;/li&gt;
+  &lt;li&gt;基本类型的比较是值的比较&lt;/li&gt;
+  &lt;li&gt;基本类型变量存放在栈区（栈内存）&lt;/li&gt;
+  &lt;li&gt;也就是说基本类型在赋值操作后，两个变量是相互不受影响的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;null跟undefined的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;null是表示一个空的对象，转为数值为0，undefind表示一个空的原始值，转为数值为NAN&lt;/li&gt;
+  &lt;li&gt;undefind指本该有一个值，但却并有定义，null表示没有对象，不应该有值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;引用类型&lt;/strong&gt;：Object Function Array&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;引用类型可以添加属性和方法，属性方法内又可以添加基本类型&lt;/li&gt;
+  &lt;li&gt;引用类型的值是可变的&lt;/li&gt;
+  &lt;li&gt;引用类型的值时同时保存在栈内存和堆内存里的对象，准确地说，引用类型的存储需要内存的栈区和堆区（堆区是指内存里的堆内存）共同完成，栈区内存保存变量标识符和指向堆内存中该对象的指针，&lt;/li&gt;
+  &lt;li&gt;引用类型的比较是引用的比较  引用类型时按引用访问的，换句话说就是比较两个对象的堆内存中的地址是否相同，那很明显，person1和person2在堆内存中地址是不同的&lt;/li&gt;
+  &lt;li&gt;引用类型的赋值其实是对象保存在栈区地址指针的赋值，因此两个变量指向同一个对象，任何的操作都会相互影响&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;类型转换&quot;&gt;类型转换&lt;/h3&gt;
+&lt;p&gt;三种强制类型转换：parseInt(),parseFloat(),Number()&lt;br /&gt;两种隐式类型转换：==，!!&lt;/p&gt;
+
+&lt;p&gt;== 和 === s的一个区别也是前者可以类型转换，后者不能&lt;/p&gt;
+
+&lt;h3 id=&quot;js作用域&quot;&gt;js作用域&lt;/h3&gt;
+&lt;p&gt;全局作用域、函数作用域、块作用域&lt;/p&gt;
+
+&lt;h3 id=&quot;this指向问题&quot;&gt;this指向问题&lt;/h3&gt;
+
+&lt;h4 id=&quot;1普通函数调用指向windows&quot;&gt;1.普通函数调用，指向windows&lt;/h4&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//输出1，此时的this指向window&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2对象的方法调用指向对象&quot;&gt;2.对象的方法调用，指向对象&lt;/h4&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+       &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//输出2,this指向Obj&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;   
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a name=&quot;jei8g&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;3构造器方法调用指向构造函数实例出来的对象&quot;&gt;3.构造器方法调用，指向构造函数实例出来的对象&lt;/h4&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;fun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;fun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//输出3，this指向main的实例对象fun&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;4callapplybind可以自定义this指向第一个参数&quot;&gt;4.call,apply,bind可以自定义this指向第一个参数&lt;/h4&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;showValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//输出4，this指向了obj对象&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showValue2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;showValue2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//输出4，this指向了obj对象&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;原型继承&quot;&gt;原型继承&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;类属性使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; 绑定&lt;/li&gt;
+  &lt;li&gt;类方法使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 对象来绑定&lt;/li&gt;
+  &lt;li&gt;为了继承属性， 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;call&lt;/code&gt; 函数来传递 &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;为了继承方法, 使用 &lt;strong&gt;Object.create&lt;/strong&gt; 连接父和子的原型&lt;/li&gt;
+  &lt;li&gt;始终将子类构造函数设置为自身，以获得其对象的正确类型&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;callback和promise&quot;&gt;callback和promise&lt;/h3&gt;
+&lt;p&gt;回调函数和回调函数优雅封装&lt;/p&gt;
+
+&lt;h3 id=&quot;正则&quot;&gt;正则 &lt;/h3&gt;
+&lt;p&gt;略&lt;/p&gt;
+
+&lt;h3 id=&quot;mapreducefilter&quot;&gt;map、reduce、filter&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;map&lt;/strong&gt; 接受一个作为参数的函数， 此函数接受一个来自数组的参数。我们需要返回一个处理过的元素， 并应用于数组中的所有元素。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;reduce&lt;/strong&gt; 为数组中的每一个元素依次执行回调函数，不包括数组中被删除或从未被赋值的元素，接受四个参数：初始r值（或者上一次回调函数的返回值），当前元素值，当前索引，调用 reduce 的数组。&lt;br /&gt;&lt;a href=&quot;https://www.jianshu.com/p/e375ba1cfc47&quot;&gt;https://www.jianshu.com/p/e375ba1cfc47&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;filter&lt;/strong&gt; 过滤出想要的数据，对数组的每个元素进行操作并返回另外一个数组（不同于 &lt;strong&gt;reduce&lt;/strong&gt; 返回的值）&lt;/p&gt;
+
+&lt;h3 id=&quot;错误处理方式&quot;&gt;错误处理方式&lt;/h3&gt;
+&lt;p&gt;一个好的开发方法总是谨慎地将 JS 代码封装装在 &lt;code class=&quot;highlighter-rouge&quot;&gt;try/catch&lt;/code&gt; 块周围。&lt;br /&gt;始终考虑错误处理是你自己， 而不是浏览器。&lt;/p&gt;
+
+&lt;h3 id=&quot;提升机制&quot;&gt;提升机制&lt;/h3&gt;
+
+&lt;h3 id=&quot;事件冒泡&quot;&gt;事件冒泡&lt;/h3&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useCapture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;默认false冒泡由内而外，反之捕获，由外而内。&lt;/p&gt;
+
+&lt;h4 id=&quot;如何阻止事件冒泡和默认事件&quot;&gt;如何阻止事件冒泡和默认事件&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;cancelBubble(IE),&lt;/li&gt;
+  &lt;li&gt;return false,&lt;/li&gt;
+  &lt;li&gt;event.preventDefault,&lt;/li&gt;
+  &lt;li&gt;event.stopPropagation()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;实现多个标签之间的通信&quot;&gt;实现多个标签之间的通信&lt;/h3&gt;
+&lt;p&gt;调用localStorage,cookies等本地存储进行存储相关信息&lt;br /&gt;三者的共同点：都保存在浏览器。&lt;br /&gt;三者的区别：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;与服务器的交互&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。&lt;/li&gt;
+  &lt;li&gt;而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;存储大小限制也不同，&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。&lt;/li&gt;
+  &lt;li&gt;sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;数据有效期不同，&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；&lt;/li&gt;
+  &lt;li&gt;localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；&lt;/li&gt;
+  &lt;li&gt;cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;作用域不同，&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；&lt;/li&gt;
+  &lt;li&gt;localStorage 在所有同源窗口中都是共享的；&lt;/li&gt;
+  &lt;li&gt;cookie也是在所有同源窗口中都是共享的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a name=&quot;Kfsyk&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;那些操作会造成内存泄露&quot;&gt;那些操作会造成内存泄露&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;setTimeout第一个参数是字符串而不是函数的时候就会造成内存泄露&lt;/li&gt;
+  &lt;li&gt;闭包&lt;/li&gt;
+  &lt;li&gt;控制台日志&lt;/li&gt;
+  &lt;li&gt;循环（两个对象彼此引用且彼此保留）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;垃圾回收方式&quot;&gt;垃圾回收方式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;标记清除：这是js最常用的垃圾回收方法，当一个变量进入执行环境时，例如函数中声明一个变量，将其标记为进入环境，当变量离开环境时，（函数执行结束），标记为离开环境&lt;/li&gt;
+  &lt;li&gt;引用计数: 跟踪记录每个值被引用的次数，声明一个变量，并将引用 类型赋值给这个变量，则这个值的引用次数+1，当变量的值变成了另一个，则这个值的引用次数-1，当值的引用次数为0的时候，就回收&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;闭包&quot;&gt;闭包&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;经典闭包&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inner&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;inn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;点击li返回li下标&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ul&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oUL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oUl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;li&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;闭包&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oUL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oUl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;li&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;oLi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;new操作符到底干了什么&quot;&gt;new操作符到底干了什么&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建一个新对象&lt;/li&gt;
+  &lt;li&gt;将构造函数的作用域赋值给新对象（所以this指向了这个新对象）&lt;/li&gt;
+  &lt;li&gt;执行构造函数的代码（为这个新对象添加属性）&lt;/li&gt;
+  &lt;li&gt;返会新对象&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;js严格模式&quot;&gt;js严格模式&lt;/h3&gt;
+&lt;p&gt;“use  strict”&lt;br /&gt;消除js一些不合理的用法&lt;br /&gt;消除代码运行的一些不安全之处&lt;br /&gt;增加运行速度&lt;br /&gt;为未来新版本js做铺垫&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;变量必须声明&lt;/li&gt;
+  &lt;li&gt;对象不能出现重复属性名&lt;/li&gt;
+  &lt;li&gt;arguments改变，不会影响函数参数&lt;/li&gt;
+  &lt;li&gt;eval，arguments变为关键字，不能作为变量名&lt;/li&gt;
+  &lt;li&gt;不允许使用with&lt;/li&gt;
+  &lt;li&gt;不用call，apply，bind改变this指向，一般函数调用指向null&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ajax请求&quot;&gt;ajax请求&lt;/h3&gt;
+&lt;p&gt;ajax请求四步&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建一个xhr对象 var xhr = new XmlHttpRequest()&lt;/li&gt;
+  &lt;li&gt;判断就绪状态为4时执行代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建请求 xhr.open(‘get’,’url’,true)&lt;/li&gt;
+  &lt;li&gt;发送请求 xhr.send(null)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a name=&quot;eUsGQ&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;在浏览器中输入url到整个页面显示在用户面前时这个过程中到底发生了什么&quot;&gt;在浏览器中输入URL到整个页面显示在用户面前时这个过程中到底发生了什么&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DNS解析&lt;/li&gt;
+  &lt;li&gt;TCP连接&lt;/li&gt;
+  &lt;li&gt;发送HTTP请求&lt;/li&gt;
+  &lt;li&gt;服务器处理请求并返回HTTP报文&lt;/li&gt;
+  &lt;li&gt;浏览器解析渲染页面&lt;/li&gt;
+  &lt;li&gt;连接结束&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;数组去重的一种相对好理解的方法&quot;&gt;数组去重的一种相对好理解的方法&lt;/h3&gt;
+&lt;p&gt;利用indexOf方法的去重&lt;/p&gt;
+
+&lt;p&gt;indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;removeItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;nArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;http相关&quot;&gt;HTTP相关&lt;/h2&gt;
+
+&lt;h4 id=&quot;1常用的http方法有哪些&quot;&gt;1.常用的HTTP方法有哪些&lt;/h4&gt;
+
+&lt;p&gt;GET:&lt;br /&gt;POST:&lt;br /&gt;PUT:&lt;br /&gt;DELETE:&lt;/p&gt;
+
+&lt;h4 id=&quot;2get与post方法的区别&quot;&gt;2.GET与POST方法的区别&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get主要是从服务器获取资源，post主要是像服务器发送数据&lt;/li&gt;
+  &lt;li&gt;get传输数据通过url请求，利用k=v的形式放在url后面，用?连接，多个用&amp;amp;连接而post是存放在，ajax中的data中的，get传输的过程使用户可见 的，而post是对用户不可见的。&lt;/li&gt;
+  &lt;li&gt;get传输的数据量小，因为受url的长度限制，但是效率高，post能上传的数据量大&lt;/li&gt;
+  &lt;li&gt;post较get更安全一些&lt;/li&gt;
+  &lt;li&gt;get方式传递的中文字符可能会乱码，post支持标准字符集，可以正确传递中文字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3http请求报文与响应报文格式&quot;&gt;3.http请求报文与响应报文格式&lt;/h4&gt;
+
+&lt;p&gt;请求报文包含三部分：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;请求行：包含请求方法、URI、http版本信息&lt;/li&gt;
+  &lt;li&gt;请求首部字段&lt;/li&gt;
+  &lt;li&gt;请求内容实体&lt;br /&gt;
+响应报文包含三部分：&lt;/li&gt;
+  &lt;li&gt;状态行：包含HTTP版本、状态码、状态码的原因短语&lt;/li&gt;
+  &lt;li&gt;响应首部字段&lt;/li&gt;
+  &lt;li&gt;响应内容实体&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4http状态码&quot;&gt;4.http状态码&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;100-199：成功接收请求，但需要进行下一步请求&lt;/li&gt;
+  &lt;li&gt;200-299：成功接收请求，并完成整个处理过程&lt;/li&gt;
+  &lt;li&gt;300-399：为完成全部请求，客户需近一步细化需求&lt;/li&gt;
+  &lt;li&gt;400-499：客户端请求有错误，包括语法错误或不能正常执行&lt;/li&gt;
+  &lt;li&gt;500-599：服务器端出现错误&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a name=&quot;N8lbh&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;5http缺点与https&quot;&gt;5.http缺点与https&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通信使用明文不加密，内容可能被窃听&lt;/li&gt;
+  &lt;li&gt;不验证通信方身份，可能遭到伪装&lt;/li&gt;
+  &lt;li&gt;无法验证报文完整性，可能被篡改&lt;br /&gt;
+https就是加上加密处理（一般是SSL安全通信线路）+认证+完整性保护&lt;br /&gt;
+常用：&lt;/li&gt;
+  &lt;li&gt;200 正常，表示一切正常，返会的是正常请求结果&lt;/li&gt;
+  &lt;li&gt;302/307 临时重定向，表示请求的文档，已被临时移动到别处&lt;/li&gt;
+  &lt;li&gt;304 未修改，调用缓存的数据&lt;/li&gt;
+  &lt;li&gt;403 服务器拒绝客户请求&lt;/li&gt;
+  &lt;li&gt;404 服务器不存在客户想要找的资源&lt;/li&gt;
+  &lt;li&gt;500 服务器内部错误&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;####&lt;/p&gt;
+
+&lt;p&gt;###&lt;/p&gt;
+
+&lt;h2 id=&quot;es6相关&quot;&gt;ES6相关&lt;/h2&gt;
+
+&lt;h4 id=&quot;let-const&quot;&gt;let const&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;let相当于给js新增了块级作用域，声明的变量只在let命令所在的代码块内有效&lt;/li&gt;
+  &lt;li&gt;const也是声明变量，它声明的变量，不能改变，可以用来声明第三方库变量的应用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;class-extends-super&quot;&gt;class extends super&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;class定义一个类，其中有一个construct方法，construct方法中的this代表实例对象，construct以外还有其他的方法，construct内定义的方法属性是实例对象自己的，construct外的方法属性是所有实例对象共享的&lt;/li&gt;
+  &lt;li&gt;class之间可以通过extends实现继承&lt;/li&gt;
+  &lt;li&gt;super指代父类的实例，子类construct中必须先调用super()方法，因为子类没有自己的this对象，是继承父类的this对象&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;arrow-function箭头函数&quot;&gt;arrow function(箭头函数)&lt;/h4&gt;
+&lt;p&gt;除了书写简洁了很多，最大的优点是this指向，使用箭头函数，函数内部的this就是定义时所在的对象。箭头函数根本没有自己的this，this是继承外面的，它内部的this就是外层代码块的this&lt;/p&gt;
+
+&lt;h4 id=&quot;template-string模板字符串&quot;&gt;template string(模板字符串)&lt;/h4&gt;
+&lt;p&gt;ajax调用数据库，需要向文档中插入大段html的时候，传统的字符串拼接太麻烦，引入模板工具库会稍微好点，不过还是没有es6的template string简单，可以直接用反单引号包括代码块``,用${}来引用变量，所有的空格缩进都会保留到输出中&lt;/p&gt;
+
+&lt;h4 id=&quot;destructuring解构赋值&quot;&gt;destructuring(解构赋值)&lt;/h4&gt;
+&lt;p&gt;es6按照一定模式，从数组和对象中提取值，对变量进行赋值，这就成为解构，也就是说，运用es5的方法，数组和对象中的变量需要，一个个进行赋值，而es6可以一步到位&lt;/p&gt;
+
+&lt;h4 id=&quot;defaultrest默认值扩展语法&quot;&gt;default,rest(默认值，扩展语法)&lt;/h4&gt;
+&lt;p&gt;当函数忘记传参的时候，给它一个默认值，传统方法是在函数中运用||，es6可以直接在参数中写上&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cat'&lt;/span&gt;  
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;animals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'dog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'fish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//[&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;gulp&quot;&gt;gulp&lt;/h2&gt;
+
+&lt;p&gt;gulp是一种自动化构建工具，前端工程化开发的一种工具，增强开发流程&lt;br /&gt;使用方便，npm安装，新建gulpfile.js,导入gulp模块，let gulp = require(‘gulp’)&lt;br /&gt;通过default任务去定义工作流&lt;br /&gt;最后在终端执行gulp来进行自动化操作&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;api很简单只有四种&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gulp.task 创建任务 ：参数任务名称，前置任务数组，回调函数&lt;/li&gt;
+  &lt;li&gt;gulp.src  寻找文件：通过路径找到一个或多个文件&lt;/li&gt;
+  &lt;li&gt;gulp.dest 输出到指定目录：如果没有就新建一个&lt;/li&gt;
+  &lt;li&gt;gulp.watch 监听文件变化，执行任务&lt;/li&gt;
+  &lt;li&gt;pipe具体不清楚，总之，除了gulp.src之外，其他执行条件都要放在.pipe()中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bootstrap&quot;&gt;Bootstrap&lt;/h2&gt;
+
+&lt;h3 id=&quot;bootstrap和foundation的比较&quot;&gt;Bootstrap和Foundation的比较&lt;/h3&gt;
+
+&lt;h4 id=&quot;1ui元素的不同&quot;&gt;1.UI元素的不同&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap给出了能想到的一切元素，也就是试图提供所有定义好的UI，比如一个导航，给予一个默认导航的样式&lt;/li&gt;
+  &lt;li&gt;Foundation只给定了限定的几种元素，可以自己自定义，更适合创造&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2尺寸单位不一样&quot;&gt;2.尺寸单位不一样，&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap是px&lt;/li&gt;
+  &lt;li&gt;Foundation是rem&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3网格布局有所不同&quot;&gt;3.网格布局有所不同&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Foundation 的网格可以自动适配当前浏览器的宽度，Foundation 则会灵活适配当前的浏览器宽度, 这是一种新的技术手段, 自动适配的同时, 可以表现的与 Transformer 一样的效果.&lt;/li&gt;
+  &lt;li&gt;Boostrap 则是预定义了几种网格尺寸来适配主流的设备和屏幕.Bootstrap 会在你改变浏览器宽度的时候突然改变它的网格.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4移动设备&quot;&gt;4.移动设备&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Foundation移动设备优先&lt;/li&gt;
+  &lt;li&gt;Bootstrap也支持移动设备&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4社区&quot;&gt;4.社区&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap有一个完备的社区,有什么问题几乎都可以迅速解决&lt;/li&gt;
+  &lt;li&gt;Foundation则没有，需要自力更生&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏.&lt;/p&gt;
+
+&lt;p&gt;您的点赞是我持续更新的动力。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Jul 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/07/15/js%E7%9F%A5%E8%AF%86%E7%82%B9%E9%80%9F%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/07/15/js%E7%9F%A5%E8%AF%86%E7%82%B9%E9%80%9F%E8%AE%B0/</guid>
+        
+        <category>笔试面试</category>
+        
+        
+      </item>
     
       <item>
         <title>《何以为家》影评</title>
@@ -1512,125 +2179,6 @@ function drawRoundRectPath(cxt,width,height,radius){
         <category>HTML5</category>
         
         <category>js经验篇</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>个推二面以及其他笔试面试题目（大致）</title>
-        <description>&lt;h1 id=&quot;20171108-个推二面&quot;&gt;2017/11/08 （个推二面）&lt;/h1&gt;
-&lt;h2 id=&quot;前端知识&quot;&gt;前端知识&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;框架angular，有用到angular的一些什么功能&lt;/li&gt;
-  &lt;li&gt;flex布局兼容性&lt;/li&gt;
-  &lt;li&gt;数组去重方法 √&lt;/li&gt;
-  &lt;li&gt;跨域问题 √&lt;/li&gt;
-  &lt;li&gt;本地存储，cookie安全性 √&lt;/li&gt;
-  &lt;li&gt;怎么定义声明一个json&lt;/li&gt;
-  &lt;li&gt;阻止冒泡中stopPropagation和preventDefault区别 √&lt;/li&gt;
-  &lt;li&gt;你知道哪些js事件&lt;/li&gt;
-  &lt;li&gt;事件委托&lt;/li&gt;
-  &lt;li&gt;一道css float题目 呈现什么效果
-```&lt;/li&gt;
-&lt;/ul&gt;
-&lt;style&gt;
-.float-box.left{
-    float:left;
-}
-.float-box.right{
-    float:right;
-}
-&lt;/style&gt;
-
-&lt;div class=&quot;float-box&quot;&gt;
-    &lt;div class=&quot;left&quot;&gt;靠左边浮动&lt;/div&gt;
-    &lt;div class=&quot;right&quot;&gt;靠右边浮动&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;bottom-box&quot;&gt;
-    &lt;div&gt;底部box&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;h2 id=&quot;计算机基础&quot;&gt;计算机基础&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;冒泡排序&lt;/li&gt;
-  &lt;li&gt;数组链表&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;看到媒体查询，问了下媒体查询&lt;/li&gt;
-  &lt;li&gt;看到官网，问了下是响应式的吗，上线了没， 我说那个商城是响应式的，然后问了商城中购物车怎么实现的&lt;/li&gt;
-  &lt;li&gt;职业规划&lt;/li&gt;
-  &lt;li&gt;什么时候接触前端的&lt;/li&gt;
-  &lt;li&gt;最后有什么问题要问我们的吗&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;最后逻辑题&quot;&gt;最后逻辑题&lt;/h2&gt;
-&lt;h3 id=&quot;一块砖头能干什么&quot;&gt;一块砖头能干什么？&lt;/h3&gt;
-
-&lt;h1 id=&quot;20171110-杭州对的人信息科技有限公司&quot;&gt;2017/11/10 （杭州对的人信息科技有限公司）&lt;/h1&gt;
-&lt;h2 id=&quot;前端基础知识&quot;&gt;前端基础知识&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;只用一个div怎么画一个矩形，矩形右上角为一个圆&lt;/li&gt;
-  &lt;li&gt;要是想要让这个圆在矩形的中间（居中问题）&lt;/li&gt;
-  &lt;li&gt;怎么画一个梯形&lt;/li&gt;
-  &lt;li&gt;amd cmd&lt;/li&gt;
-  &lt;li&gt;拖拽事件的实现&lt;/li&gt;
-  &lt;li&gt;有哪些鼠标事件&lt;/li&gt;
-  &lt;li&gt;事件中有哪些有冒泡&lt;/li&gt;
-  &lt;li&gt;一个输入框，从鼠标移入，然后点击输入框，再移出输入框，期间发生了哪些事件，按顺序说&lt;/li&gt;
-  &lt;li&gt;事件委托&lt;/li&gt;
-  &lt;li&gt;怎么解决页面首次加载，:hover改变图片闪白bug&lt;/li&gt;
-  &lt;li&gt;雪碧图是怎么制作的，雪碧图，svg一键生成。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;其他-1&quot;&gt;其他&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;在做官网项目时有遇到什么问题&lt;/li&gt;
-  &lt;li&gt;wow.js是干什么的&lt;/li&gt;
-  &lt;li&gt;对webpack有了解吗&lt;/li&gt;
-  &lt;li&gt;用gulp做过哪些事&lt;/li&gt;
-  &lt;li&gt;angular单页面的具体实现方式&lt;/li&gt;
-  &lt;li&gt;用过react吗&lt;/li&gt;
-  &lt;li&gt;require.js&lt;/li&gt;
-  &lt;li&gt;c3.js，D3.js&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;20171111-小麦助教&quot;&gt;2017/11/11 (小麦助教)&lt;/h1&gt;
-&lt;h2 id=&quot;前端基础知识-1&quot;&gt;前端基础知识&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;浏览器渲染页面过程中发生了什么&lt;/li&gt;
-  &lt;li&gt;跨域问题&lt;/li&gt;
-  &lt;li&gt;get与post区别&lt;/li&gt;
-  &lt;li&gt;状态码500,400&lt;/li&gt;
-  &lt;li&gt;localstorage的定义以及api，怎么删除单条数据&lt;/li&gt;
-  &lt;li&gt;axios与ajax区别&lt;/li&gt;
-  &lt;li&gt;jQuery中$.fn是什么意思&lt;/li&gt;
-  &lt;li&gt;原型链&lt;/li&gt;
-  &lt;li&gt;出了一道手写编程，一个数列，1,1,2,3,5,8,13,21…,计算第100位是什么数字&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;其他-2&quot;&gt;其他&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;快速排序&lt;/li&gt;
-  &lt;li&gt;进程与线程&lt;/li&gt;
-  &lt;li&gt;promise&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 10 Sep 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2018/09/10/other_interview/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/09/10/other_interview/</guid>
-        
-        <category>笔试面试</category>
         
         
       </item>
