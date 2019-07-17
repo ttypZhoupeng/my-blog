@@ -53,7 +53,8 @@ body {
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
-  font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  /* font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif; */
+  font-family: 'Noto Serif SC', serif;
   line-height: 1.7;
   font-size: 16px;
   color: #404040;
@@ -531,8 +532,8 @@ pre code {
   }
 }
 .post-content-preview {
-  font-size: 13px;
-  font-style: italic;
+  font-size: 14px;
+  /* font-style: italic; */
   color: #a3a3a3;
 }
 .post-content-preview:hover {
