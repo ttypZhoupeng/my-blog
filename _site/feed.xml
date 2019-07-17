@@ -5,12 +5,12 @@
     <description>澹台宇鹏/@Roc Zhou</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 15 Jul 2019 15:52:27 +0800</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 15:52:27 +0800</lastBuildDate>
+    <pubDate>Tue, 16 Jul 2019 17:23:04 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Jul 2019 17:23:04 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>js笔试面试知识点速记[1]</title>
+        <title>js速记(1)</title>
         <description>&lt;h1 id=&quot;js速记&quot;&gt;js速记&lt;/h1&gt;
 
 &lt;blockquote&gt;
@@ -144,12 +144,8 @@
 &lt;p&gt;也就是一个网站不能执行其他网站上的网址，或者说一个服务器上的文件，无法拿到另一个服务器上的文件是浏览器的同源策略，对js的一种安全限制。&lt;br /&gt;当域名协议端口，有一个不同的时候就为跨域&lt;/p&gt;
 
 &lt;h4 id=&quot;2解决方法&quot;&gt;2.解决方法&lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;前端处理：&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;JSONP:&lt;/strong&gt;&lt;/p&gt;
-
+&lt;p&gt;前端处理：
+&lt;strong&gt;JSONP:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;json with padding    json的一种使用模式&lt;/li&gt;
   &lt;li&gt;跨域产生的具体原因：由于浏览器的同源策略，ajax无法进行跨域，但是script标签中的src支持跨域&lt;/li&gt;
@@ -157,16 +153,10 @@
   &lt;li&gt;注意：与ajax的不同，ajax是通过xhr获取非本页面的数据内容，而JSONP获取的是服务器提供js脚本&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;后端处理：&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;后端处理：
+&lt;strong&gt;CORS:&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;跨域资源共享，w3c标准&lt;/strong&gt;&lt;br /&gt;它允许浏览器向跨源(协议 + 域名 + 端口)服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制&lt;br /&gt;CORS需要浏览器和服务器同时支持，浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，因此关键在于服务器实现cors接口&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;CORS:&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;跨域资源共享，w3c标准&lt;/strong&gt;&lt;br /&gt;它允许浏览器向跨源(协议 + 域名 + 端口)服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制&lt;br /&gt;CORS需要浏览器和服务器同时支持，浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，因此关键在于服务器实现cors接口&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;两者的优缺点：&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;两者的优缺点：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;JSONP对浏览器的支持较好，IE10一下不支持CORS&lt;/li&gt;
@@ -175,8 +165,6 @@
   &lt;li&gt;JSONP只会发一次请求；而对于复杂请求，CORS会发两次请求。&lt;/li&gt;
   &lt;li&gt;相对而言CORS更安全一点&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;**&lt;/p&gt;
 
 &lt;h3 id=&quot;typeof返回的类型--基础类型-引用类型&quot;&gt;typeof返回的类型 &amp;amp; 基础类型 &amp;amp;引用类型&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;返回的类型&lt;/strong&gt;：string,number,object,undefined,boolean,function&lt;/p&gt;
@@ -314,27 +302,21 @@
 &lt;h3 id=&quot;实现多个标签之间的通信&quot;&gt;实现多个标签之间的通信&lt;/h3&gt;
 &lt;p&gt;调用localStorage,cookies等本地存储进行存储相关信息&lt;br /&gt;三者的共同点：都保存在浏览器。&lt;br /&gt;三者的区别：&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;与服务器的交互&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h4 id=&quot;与服务器的交互&quot;&gt;与服务器的交互&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。&lt;/li&gt;
   &lt;li&gt;而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;存储大小限制也不同，&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h4 id=&quot;存储大小限制也不同&quot;&gt;存储大小限制也不同，&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。&lt;/li&gt;
   &lt;li&gt;sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;数据有效期不同，&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h4 id=&quot;数据有效期不同&quot;&gt;数据有效期不同，&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；&lt;/li&gt;
@@ -342,9 +324,7 @@
   &lt;li&gt;cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;作用域不同，&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h4 id=&quot;作用域不同&quot;&gt;作用域不同，&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；&lt;/li&gt;
@@ -352,9 +332,7 @@
   &lt;li&gt;cookie也是在所有同源窗口中都是共享的&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a name=&quot;Kfsyk&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;那些操作会造成内存泄露&quot;&gt;那些操作会造成内存泄露&lt;/h3&gt;
-
 &lt;ul&gt;
   &lt;li&gt;setTimeout第一个参数是字符串而不是函数的时候就会造成内存泄露&lt;/li&gt;
   &lt;li&gt;闭包&lt;/li&gt;
@@ -363,7 +341,6 @@
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;垃圾回收方式&quot;&gt;垃圾回收方式&lt;/h3&gt;
-
 &lt;ul&gt;
   &lt;li&gt;标记清除：这是js最常用的垃圾回收方法，当一个变量进入执行环境时，例如函数中声明一个变量，将其标记为进入环境，当变量离开环境时，（函数执行结束），标记为离开环境&lt;/li&gt;
   &lt;li&gt;引用计数: 跟踪记录每个值被引用的次数，声明一个变量，并将引用 类型赋值给这个变量，则这个值的引用次数+1，当变量的值变成了另一个，则这个值的引用次数-1，当值的引用次数为0的时候，就回收&lt;/li&gt;
@@ -535,7 +512,6 @@
   &lt;li&gt;500-599：服务器端出现错误&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a name=&quot;N8lbh&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&quot;5http缺点与https&quot;&gt;5.http缺点与https&lt;/h4&gt;
 
 &lt;ul&gt;
@@ -551,10 +527,6 @@ https就是加上加密处理（一般是SSL安全通信线路）+认证+完整�
   &lt;li&gt;404 服务器不存在客户想要找的资源&lt;/li&gt;
   &lt;li&gt;500 服务器内部错误&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;####&lt;/p&gt;
-
-&lt;p&gt;###&lt;/p&gt;
 
 &lt;h2 id=&quot;es6相关&quot;&gt;ES6相关&lt;/h2&gt;
 
@@ -605,7 +577,6 @@ https就是加上加密处理（一般是SSL安全通信线路）+认证+完整�
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;gulp&quot;&gt;gulp&lt;/h2&gt;
-
 &lt;p&gt;gulp是一种自动化构建工具，前端工程化开发的一种工具，增强开发流程&lt;br /&gt;使用方便，npm安装，新建gulpfile.js,导入gulp模块，let gulp = require(‘gulp’)&lt;br /&gt;通过default任务去定义工作流&lt;br /&gt;最后在终端执行gulp来进行自动化操作&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -659,17 +630,10 @@ https就是加上加密处理（一般是SSL安全通信线路）+认证+完整�
   &lt;li&gt;Foundation则没有，需要自力更生&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏.&lt;/p&gt;
-
-&lt;p&gt;您的点赞是我持续更新的动力。&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Jul 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2019/07/15/js%E7%9F%A5%E8%AF%86%E7%82%B9%E9%80%9F%E8%AE%B0/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/07/15/js%E7%9F%A5%E8%AF%86%E7%82%B9%E9%80%9F%E8%AE%B0/</guid>
+        <link>http://localhost:4000/my-blog/2019/07/15/js%E9%80%9F%E8%AE%B0(1)/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/07/15/js%E9%80%9F%E8%AE%B0(1)/</guid>
         
         <category>笔试面试</category>
         
