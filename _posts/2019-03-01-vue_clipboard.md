@@ -153,11 +153,3 @@ clipboard.on('error', function(e) {
 #### 可能存在的兼容性问题
 
 网上说这个插件可能存在一些兼容性问题，我自己测试了多个手机，包括安卓和ios，暂时还未发现有兼容问题的存在，如果遇到了我再来及时更新
-
-#### 最后
-
-感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
-
-如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
-
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/03/01/vue_clipboard/)

@@ -14,12 +14,11 @@ tags: js基础篇
 
 - [js基础查漏补缺](#js%E5%9F%BA%E7%A1%80%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA)
   - [高阶函数](#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0)
-    - [Map](#map)
+    - [Map](#Map)
     - [reduce](#reduce)
     - [filter](#filter)
       - [回调函数](#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0)
     - [sort](#sort)
-      - [最后](#%E6%9C%80%E5%90%8E)
 
 <!-- /TOC -->
 
@@ -182,10 +181,4 @@ console.log(arr); // [1, 2, 10, 20]
 
 [廖雪峰js教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499355829ead974e550644e2ebd9fd8bb1b0dd721000)
 
-#### 最后
 
-感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
-
-如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
-
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/15/higher_order_functions/)

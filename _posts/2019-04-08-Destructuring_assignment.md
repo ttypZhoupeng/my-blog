@@ -22,7 +22,6 @@ tags: js基础篇
       - [交换两个变量值](#交换两个变量值)
       - [快速获取当前页面的域名和路径](#快速获取当前页面的域名和路径)
       - [函数接收对象参数，直接把对象的属性绑定到变量](#函数接收对象参数直接把对象的属性绑定到变量)
-    - [最后](#最后)
 
 <!-- /TOC -->
 
@@ -160,10 +159,4 @@ function buildDate({year, month, day, hour=0, minute=0, second=0}) {
 
 [廖雪峰js教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000)
 
-### 最后
 
-感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
-
-如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
-
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/my-blog/2019/04/08/Destructuring_assignment/)

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>澹台宇鹏</title>
-    <description>澹台宇鹏/@Roc Zhou</description>
+    <description>澹台宇鹏/@Juroc</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 17 Jul 2019 14:35:33 +0800</pubDate>
-    <lastBuildDate>Wed, 17 Jul 2019 14:35:33 +0800</lastBuildDate>
+    <pubDate>Wed, 17 Jul 2019 14:41:41 +0800</pubDate>
+    <lastBuildDate>Wed, 17 Jul 2019 14:41:41 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -669,13 +669,6 @@ https就是加上加密处理（一般是SSL安全通信线路）+认证+完整�
 
 &lt;p&gt;愿我们每个人都被这个世界温柔以待~&lt;/p&gt;
 
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/05/11/capernaum/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/05/11/capernaum/</link>
@@ -697,18 +690,14 @@ https就是加上加密处理（一般是SSL安全通信线路）+认证+完整�
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0&quot;&gt;高阶函数&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#map&quot;&gt;Map&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#Map&quot;&gt;Map&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#reduce&quot;&gt;reduce&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#filter&quot;&gt;filter&lt;/a&gt;
             &lt;ul&gt;
               &lt;li&gt;&lt;a href=&quot;#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0&quot;&gt;回调函数&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#sort&quot;&gt;sort&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E5%90%8E&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#sort&quot;&gt;sort&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -864,13 +853,6 @@ console.log(arr); // [1, 2, 10, 20]
 
 &lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499355829ead974e550644e2ebd9fd8bb1b0dd721000&quot;&gt;廖雪峰js教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/15/higher_order_functions/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/04/15/higher_order_functions/</link>
@@ -1067,13 +1049,6 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 &lt;p&gt;A: 一般来说还是不建议裸辞，除非跳槽的跨度比较大，比如从前端开发跳到后端数据挖掘方向，这时候可能需要比较久的时间去准备。
 另外裸辞的话还是比较影响心态的，因为没有工作，会比较急，然后可能就随便找了家公司，可能等不到自己最满意的offer了。&lt;/p&gt;
 
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/14/internet_winter/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Apr 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/04/14/internet_winter/</link>
@@ -1140,13 +1115,6 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
 
 &lt;p&gt;面试官对于框架除了问及API，更关注对于框架底层原理的了解程度&lt;/p&gt;
 
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/09/six_year_FE_advise/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Apr 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/04/09/six_year_FE_advise/</link>
@@ -1180,7 +1148,6 @@ c)	面试后：现金、福利、期股权、KPI&lt;/p&gt;
               &lt;li&gt;&lt;a href=&quot;#函数接收对象参数直接把对象的属性绑定到变量&quot;&gt;函数接收对象参数，直接把对象的属性绑定到变量&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#最后&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -1320,13 +1287,6 @@ var x, y;
 
 &lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000&quot;&gt;廖雪峰js教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/08/Destructuring_assignment/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Apr 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/04/08/Destructuring_assignment/</link>
@@ -1345,10 +1305,10 @@ var x, y;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#js%E5%9F%BA%E7%A1%80%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA&quot;&gt;js基础查漏补缺&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1-es6-map-set&quot;&gt;1. es6 Map Set&lt;/a&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-es6-Map-Set&quot;&gt;1. es6 Map Set&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#11-map&quot;&gt;1.1 Map&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#12-set&quot;&gt;1.2 Set&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#11-Map&quot;&gt;1.1 Map&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#12-Set&quot;&gt;1.2 Set&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8&quot;&gt;2. 函数定义和调用&lt;/a&gt;
@@ -1356,7 +1316,6 @@ var x, y;
           &lt;li&gt;&lt;a href=&quot;#21-arguments%E7%9A%84%E7%94%A8%E5%A4%84&quot;&gt;2.1 arguments的用处&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#22-es6-rest%E5%8F%82%E6%95%B0&quot;&gt;2.2 es6 rest参数&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#23-return-%E7%9A%84%E5%9D%91&quot;&gt;2.3 return 的坑&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E5%90%8E&quot;&gt;最后&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -1563,12 +1522,6 @@ foo(); // undefined
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/04/04/map_set/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Apr 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/04/04/map_set/</link>
@@ -1716,14 +1669,6 @@ clipboard.on('error', function(e) {
 &lt;h4 id=&quot;可能存在的兼容性问题&quot;&gt;可能存在的兼容性问题&lt;/h4&gt;
 
 &lt;p&gt;网上说这个插件可能存在一些兼容性问题，我自己测试了多个手机，包括安卓和ios，暂时还未发现有兼容问题的存在，如果遇到了我再来及时更新&lt;/p&gt;
-
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/03/01/vue_clipboard/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Mar 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2019/03/01/vue_clipboard/</link>
@@ -1893,14 +1838,6 @@ yacc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;参考文章：&lt;a href=&quot;http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/&quot;&gt;How to Install Command Line Tools in Mac OS X (Without Xcode)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/12/29/Command_Line_Tools/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 29 Dec 2018 00:00:00 +0800</pubDate>
@@ -2128,13 +2065,6 @@ function drawRoundRectPath(cxt,width,height,radius){
 }  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
-
-&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
-
-&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/10/09/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</link>

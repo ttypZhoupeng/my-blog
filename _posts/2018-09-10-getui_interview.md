@@ -408,9 +408,3 @@ b={b:1}
 
 二面具体问题请看  [前端面试经历](https://ttypzhoupeng.github.io/my-blog/2018/09/10/other_interview/)
 
-#### 最后
-感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。
-
-如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。
-
-转载请注明：[周鹏的博客](https://ttypzhoupeng.github.io/my-blog) » [点击阅读原文](https://ttypzhoupeng.github.io/2018/09/getui_interview/)
