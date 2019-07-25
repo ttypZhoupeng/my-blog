@@ -5,9 +5,395 @@
     <description>澹台宇鹏/@Juroc</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 17 Jul 2019 14:41:41 +0800</pubDate>
-    <lastBuildDate>Wed, 17 Jul 2019 14:41:41 +0800</lastBuildDate>
+    <pubDate>Thu, 25 Jul 2019 14:37:06 +0800</pubDate>
+    <lastBuildDate>Thu, 25 Jul 2019 14:37:06 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>webpack3 升级 webpack4 踩坑记录</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本篇不包含所有坑，暂时只记录自己踩到的部分坑&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;一安装&quot;&gt;一.安装&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;安装webpack4最新版本&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save-dev webpack@4 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;安装新增依赖 webpack-cli&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;这个在webpack3中，webpack本身和它的CLI是在同一个包中，webpack4中将两个分开管理。&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save-dev webpack-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;二运行&quot;&gt;二.运行&lt;/h3&gt;
+
+&lt;p&gt;执行本地打包以及运行操作&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run build:dll
+npm run start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;记得添加mode&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用来告知 webpack 使用相应环境的内置优化&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'production'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//或者 'development'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;其中遇到的报错：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;1.Error:webpack.optimize.UglifyJsPlugin has been removed,pleaseuseconfig.optimization.minimizeinstead.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;UglifyJsPlugin是用来对js文件进行压缩&lt;/p&gt;
+
+&lt;p&gt;webpack4中&lt;code class=&quot;highlighter-rouge&quot;&gt;UglifyJsPlugin&lt;/code&gt;被废除，需要安装新的插件&lt;code class=&quot;highlighter-rouge&quot;&gt;uglifyjs-webpack-plugin&lt;/code&gt;进行替换，见&lt;a href=&quot;https://webpack.docschina.org/migrate/4/#update-plugins&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;uglifyjs-webpack-plugin&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install uglifyjs-webpack-plugin --save-dev 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;更改 webpack.dll.config.js&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;webpack.prod.config.js&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;去除&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;webpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;optimize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;UglifyJsPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;na&quot;&gt;compress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;      &lt;span class=&quot;na&quot;&gt;warnings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;na&quot;&gt;mangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;      &lt;span class=&quot;na&quot;&gt;safari10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;na&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;      &lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;      &lt;span class=&quot;na&quot;&gt;ascii_only&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;na&quot;&gt;sourceMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;    &lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;添加&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;UglifyJsPlugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'uglifyjs-webpack-plugin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;optimization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//与entry同级&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;minimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;UglifyJsPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uglifyOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;compress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;mangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;sourceMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;uglifyjs-webpack-plugin&lt;/code&gt;更多的配置请参考&lt;a href=&quot;https://www.npmjs.com/package/uglifyjs-webpack-plugin2&quot;&gt;详细配置&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2.Error: webpack.optimize.CommonsChunkPlugin has been removed, please use config.optimization.splitChunks instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;CommonsChunkPlugin 主要是用来提取第三方库和公共模块&lt;/p&gt;
+
+&lt;p&gt;CommonsChunkPlugin 已被移除，用splitChunks替代，见&lt;a href=&quot;https://webpack.docschina.org/migrate/4/#commonschunkplugin&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更改webpack.base.config.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;去除&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// new webpack.optimize.CommonsChunkPlugin({
+//   children: true,
+//   async: true,
+//   minChunks: 2,
+// }),
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;添加&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minChunks: 2,
+    },
+  },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;splitChunks&lt;/code&gt;更多的配置请参考&lt;a href=&quot;https://webpack.docschina.org/plugins/split-chunks-plugin/&quot;&gt;详细配置&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;3.compilation.mainTemplate.applyPluginsWaterfall is not a function&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;更新html-webpack-plugin到最新版本&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install html-webpack-plugin@latest --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;4.Chunk.entrypoints: Use Chunks.groupsIterable and filter by instanceof Entrypoint instead&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个最后解决方式是用&lt;code class=&quot;highlighter-rouge&quot;&gt;mini-css-extract-plugin&lt;/code&gt;替代。&lt;/p&gt;
+
+&lt;p&gt;我记录下自己更新这个的过程，以下前半部分可以直接跳过。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;更新extract-webpack-plugin到最新版本&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save-dev extract-text-webpack-plugin@4.0.0-beta.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;继续报错&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Path variable [contenthash] not implemented in this context: static/css/style.[contenthash].css&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在之前版本中我们使用extract-text-webpack-plugin来提取CSS文件，不过在webpack 4.x中则应该使用mini-css-extract-plugin来提取CSS到单独文件中&lt;/p&gt;
+
+&lt;p&gt;更改如下&lt;/p&gt;
+
+&lt;p&gt;这是基于webpack 3.0&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;utils&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./utils'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExtractTextPlugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'extract-text-webpack-plugin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExtractTextPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assetsPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'css/[name].[contenthash:7].css'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;基于webpack 4.0&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;utils&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./utils'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MiniCssExtractPlugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mini-css-extract-plugin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MiniCssExtractPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assetsPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'css/[name].[contenthash:7].css'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;css 以及 mini-css-extract-plugin 的 rule配置&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;css|less&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MiniCssExtractPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'css-loader'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;modules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;importLoaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;localIdentName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[local]'&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'postcss-loader'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;ident&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'postcss'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'postcss-flexbugs-fixes'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;autoprefixer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+                  &lt;span class=&quot;na&quot;&gt;browsers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;'&amp;gt;1%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;'last 4 versions'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;'Firefox ESR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;'not ie &amp;lt; 9'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// React doesn't support IE8 anyway&lt;/span&gt;
+                  &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                  &lt;span class=&quot;na&quot;&gt;flexbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'no-2009'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'less-loader'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;modifyVars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;theme&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;5.TypeError: webpack.optimize.DedupePlugin is not a constructor&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DedupePlugin&lt;/code&gt;是用来查找相等或近似的模块，避免在最终生成的文件中出现重复的模块&lt;/p&gt;
+
+&lt;p&gt;已经被废除，删除即可，&lt;a href=&quot;https://webpack.docschina.org/migrate/3/#%E7%A7%BB%E9%99%A4-dedupeplugin&quot;&gt;见官网&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;6.FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个是内存溢出了，需要在启动命令中加一个空间 &lt;code class=&quot;highlighter-rouge&quot;&gt;--max_old_space_size=4096&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;better-npm-run start&quot;,
+},
+&quot;betterScripts&quot;: {
+    &quot;start&quot;: {
+      &quot;command&quot;: &quot;node --max_old_space_size=4096 build/server.js&quot;,
+      &quot;env&quot;: {
+        &quot;NODE_ENV&quot;: &quot;development&quot;,
+        &quot;DEPLOY_ENV&quot;: &quot;&quot;,
+        &quot;PUBLIC_URL&quot;: &quot;&quot;,
+        &quot;PORT&quot;: &quot;8082&quot;
+      }
+    },
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;7.&lt;strong&gt;最后还有一个大坑&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offline-plugin&lt;/code&gt;插件，可以用来对多页面应用进行缓存。这个插件的报错同以上&lt;code class=&quot;highlighter-rouge&quot;&gt;UglifyJsPlugin&lt;/code&gt;的报错。&lt;/p&gt;
+
+&lt;p&gt;只需要更新到最新版本即可。&lt;/p&gt;
+
+&lt;p&gt;以下记录踩坑过程。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Error:webpack.optimize.UglifyJsPlugin has been removed,pleaseuseconfig.optimization.minimizeinstead.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因此导致我，删了好几次&lt;code class=&quot;highlighter-rouge&quot;&gt;UglifyJsPlugin&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;uglifyjs-webpack-plugin&lt;/code&gt;相关的所有代码，然后依然报错。&lt;/p&gt;
+
+&lt;p&gt;又以为是缓存问题，我重启了vscode，重启了终端，电脑也尝试重启一遍，依然报错。&lt;/p&gt;
+
+&lt;p&gt;最后逐行注释代码，运行打包操作，发现是&lt;code class=&quot;highlighter-rouge&quot;&gt;offline-plugin&lt;/code&gt;插件的问题。&lt;/p&gt;
+
+&lt;p&gt;问题所在：&lt;code class=&quot;highlighter-rouge&quot;&gt;offline-plugin&lt;/code&gt;5.0以前的版本会带有&lt;code class=&quot;highlighter-rouge&quot;&gt;webpack.optimize.UglifyJsPlugin&lt;/code&gt;操作，最新的应该做了些处理。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://note.youdao.com/yws/res/1909/557183166E0647FEA73021329080920E&quot; alt=&quot;图片&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/NekR/offline-plugin/search?q=UglifyJsPlugin&amp;amp;unscoped_q=UglifyJsPlugin&quot;&gt;详情参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最后处理方式，更新&lt;code class=&quot;highlighter-rouge&quot;&gt;offline-plugin&lt;/code&gt;到最新的版本&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install offline-plugin --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;三新增typescript的打包&quot;&gt;三、新增TypeScript的打包&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save-dev typescript ts-loader
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;添加&lt;code class=&quot;highlighter-rouge&quot;&gt;tsconfig.json&lt;/code&gt;文件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;可以利用ts初始化命令自动添加&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tsc --init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;也可以手动新增文件。&lt;/p&gt;
+
+&lt;p&gt;其中配置详情如下，具体查阅&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/tsconfig-json.html&quot;&gt;tsconfig.json配置详情&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;outDir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;./dist/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;noImplicitAny&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;commonjs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;target&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;jsx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;allowJs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;moduleResolution&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;esModuleInterop&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;experimentalDecorators&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;noUnusedParameters&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;noUnusedLocals&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ESNext&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;exclude&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node_modules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;配置 webpack 处理 TypeScript, 主要更改点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;添加rule&lt;/li&gt;
+  &lt;li&gt;添加需要处理的文件后缀，’.ts’、’.tsx’等
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;tsx&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ts-loader'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/node_modules/&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.tsx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.ts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.js'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;测试文件TestTsLoader.tsx&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用来检测是否配置成功，导入相应页面即可测试。实测ok&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;react&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TsProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TestTsLoader&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TsProps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;am&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/h1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;参考资料&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;1.https://blog.csdn.net/harsima/article/details/80819747
+2.https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+3.https://webpack.docschina.org/migrate/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;四再推荐一个npm-script命令优化插件-better-npm-run&quot;&gt;四.再推荐一个npm script命令优化插件 &lt;code class=&quot;highlighter-rouge&quot;&gt;better-npm-run&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;参考:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;1.https://www.jianshu.com/p/710d0a693357
+2.https://www.npmjs.com/package/better-npm-run&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Wed, 24 Jul 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/07/24/webpack4_update/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/07/24/webpack4_update/</guid>
+        
+        <category>webpack</category>
+        
+        
+      </item>
     
       <item>
         <title>js速记(1)</title>
@@ -1845,234 +2231,6 @@ yacc
         <guid isPermaLink="true">http://localhost:4000/my-blog/2018/12/29/Command_Line_Tools/</guid>
         
         <category>Mac环境配置</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>html dom 转化成图片踩坑记（canvas toDataURL）</title>
-        <description>&lt;h2 id=&quot;需求&quot;&gt;需求&lt;/h2&gt;
-
-&lt;p&gt;在开发过程中遇到这么一个需求，h5页面需要将一个html dom转化成图片，便于用户保存。&lt;/p&gt;
-
-&lt;h2 id=&quot;面向百度搜索第三方得-html2canvas-和-dom-to-image&quot;&gt;面向百度搜索第三方得 html2canvas 和 dom-to-image&lt;/h2&gt;
-
-&lt;p&gt;两者在写这篇笔记之前在github上的星星数分别是&lt;/p&gt;
-
-&lt;p&gt;dom-to-image  4k ⭐️&lt;/p&gt;
-
-&lt;p&gt;html2canvas 13.7k ⭐️&lt;/p&gt;
-
-&lt;p&gt;两者都有尝试过，都有意想不到的bug，包括&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;部分手机有某些背景图片无法展示，为空白&lt;/li&gt;
-  &lt;li&gt;iphone8 plus ios 11中根本不调用这个转换方法，从而得不到想要的图片。
-等等&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;自己动手&quot;&gt;自己动手&lt;/h2&gt;
-
-&lt;h3 id=&quot;思路&quot;&gt;思路&lt;/h3&gt;
-
-&lt;p&gt;利用canvas的toDataURL来拿到canvas转化的base64码，来替换img的url, 也可以把图片上传到公司的服务器上，得到图片的地址来进行下载，或作为参数来传递&lt;/p&gt;
-
-&lt;p&gt;那么canvas的绘制主要就是文本和图片的绘制,文本绘制相对简单，图片绘制有一些注意点。&lt;/p&gt;
-
-&lt;h3 id=&quot;canvas-初始化&quot;&gt;canvas 初始化&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;注意：由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;canvas id=&quot;canvas&quot; width=&quot;750&quot; height=&quot;1164&quot;&amp;gt;
-  你的浏览器居然不支持Canvas？！赶快换一个吧！！
-&amp;lt;/canvas&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let c = document.getElementById(&quot;canvas&quot;);
-let ctx = c.getContext(&quot;2d&quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;文本绘制&quot;&gt;文本绘制&lt;/h3&gt;
-
-&lt;h4 id=&quot;官方文档如图1&quot;&gt;官方文档如图1&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/1.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;详细文档请参考-canvas手册&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
-
-&lt;h4 id=&quot;代码示例&quot;&gt;代码示例&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.fillStyle = &quot;#fff&quot;;
-ctx.font = &quot;32px PingFangSC-Regular&quot;;
-ctx.textAlign = &quot;left&quot;;
-ctx.fillText(&quot;这是文本&quot;, 280, 755);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;图片绘制&quot;&gt;图片绘制&lt;/h3&gt;
-
-&lt;h4 id=&quot;官方文档如图2&quot;&gt;官方文档如图2&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/2.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;详细文档请参考1-canvas手册&quot;&gt;详细文档请参考1 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
-
-&lt;h4 id=&quot;注意事项&quot;&gt;注意事项&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;图片需要进行跨域处理，否则后期无法生成图片，也就是在img标签中增加crossOrigin属性，值为anonymous&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const instBanner = document.getElementById(&quot;instBanner&quot;);
-instBanner.crossOrigin = &quot;anonymous&quot;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;需要等到图片加载完成再画到画布上，否则有可能没画上去&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
-posterBg.src = mainBg;
-posterBg.onload = () =&amp;gt; {
-  ctx.drawImage(posterBg, 0, 0, 750, 1164);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;完整代码示例&quot;&gt;完整代码示例&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
-posterBg.src = 'https:....'; //这里是图片url
-posterBg.crossOrigin = &quot;anonymous&quot;;
-posterBg.onload = () =&amp;gt; {
-  ctx.drawImage(posterBg, 0, 0, 750, 1164);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;生成图片&quot;&gt;生成图片&lt;/h3&gt;
-
-&lt;h4 id=&quot;替换img-src&quot;&gt;替换img src&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
-let canvasImg = document.getElementById(&quot;canvasImg&quot;);
-canvas.src = dataURL;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;上传服务器得到img-url可作为参数保存图片&quot;&gt;上传服务器，得到img url(可作为参数，保存图片)&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
-function getImgUrl(dataURL){
-  //一些上传服务器的代码
-  return imgUrl
-}
-let imgUrl = getImgUrl();
-let canvasImg = document.getElementById(&quot;canvasImg&quot;);
-canvas.src = imgUrl;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;最后奉上一些常用的canvas处理方法&quot;&gt;最后奉上一些，常用的canvas处理方法&lt;/h3&gt;
-
-&lt;h4 id=&quot;圆形图片的绘制&quot;&gt;圆形图片的绘制&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.save();
-
-ctx.beginPath(); //开始绘制
-//先画个圆   前两个参数确定了圆心 （x,y） 坐标  第三个参数是圆的半径  四参数是绘图方向  默认是false，即顺时针
-ctx.arc(60, 60, 30, 0 * Math.PI, 2 * Math.PI);
-
-ctx.clip();//画好了圆 剪切  原始画布中剪切任意形状和尺寸。一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内 这也是我们要save上下文的原因
-
-ctx.drawImage('https:....', 30, 30, 60, 60);
-
-contex.restore(); //恢复之前保存的绘图上下文 恢复之前保存的绘图上下午即状态 还可以继续绘制
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;圆角矩形绘制&quot;&gt;圆角矩形绘制&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-/**该方法用来绘制圆角矩形 
-*@param cxt:canvas的上下文环境 
-*@param x:左上角x轴坐标 
-*@param y:左上角y轴坐标 
-*@param width:矩形的宽度 
-*@param height:矩形的高度 
-*@param radius:圆的半径 
-*@param lineWidth:线条粗细 
-*@param strokeColor:线条颜色 
-**/  
-function strokeRoundRect(cxt,x,y,width,height,radius,/*optional*/lineWidth,/*optional*/strokeColor){  
-    //圆的直径必然要小于矩形的宽高          
-    if(2*radius&amp;gt;width || 2*radius&amp;gt;height){return false;}  
-      
-    cxt.save();  
-    cxt.translate(x,y);  
-    //绘制圆角矩形的各个边  
-    drawRoundRectPath(cxt,width,height,radius);  
-    cxt.lineWidth = lineWidth||2;//若是给定了值就用给定的值否则给予默认值2  
-    cxt.strokeStyle=strokeColor||&quot;#000&quot;;  
-    cxt.stroke();  
-    cxt.restore();  
-}  
-
-/**该方法用来绘制一个有填充色的圆角矩形 
-*@param cxt:canvas的上下文环境 
-*@param x:左上角x轴坐标 
-*@param y:左上角y轴坐标 
-*@param width:矩形的宽度 
-*@param height:矩形的高度 
-*@param radius:圆的半径 
-*@param fillColor:填充颜色 
-**/
-function fillRoundRect(cxt,x,y,width,height,radius,/*optional*/fillColor){  
-    //圆的直径必然要小于矩形的宽高          
-    if(2*radius&amp;gt;width || 2*radius&amp;gt;height){return false;}  
-      
-    cxt.save();  
-    cxt.translate(x,y);  
-    //绘制圆角矩形的各个边  
-    drawRoundRectPath(cxt,width,height,radius);  
-    cxt.fillStyle=fillColor||&quot;#000&quot;;//若是给定了值就用给定的值否则给予默认值  
-    cxt.fill();  
-    cxt.restore();  
-}  
-
-function drawRoundRectPath(cxt,width,height,radius){  
-    cxt.beginPath(0);  
-    //从右下角顺时针绘制，弧度从0到1/2PI  
-    cxt.arc(width-radius,height-radius,radius,0,Math.PI/2);  
-  
-    //矩形下边线  
-    cxt.lineTo(radius,height);  
-  
-    //左下角圆弧，弧度从1/2PI到PI  
-    cxt.arc(radius,height-radius,radius,Math.PI/2,Math.PI);  
-  
-    //矩形左边线  
-    cxt.lineTo(0,radius);  
-  
-    //左上角圆弧，弧度从PI到3/2PI  
-    cxt.arc(radius,radius,radius,Math.PI,Math.PI*3/2);  
-  
-    //上边线  
-    cxt.lineTo(width-radius,0);  
-  
-    //右上角圆弧  
-    cxt.arc(width-radius,radius,radius,Math.PI*3/2,Math.PI*2);  
-  
-    //右边线  
-    cxt.lineTo(width,height-radius);  
-    cxt.closePath();  
-}  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</link>
-        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</guid>
-        
-        <category>HTML5</category>
-        
-        <category>js经验篇</category>
         
         
       </item>

@@ -10,7 +10,7 @@
     <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/my-blog/img/logo.jpg">
 
-    <title>澹台宇鹏</title>
+    <title>澹台宇鹏/@Juroc</title>
 
     <link rel="canonical" href="http://localhost:4000/my-blog/">
 
@@ -132,7 +132,7 @@
                 <div class="site-heading">
                     <h1>澹台宇鹏</h1>
                     <!--<hr class="small">-->
-                    <span class="subheading">Juroc blog</span>
+                    <span class="subheading">Juroc's blog</span>
                 </div>
             </div>
         </div>
@@ -154,6 +154,38 @@
                 post-container
             ">
     			
+<div class="post-preview">
+    <a href="/my-blog/2019/07/24/webpack4_update/">
+        <h2 class="post-title">
+            webpack3 升级 webpack4 踩坑记录
+        </h2>
+        
+        <div class="post-content-preview">
+            
+  本篇不包含所有坑，暂时只记录自己踩到的部分坑
+
+
+一.安装
+
+安装webpack4最新版本
+npm install --save-dev webpack@4 
+
+安装新增依赖 webpack-cli
+
+这个在webpack3中，webpack本身和它的CLI是在同一个包中，webpack4中将两个分开管理。
+
+npm install --save-dev webpack-cli
+
+
+二...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by zhoupeng on 2019-07-24
+    </p>
+</div>
+<hr>
+
 <div class="post-preview">
     <a href="/my-blog/2019/07/15/js%E9%80%9F%E8%AE%B0(1)/">
         <h2 class="post-title">
@@ -444,37 +476,6 @@ pc端的文本复制到剪切板
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/my-blog/2018/10/09/canvas_toDataURL/">
-        <h2 class="post-title">
-            html dom 转化成图片踩坑记（canvas toDataURL）
-        </h2>
-        
-        <div class="post-content-preview">
-            需求
-
-在开发过程中遇到这么一个需求，h5页面需要将一个html dom转化成图片，便于用户保存。
-
-面向百度搜索第三方得 html2canvas 和 dom-to-image
-
-两者在写这篇笔记之前在github上的星星数分别是
-
-dom-to-image  4k ⭐️
-
-html2canvas 13.7k ⭐️
-
-两者都有尝试过，都有意想不到的bug，包括
-
-
-  部分手机有某些背景图片...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by zhoupeng on 2018-10-09
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -530,6 +531,8 @@ html2canvas 13.7k ⭐️
                                 <a href="/my-blog/tags/#js基础篇" title="js基础篇" rel="3">
                                     js基础篇
                                 </a>
+                            
+                        
                             
                         
                             
