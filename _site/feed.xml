@@ -5,6 +5,7 @@
     <description>澹台宇鹏/@Juroc</description>
     <link>http://localhost:4000/my-blog/</link>
     <atom:link href="http://localhost:4000/my-blog/feed.xml" rel="self" type="application/rss+xml" />
+<<<<<<< Updated upstream
     <pubDate>Thu, 25 Jul 2019 14:37:06 +0800</pubDate>
     <lastBuildDate>Thu, 25 Jul 2019 14:37:06 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
@@ -1022,6 +1023,47 @@ https就是加上加密处理（一般是SSL安全通信线路）+认证+完整�
         <guid isPermaLink="true">http://localhost:4000/my-blog/2019/07/15/js%E9%80%9F%E8%AE%B0(1)/</guid>
         
         <category>笔试面试</category>
+=======
+    <pubDate>Sat, 08 Jun 2019 21:56:23 +0800</pubDate>
+    <lastBuildDate>Sat, 08 Jun 2019 21:56:23 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>蛋壳公寓租房指南</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;为了追求更好的租房体验，在这端午之际，打算换一个小窝来着。头一天晚上临时，在拼室友小程序（出租，租房推荐）里面发了一个租房贴，有不少小哥联系我，挑选了几个看上去还可以的，并约好第二天看房，后来发现带看房的都是蛋壳公寓的员工小哥（前不久还都是一房东）。看了一天的蛋壳公寓，第一次看这种平台方的租房，也就和小哥多聊了下，大致了解了这个蛋壳公寓，以及它出租的房子。另外搜集了下相关的信息，想来记录下，也给需要租房的朋友提供一些参考资料。&lt;/p&gt;
+
+&lt;h2 id=&quot;正文从这里开始&quot;&gt;正文从这里开始&lt;/h2&gt;
+
+&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
+
+&lt;p&gt;简单介绍下，&lt;code class=&quot;highlighter-rouge&quot;&gt;蛋壳公寓&lt;/code&gt;是互联网大环境下的一个提供租赁服务的平台，可以在官网以及app上查找自己想要的出租房类型，并约好看房时间，不需要任何费用。类似的还有&lt;code class=&quot;highlighter-rouge&quot;&gt;自如&lt;/code&gt;等。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;不过现在仿佛不用他们的软件，在其他无论是咸鱼，58同城，豆瓣租房，还是拼室友等等互联网工具中都能看到蛋壳小哥的身影…(都是为了生活)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;这里&quot;&gt;这里&lt;/h3&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，欢迎关注我的个人公众号，不定期更新。&lt;/p&gt;
+
+&lt;p&gt;如果有什么问题都可以在我的公众号中提出，我会及时回复。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个好看。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/qrcode.jpg&quot; alt=&quot;公众号二维码&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2019/06/08/danke_renting/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2019/06/08/danke_renting/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2019/06/08/danke_renting/</guid>
+        
+        <category>租房</category>
+>>>>>>> Stashed changes
         
         
       </item>
@@ -2235,5 +2277,243 @@ yacc
         
       </item>
     
+<<<<<<< Updated upstream
+=======
+      <item>
+        <title>html dom 转化成图片踩坑记（canvas toDataURL）</title>
+        <description>&lt;h2 id=&quot;需求&quot;&gt;需求&lt;/h2&gt;
+
+&lt;p&gt;在开发过程中遇到这么一个需求，h5页面需要将一个html dom转化成图片，便于用户保存。&lt;/p&gt;
+
+&lt;h2 id=&quot;面向百度搜索第三方得-html2canvas-和-dom-to-image&quot;&gt;面向百度搜索第三方得 html2canvas 和 dom-to-image&lt;/h2&gt;
+
+&lt;p&gt;两者在写这篇笔记之前在github上的星星数分别是&lt;/p&gt;
+
+&lt;p&gt;dom-to-image  4k ⭐️&lt;/p&gt;
+
+&lt;p&gt;html2canvas 13.7k ⭐️&lt;/p&gt;
+
+&lt;p&gt;两者都有尝试过，都有意想不到的bug，包括&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;部分手机有某些背景图片无法展示，为空白&lt;/li&gt;
+  &lt;li&gt;iphone8 plus ios 11中根本不调用这个转换方法，从而得不到想要的图片。
+等等&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;自己动手&quot;&gt;自己动手&lt;/h2&gt;
+
+&lt;h3 id=&quot;思路&quot;&gt;思路&lt;/h3&gt;
+
+&lt;p&gt;利用canvas的toDataURL来拿到canvas转化的base64码，来替换img的url, 也可以把图片上传到公司的服务器上，得到图片的地址来进行下载，或作为参数来传递&lt;/p&gt;
+
+&lt;p&gt;那么canvas的绘制主要就是文本和图片的绘制,文本绘制相对简单，图片绘制有一些注意点。&lt;/p&gt;
+
+&lt;h3 id=&quot;canvas-初始化&quot;&gt;canvas 初始化&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：由于最后生成的图片可能会模糊，可以尽量画大一点画布，可以按照设计图来&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;canvas id=&quot;canvas&quot; width=&quot;750&quot; height=&quot;1164&quot;&amp;gt;
+  你的浏览器居然不支持Canvas？！赶快换一个吧！！
+&amp;lt;/canvas&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let c = document.getElementById(&quot;canvas&quot;);
+let ctx = c.getContext(&quot;2d&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;文本绘制&quot;&gt;文本绘制&lt;/h3&gt;
+
+&lt;h4 id=&quot;官方文档如图1&quot;&gt;官方文档如图1&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/1.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;详细文档请参考-canvas手册&quot;&gt;详细文档请参考 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;代码示例&quot;&gt;代码示例&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.fillStyle = &quot;#fff&quot;;
+ctx.font = &quot;32px PingFangSC-Regular&quot;;
+ctx.textAlign = &quot;left&quot;;
+ctx.fillText(&quot;这是文本&quot;, 280, 755);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;图片绘制&quot;&gt;图片绘制&lt;/h3&gt;
+
+&lt;h4 id=&quot;官方文档如图2&quot;&gt;官方文档如图2&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/my-blog/img/posts/canvas_toDataURL/2.png&quot; alt=&quot;文本绘制&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;详细文档请参考1-canvas手册&quot;&gt;详细文档请参考1 &lt;a href=&quot;http://www.w3school.com.cn/tags/html_ref_canvas.asp&quot;&gt;canvas手册&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;注意事项&quot;&gt;注意事项&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;图片需要进行跨域处理，否则后期无法生成图片，也就是在img标签中增加crossOrigin属性，值为anonymous&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const instBanner = document.getElementById(&quot;instBanner&quot;);
+instBanner.crossOrigin = &quot;anonymous&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;需要等到图片加载完成再画到画布上，否则有可能没画上去&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
+posterBg.src = mainBg;
+posterBg.onload = () =&amp;gt; {
+  ctx.drawImage(posterBg, 0, 0, 750, 1164);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;完整代码示例&quot;&gt;完整代码示例&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const posterBg = new Image();
+posterBg.src = 'https:....'; //这里是图片url
+posterBg.crossOrigin = &quot;anonymous&quot;;
+posterBg.onload = () =&amp;gt; {
+  ctx.drawImage(posterBg, 0, 0, 750, 1164);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;生成图片&quot;&gt;生成图片&lt;/h3&gt;
+
+&lt;h4 id=&quot;替换img-src&quot;&gt;替换img src&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
+let canvasImg = document.getElementById(&quot;canvasImg&quot;);
+canvas.src = dataURL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;上传服务器得到img-url可作为参数保存图片&quot;&gt;上传服务器，得到img url(可作为参数，保存图片)&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let dataURL = c.toDataURL(&quot;image/png&quot;);
+function getImgUrl(dataURL){
+  //一些上传服务器的代码
+  return imgUrl
+}
+let imgUrl = getImgUrl();
+let canvasImg = document.getElementById(&quot;canvasImg&quot;);
+canvas.src = imgUrl;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;最后奉上一些常用的canvas处理方法&quot;&gt;最后奉上一些，常用的canvas处理方法&lt;/h3&gt;
+
+&lt;h4 id=&quot;圆形图片的绘制&quot;&gt;圆形图片的绘制&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctx.save();
+
+ctx.beginPath(); //开始绘制
+//先画个圆   前两个参数确定了圆心 （x,y） 坐标  第三个参数是圆的半径  四参数是绘图方向  默认是false，即顺时针
+ctx.arc(60, 60, 30, 0 * Math.PI, 2 * Math.PI);
+
+ctx.clip();//画好了圆 剪切  原始画布中剪切任意形状和尺寸。一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内 这也是我们要save上下文的原因
+
+ctx.drawImage('https:....', 30, 30, 60, 60);
+
+contex.restore(); //恢复之前保存的绘图上下文 恢复之前保存的绘图上下午即状态 还可以继续绘制
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;圆角矩形绘制&quot;&gt;圆角矩形绘制&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+/**该方法用来绘制圆角矩形 
+*@param cxt:canvas的上下文环境 
+*@param x:左上角x轴坐标 
+*@param y:左上角y轴坐标 
+*@param width:矩形的宽度 
+*@param height:矩形的高度 
+*@param radius:圆的半径 
+*@param lineWidth:线条粗细 
+*@param strokeColor:线条颜色 
+**/  
+function strokeRoundRect(cxt,x,y,width,height,radius,/*optional*/lineWidth,/*optional*/strokeColor){  
+    //圆的直径必然要小于矩形的宽高          
+    if(2*radius&amp;gt;width || 2*radius&amp;gt;height){return false;}  
+      
+    cxt.save();  
+    cxt.translate(x,y);  
+    //绘制圆角矩形的各个边  
+    drawRoundRectPath(cxt,width,height,radius);  
+    cxt.lineWidth = lineWidth||2;//若是给定了值就用给定的值否则给予默认值2  
+    cxt.strokeStyle=strokeColor||&quot;#000&quot;;  
+    cxt.stroke();  
+    cxt.restore();  
+}  
+
+/**该方法用来绘制一个有填充色的圆角矩形 
+*@param cxt:canvas的上下文环境 
+*@param x:左上角x轴坐标 
+*@param y:左上角y轴坐标 
+*@param width:矩形的宽度 
+*@param height:矩形的高度 
+*@param radius:圆的半径 
+*@param fillColor:填充颜色 
+**/
+function fillRoundRect(cxt,x,y,width,height,radius,/*optional*/fillColor){  
+    //圆的直径必然要小于矩形的宽高          
+    if(2*radius&amp;gt;width || 2*radius&amp;gt;height){return false;}  
+      
+    cxt.save();  
+    cxt.translate(x,y);  
+    //绘制圆角矩形的各个边  
+    drawRoundRectPath(cxt,width,height,radius);  
+    cxt.fillStyle=fillColor||&quot;#000&quot;;//若是给定了值就用给定的值否则给予默认值  
+    cxt.fill();  
+    cxt.restore();  
+}  
+
+function drawRoundRectPath(cxt,width,height,radius){  
+    cxt.beginPath(0);  
+    //从右下角顺时针绘制，弧度从0到1/2PI  
+    cxt.arc(width-radius,height-radius,radius,0,Math.PI/2);  
+  
+    //矩形下边线  
+    cxt.lineTo(radius,height);  
+  
+    //左下角圆弧，弧度从1/2PI到PI  
+    cxt.arc(radius,height-radius,radius,Math.PI/2,Math.PI);  
+  
+    //矩形左边线  
+    cxt.lineTo(0,radius);  
+  
+    //左上角圆弧，弧度从PI到3/2PI  
+    cxt.arc(radius,radius,radius,Math.PI,Math.PI*3/2);  
+  
+    //上边线  
+    cxt.lineTo(width-radius,0);  
+  
+    //右上角圆弧  
+    cxt.arc(width-radius,radius,radius,Math.PI*3/2,Math.PI*2);  
+  
+    //右边线  
+    cxt.lineTo(width,height-radius);  
+    cxt.closePath();  
+}  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
+&lt;p&gt;感谢各位大佬的参阅，如果有什么问题都可以在评论区提出。&lt;/p&gt;
+
+&lt;p&gt;如果觉得对您有帮助的话，也可点个赞，点个收藏，点关注不迷路。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog&quot;&gt;周鹏的博客&lt;/a&gt; » &lt;a href=&quot;https://ttypzhoupeng.github.io/my-blog/2018/10/09/canvas_toDataURL/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</link>
+        <guid isPermaLink="true">http://localhost:4000/my-blog/2018/10/09/canvas_toDataURL/</guid>
+        
+        <category>HTML5</category>
+        
+        <category>js经验篇</category>
+        
+        
+      </item>
+    
+>>>>>>> Stashed changes
   </channel>
 </rss>
