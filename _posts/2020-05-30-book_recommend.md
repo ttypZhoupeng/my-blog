@@ -16,7 +16,7 @@ tags: 读书
 
 ### 群推荐书籍包含：
 
-<!-- - 《活着》 提到2次 豆瓣评分 9.4
+- 《活着》 提到2次 豆瓣评分 9.4
 - 《明朝那些事》 提到2次 豆瓣评分 9.1 
 - 《小王子》 提到2次 豆瓣评分 9.0
 - 《我们仨》 提到2次 豆瓣评分 8.7
@@ -42,141 +42,137 @@ tags: 读书
 - 《无价》 豆瓣评分 7.9
 - 《墨菲定律》 豆瓣评分 6.2
 - 《总有一个瞬间让你感动》
-- 《人性》 -->
+- 《人性》
 
-<html>
-<!--在这里插入内容-->
-<div id="box"></div>
-  <div>
-    <span style="width:150px;display: inline-block">《活着》</span>
+
+<!-- <div>
+    <span style="width:170px;display: inline-block">《活着》</span>
     <span>-----<span>
     <span>提到<span style="color:orange"> 2次</span> 豆瓣评分<span style="color:orange"> 9.4</span> </span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《明朝那些事儿》</span>
+    <span style="width:170px;display: inline-block">《明朝那些事儿》</span>
     <span>-----<span>
     <span>提到<span style="color:orange"> 2次</span> 豆瓣评分<span style="color:orange"> 9.1</span> </span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《小王子》</span>
+    <span style="width:170px;display: inline-block">《小王子》</span>
     <span>-----<span>
     <span>提到<span style="color:orange"> 2次</span> 豆瓣评分<span style="color:orange"> 9.0</span> </span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《我们仨》</span>
+    <span style="width:170px;display: inline-block">《我们仨》</span>
     <span>-----<span>
     <span>提到<span style="color:orange"> 2次</span> 豆瓣评分<span style="color:orange"> 8.7</span> </span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《道德经》</span>
+    <span style="width:170px;display: inline-block">《道德经》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 9.5</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《金瓶梅》</span>
+    <span style="width:170px;display: inline-block">《金瓶梅》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 9.2</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《全球通史》</span>
+    <span style="width:170px;display: inline-block">《全球通史》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 9.2</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《平凡的世界》</span>
+    <span style="width:170px;display: inline-block">《平凡的世界》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 9.0</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《国富论》</span>
+    <span style="width:170px;display: inline-block">《国富论》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 9.0</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《鬼谷子》</span>
+    <span style="width:170px;display: inline-block">《鬼谷子》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 9.0</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《黄金时代》</span>
+    <span style="width:170px;display: inline-block">《黄金时代》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.9</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《追风筝的人》</span>
+    <span style="width:170px;display: inline-block">《追风筝的人》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.9</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《一只特立独行的猪》</span>
+    <span style="width:170px;display: inline-block">《一只特立独行的猪》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.8</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《月亮与六便士》</span>
+    <span style="width:170px;display: inline-block">《月亮与六便士》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.8</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《曾国藩家书》</span>
+    <span style="width:170px;display: inline-block">《曾国藩家书》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.7</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《富爸爸穷爸爸》</span>
+    <span style="width:170px;display: inline-block">《富爸爸穷爸爸》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.5</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《解忧杂货铺》</span>
+    <span style="width:170px;display: inline-block">《解忧杂货铺》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.5</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《了不起的盖茨比》</span>
+    <span style="width:170px;display: inline-block">《了不起的盖茨比》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.4</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《人生》</span>
+    <span style="width:170px;display: inline-block">《人生》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.4</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《瓦尔登湖》</span>
+    <span style="width:170px;display: inline-block">《瓦尔登湖》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.4</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《人性的弱点》</span>
+    <span style="width:170px;display: inline-block">《人性的弱点》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.2</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《自控力》</span>
+    <span style="width:170px;display: inline-block">《自控力》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.2</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《穆斯林的葬礼》</span>
+    <span style="width:170px;display: inline-block">《穆斯林的葬礼》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 8.1</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《无价》</span>
+    <span style="width:170px;display: inline-block">《无价》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 7.9</span>
   <div>
   <div>
-    <span style="width:150px;display: inline-block">《墨菲定律》</span>
+    <span style="width:170px;display: inline-block">《墨菲定律》</span>
     <span>-----<span>
     豆瓣评分<span style="color:orange"> 6.2</span>
   <div>
-</html>
-
-<br/>
-
+ </html> -->
 ---
+
 
 ### 推荐/分类
 
